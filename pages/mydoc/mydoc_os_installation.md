@@ -58,5 +58,14 @@ deb-src http://security.debian.org/ jessie/updates main contrib non-free
 deb http://ftp.es.debian.org/debian/ jessie-updates main contrib non-free
 deb-src http://ftp.es.debian.org/debian/ jessie-updates main contrib non-free
 ```
+## Install pre-required software
+Install the following packages, which are needed by the sNow! installation scripts:
+
+```
+apt-get install bridge-utils gawk lvm2 sudo wget git ca-certificates lsb-release
+```
+
+## External shared file system servers (home directory and /sNow folder)
+If you are using an external NFS server or a cluster file system to share the home directory and the /sNow folder, then those file systems should be available before installing sNow!
 
 {% include links.html %}
