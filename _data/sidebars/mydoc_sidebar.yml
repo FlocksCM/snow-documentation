@@ -28,20 +28,20 @@ entries:
       output: web, pdf
       type: homepage
 
-    - title: Introduction
-      url: /mydoc_introduction.html
-      output: web, pdf
-
-    - title: Supported features
-      url: /mydoc_supported_features.html
-      output: web, pdf
-
-    - title: About the theme author
-      url: /mydoc_about.html
-      output: web, pdf
-
-    - title: Support
+    - title: Licensing and enterprise support
       url: /mydoc_support.html
+      output: web, pdf
+      
+    - title: Why sNow!
+      url: /mydoc_why_snow.html
+      output: web, pdf
+
+    - title: Software ecosystem
+      url: /mydoc_software_ecosystem.html
+      output: web, pdf
+
+    - title: Hardware requirements
+      url: /mydoc_hardware_requirements.html
       output: web, pdf
 
   - title: Release Notes
