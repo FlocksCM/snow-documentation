@@ -6,7 +6,6 @@ sidebar: mydoc_sidebar
 permalink: index.html
 summary: Main page for sNow! documentation
 ---
-## Overview
 sNow! is an open-source HPC suite which provides all the required elements to deploy, manage and customize a compute solution. With the sNow! default configuration, you will able to set up a completely functional HPC cluster from scratch in a very short time.
 
 The predefined configuration contains advanced features which significantly reduce additional complexities for the end user. In addition to that, sNow! allows you to integrate simple hook scripts to customize your system to your needs.
@@ -25,17 +24,6 @@ In general, the target environments for sNow! are those looking for:
 * Improving reliability and scalability
 * Flexibility and easy customization
 * Outsourcing HPC administration services
-
-## Licensing and Enterprise Support
-sNow! is available under the [GNU General Public License](https://www.gnu.org/copyleft/gpl.html). As open-source project, sNow! is free of charge and you can get support from the community of users via email list and bug reporting through Bitbucket. In addition to that, hardware vendors and consulting companies can provide 1st and 2nd level support. HPCNow! as creator and main developer of this project, feels the responsibility to provide 3rd level support.
-
-HPCNow! also offers a full line of services for sNow!, including:
-* Support agreements for sNow! clusters
-* Custom development
-* Configuration assistance
-* Training
-* Customization 
-Please, [contact us](mailto:info@hpcnow.com) for questions regarding the professional services offered by HPCNow!
 
 ## Feedback, Suggestions and Bug Reports
 Please feel free to send feedback and suggestions to the main developers of this open-source project at info@hpcnow.com

@@ -1,5 +1,5 @@
 ---
-title: Support
+title: Licensing and Enterprise Support
 tags: [getting_started, troubleshooting]
 keywords: questions, troubleshooting, contact, support
 last_updated: July 3, 2016
@@ -9,6 +9,15 @@ permalink: mydoc_support.html
 folder: mydoc
 ---
 
-Let me know about any bugs or other issues that you find. Just email me at <a href="mailto:tomjohnson1492@gmail.com">tomjohnson1492@gmail.com</a>. You can also [create issues directly within the Github repository here](https://github.com/tomjohnson1492/jekyll-doc/issues).
+sNow! is available under the [GNU General Public License](https://www.gnu.org/copyleft/gpl.html). As open-source project, sNow! is free of charge and you can get support from the community of users via email list and bug reporting through Bitbucket. In addition to that, hardware vendors and consulting companies can provide 1st and 2nd level support. [HPCNow!](http://www.hpcnow.com) as creator and main developer of this project, feels the responsibility to provide 3rd level support.
+
+HPCNow! also offers a full line of services for sNow!, including:
+* Support agreements for sNow! clusters
+* Custom development
+* Configuration assistance
+* Training
+* Customization
+
+Please, [contact us](mailto:info@hpcnow.com) for questions regarding the professional services offered by [HPCNow!](http://www.hpcnow.com).
 
 {% include links.html %}
