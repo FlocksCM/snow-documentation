@@ -27,8 +27,9 @@ Key parameters in snow.conf
 Key configuration files:
 
 |domain|snow-configspace|Function|
+|-------|--------|----------|
 |/var/cfengine/inputs/promises.cf|X|This file is the first file that cf-agent with no arguments will try to look for. It should contain all of the basic configuration settings, including a list of other files to include. In normal operation, it must have a bundlesequence.
-}/var/cfengine/inputs/update.cf|X|This file should rarely if ever change. Should you ever change it (or when you upgrade CFEngine), take special care to ensure the old and new CFEngine can parse and execute this file successfully.|
+|/var/cfengine/inputs/update.cf|X|This file should rarely if ever change. Should you ever change it (or when you upgrade CFEngine), take special care to ensure the old and new CFEngine can parse and execute this file successfully.|
 |/var/cfengine/inputs/failsafe.cf|X|This file is generated during the bootstrapping process and should probably never be changed. The only job of failsafe.cf is to execute the update bundle in a “standalone” context should there be a syntax error somewhere in the main set of promises.|
 
 Default ports
