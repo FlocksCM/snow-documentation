@@ -67,25 +67,43 @@ entries:
     - title: SSH access
       url: /mydoc_ssh_access.html
       output: web, pdf
+      
+    - title: Escalate to root user
+      url: /mydoc_escalate_to_root.html
+      output: web, pdf      
 
-  - title: Authoring
+  - title: Configuration
     output: web, pdf
 
     folderitems:
-    - title: Pages
-      url: /mydoc_pages.html
+    - title: Check List
+      url: /mydoc_check_list.html
       output: web, pdf
 
-    - title: Posts
-      url: /mydoc_posts.html
+      subfolders:
+      - title: Setup network bridges
+        url: /mydoc_setup_network_bridges.html
+        output: web, pdf
+        subfolderitems:
+
+        - title: Configuration example for Scenario A
+          url: /mydoc_scenario_a.html
+          output: web
+         
+        - title: Configuration example for Scenario B
+          url: /mydoc_scenario_b.html
+          output: web
+
+        - title: Configuration example for Scenario C
+          url: /mydoc_scenario_c.html
+          output: web
+          
+    - title: Hostname setting
+      url: /mydoc_hostname_setting.html
       output: web, pdf
 
-    - title: Lists
-      url: /mydoc_lists.html
-      output: web, pdf
-
-    - title: Conditional logic
-      url: /mydoc_conditional_logic.html
+    - title: Customize your cluster before initializing
+      url: /mydoc_customize_your_cluster.html
       output: web, pdf
 
     - title: Content reuse
@@ -104,11 +122,11 @@ entries:
       url: /mydoc_atom_text_editor.html
       output: web, pdf
 
-  - title: Navigation
+  - title: Selecting domains
     output: web, pdf
 
     folderitems:
-    - title: Sidebar navigation
+    - title: List of available roles
       url: /mydoc_sidebar_navigation.html
       output: web, pdf
 
