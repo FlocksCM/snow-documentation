@@ -81,11 +81,14 @@ entries:
       output: web, pdf
 
       subfolders:
-      - title: Setup network bridges
-        url: /mydoc_setup_network_bridges.html
+      - title: Network configuration
         output: web, pdf
         subfolderitems:
 
+        - title: Setup network bridges
+          url: /mydoc_setup_network_bridges.html
+          output: web
+          
         - title: Configuration example for Scenario A
           url: /mydoc_scenario_a.html
           output: web
@@ -107,17 +110,17 @@ entries:
       output: web, pdf
 
     - title: Selecting domains
-      url: /mydoc_content_reuse.html
+      url: /mydoc_selecting_domains.html
       output: web, pdf
 
     - title: List of available roles
-      url: /mydoc_collections.html
+      url: /mydoc_available_roles.html
       output: web, pdf
 
     - title: Generate the config files
-      url: /mydoc_webstorm_text_editor.html
+      url: /mydoc_generate_config_files.html
       output: web, pdf
 
     - title: Download the sNow! template
-      url: /mydoc_atom_text_editor.html
+      url: /mydoc_download_snow_template.html
       output: web, pdf
