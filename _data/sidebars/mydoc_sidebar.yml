@@ -106,18 +106,18 @@ entries:
       url: /mydoc_customize_your_cluster.html
       output: web, pdf
 
-    - title: Content reuse
+    - title: Selecting domains
       url: /mydoc_content_reuse.html
       output: web, pdf
 
-    - title: Collections
+    - title: List of available roles
       url: /mydoc_collections.html
       output: web, pdf
 
-    - title: WebStorm editor tips
+    - title: Generate the config files
       url: /mydoc_webstorm_text_editor.html
       output: web, pdf
 
-    - title: Atom editor tips
+    - title: Download the sNow! template
       url: /mydoc_atom_text_editor.html
       output: web, pdf
