@@ -21,8 +21,7 @@ cp -p /sNow/snow-tools/etc/snow.conf-example /sNow/snow-tools/etc/snow.conf
 
 Be aware that newer releases may include more parameters to setup and migrating from a previous release to a newer one will require you to extend your current snow.conf with some new parameters.
 
-## IMPORTANT:
-Please ensure this snow.conf file belongs to root:root and has permissions 600 as it will contain passwords in plain text.
+{% include warning.html content="Please ensure this snow.conf file belongs to root:root and has permissions 600 as it will contain passwords in plain text." %}
 
 This document provides a short description of each parameter. 
 
@@ -31,25 +30,42 @@ Defines the NFS server where all the sNow! files will be stored. The /sNow files
 
 ## sNow! paths
 The following paths define where the code and binaries are going to be stored. Most of them are NOT customizable yet but they will be in upcoming releases. Keep the following paths as static for the time being
-### SNOW_PATH=/sNow
-The main sNow! root directory where all the subfolders usually are stored. Default value is /sNow
-### SNOW_HOME=/home
-This parameter defines the default path to the shared home directory.
-### SNOW_SOFT=$SNOW_PATH/easybuild
-This parameter defines the default path to the EasyBuild root folder.
-### SNOW_CONF=$SNOW_PATH/snow-configspace
-This parameter defines the default path to the snow-configspace folder.
-### SNOW_TOOL=$SNOW_PATH/snow-tools
-This parameter defines the default path to the snow-tools folder.
+* SNOW_PATH: The main sNow! root directory where all the subfolders usually are stored. Default value is /sNow
+```
+SNOW_PATH=/sNow
+```
+* SNOW_HOME: This parameter defines the default path to the shared home directory.
+```
+SNOW_HOME=/home
+```
+* SNOW_SOFT: This parameter defines the default path to the EasyBuild root folder.
+```
+SNOW_SOFT=$SNOW_PATH/easybuild
+```
+* SNOW_CONF: This parameter defines the default path to the snow-configspace folder.
+```
+SNOW_CONF=$SNOW_PATH/snow-configspace
+```
+* SNOW_TOOL: This parameter defines the default path to the snow-tools folder.
+```
+SNOW_TOOL=$SNOW_PATH/snow-tools
+```
 
 ## IMG_DST
-Defines where the domains OS files will be stored. This allows you to use root and swap filesystems for the domains in LVM volumes and  loopback files. The NFSROOT option requires complex manual intervention and it is still experimental.
-### IMG_DST='lvm=snow_vg'
-The domains will be stored inside a Logical Volume created in the snow_vg Volume Group.
-### IMG_DST='dir=/sNow/domains'
-The domains will be stored inside a loopback file located inside /sNow/domains folder.
-### IMG_DST='nfs=$NFS_SERVER:/sNow/domains' (experimental)
-The domains file system will be stored in NFS server and booted via NFSROOT.
+Defines where the domains OS files will be stored. This allows you to use root and swap filesystems for the domains in LVM volumes and  loopback files. 
+* LVM - The domains will be stored inside a Logical Volume created in the snow_vg Volume Group.
+```
+IMG_DST='lvm=snow_vg'
+```
+* Loopback files - The domains will be stored inside a loopback file located inside /sNow/domains folder.
+```
+IMG_DST='dir=/sNow/domains'
+```
+* NFSROOT - The domains file system will be stored in NFS server and booted via NFSROOT.
+```
+IMG_DST='nfs=$NFS_SERVER:/sNow/domains' (experimental)
+```
+{% include note.html content="The NFSROOT option requires complex manual intervention and it is still experimental." %}
 
 ## SNOW_NODES
 Defines the list of nodes which will be the sNow! management servers. The default value is snow01. If you use more than one sNow! management server then you should define here the list of hostnames in a space separated list.
@@ -143,46 +159,35 @@ NET_DMZ=( 'xdmz0' '172.16.1.254' '172.16.1.1' '172.16.1.' '255.255.255.0' '-dmz'
 ## IPMI / BMC setup
 The following parameters provide the required information to interact with the compute nodes via IPMI.Please define here the access type for the IPMI/iLO/iDRAC/IMM of your system and the username and password which allow interaction with it. In the present version of sNow! all nodes must have the same user/password combination.
 
-### IPMI_TYPE
-IPMI type used by ipmitools. Default value is lanplus.
-### IPMI_USER
-IPMI user. Default value is admin.
-### IPMI_PASSWORD
-IPMI password associated with the user described above. Default value is admin.
+* ```IPMI_TYPE```: IPMI type used by ipmitools. Default value is lanplus.
+* ```IPMI_USER```: IPMI user. Default value is admin.
+* ```IPMI_PASSWORD```: IPMI password associated with the user described above. Default value is admin.
 
 ## Power awareness considerations
 The following parameters will define how the nodes will boot in case you boot a large set of nodes. Instead of booting them all at exactly the same time, and in order to avoid unnecessary circuit overload and unbalanced loading in the power distribution, the nodes will be booted in blocks.
-### BLOCKN
-Number of nodes to boot per cycle. Default value is 12 nodes.
-### BLOCKD
-Delay before booting the next group of BLOCKD nodes. Default value is 4 seconds.
-### BOOT_DELAY
-The expected time for the compute node to start to boot from PXE. After this period of time, the PXE configuration will roll back to the default boot defined in the snow.conf. Default value is 300 seconds. 
+* ```BLOCKN```: Number of nodes to boot per cycle. Default value is 12 nodes.
+* ```BLOCKD```:Delay before booting the next group of BLOCKD nodes. Default value is 4 seconds.
+* ```BOOT_DELAY```: The expected time for the compute node to start to boot from PXE. After this period of time, the PXE configuration will roll back to the default boot defined in the snow.conf. Default value is 300 seconds. 
 
-This means if you boot a range of 100 nodes it will boot BLOCKN nodes, then wait BLOCKD seconds, boot BLOCKN more nodes, wait BLOCKD seconds, and repeat this sequence until all of them are booted.
+{% include note.html content="iThis means if you boot a range of 100 nodes it will boot BLOCKN nodes, then wait BLOCKD seconds, boot BLOCKN more nodes, wait BLOCKD seconds, and repeat this sequence until all of them are booted." %}
 
 ## Config manager
 sNow! allows you to integrate your prefered configuration manager. If you are using CFEngine, there is a role which partially integrates it. If you are using another one, you may want to create a new role. Since configuration managers are quite complex to setup and strongly depend on site implementation, this component is outside the sNow! scope and support. sNow! only provides integration but not deployment of this service. The default values are unset.
-### CM_SOFTWARE
-Defines the name of the configuration manager to be used. Default value is empty.
-### CM_SERVER
-Defines the configuration manager server. Default value is empty.
-### CM_VERSION
-Defines the version of the configuration manager to be used. Default value is empty.
+* ```CM_SOFTWARE```: Defines the name of the configuration manager to be used. Default value is empty.
+* ```CM_SERVER```: Defines the configuration manager server. Default value is empty.
+* ```CM_VERSION```: Defines the version of the configuration manager to be used. Default value is empty.
 
 ## Cluster provisioning: deployment system
 The following parameters define the information required to deploy and boot new compute nodes as well as the golden nodes which will play a key role in the deployment of applications in the shared file system as well as the cloning system.
-### DEFAULT_BOOT
-All the nodes will boot via PXE and the PXE server will define when the node should boot from the network or any other device. You can setup a default image here or define different images for a specific nodes through snow CLI. The default value is localboot.
-### DEFAULT_TEMPLATE
-By default sNow! will deploy all the compute nodes with the template defined in this parameter. You can also deploy nodes using a different template by adding the template name as an option in the snow CLI: 
+* ```DEFAULT_BOOT```: All the nodes will boot via PXE and the PXE server will define when the node should boot from the network or any other device. You can setup a default image here or define different images for a specific nodes through snow CLI. The default value is localboot.
+* ```DEFAULT_TEMPLATE```: By default sNow! will deploy all the compute nodes with the template defined in this parameter. You can also deploy nodes using a different template by adding the template name as an option in the snow CLI: 
 
 ```
 snow deploy n-[001-200] custom_template
 ```
 More information on this is available in section 6. The default value is centos-7-default
-### DEFAULT_CONSOLE_OPTIONS
-Some compute nodes may require different options in order to interact with the remote console during the PXE boot. This option is used as default. You can also setup different console options for a specific node through snow CLI. The default value is: 
+
+* ```DEFAULT_CONSOLE_OPTIONS```: Some compute nodes may require different options in order to interact with the remote console during the PXE boot. This option is used as default. You can also setup different console options for a specific node through snow CLI. The default value is: 
 
 ```
 DEFAULT_CONSOLE_OPTIONS="console=tty0 console=ttyS0,115200n8"
@@ -283,42 +288,49 @@ SLURMDBD_NAME=slurm_acct_db
 
 ### Slurm Accounting and Fair Share
 
+The following option forces the use of associations and QoS for accounting. 
+
 ```
-ACCOUNTING_STORAGE_ENFORCE
 ACCOUNTING_STORAGE_ENFORCE=associations,qos
 ```
-The following option forces the use of associations and QoS for accounting. Fairsharing is the most common approach to share resources but it requires some manual intervention. Consider using the following helper script to define how to share the computational resources between your groups and users:
+
+Fairsharing is the most common approach to share resources but it requires some manual intervention. Consider using the following helper script to define how to share the computational resources between your groups and users:
 
 ```
 $SNOW_TOOLS/contrib/slurm_fairshare/slurm_share_tree.sh
 ```
 
-```
-ACCOUNTING_STORAGE_ENFORCE=nojobs
-```
+If you you don't need QoS or fairshare, you can consider to implement one of the two following options:
+
 * nojobs - This option prevents job information being stored in accounting.
 * nosteps - This option prevents step information being stored in accounting.
 
-Both nojobs and nosteps could be helpful in an environment where you want to use limits but don't really care about utilization. For more information, please see : https://slurm.schedmd.com/accounting.html
+{% include note.html content="Both nojobs and nosteps could be helpful in an environment where you want to use limits but don't really care about utilization. For more information, please see : https://slurm.schedmd.com/accounting.html" %}
 
-### SLURM_CLUSTER_NAME
-Defines the name of the cluster
+```
+ACCOUNTING_STORAGE_ENFORCE=nojobs
+```
 
-### MUNGE user definition
+### Cluster Name
+The following parameter defines the name of the cluster.
+
+```
+SLURM_CLUSTER_NAME
+```
+### MUNGE and Slurm user definition
 
 ```
 MUNGE_UID=994
 MUNGE_GID=994
+SLURM_GID=995
+SLURM_UID=995
 ```
 ### Slurmctl master
 
 ```
 SLURM_VERSION=15.8.2
 SLURM_CONF=/etc/slurm/slurm.conf
-SLURM_GID=995
-SLURM_UID=995
 LICENSES=intel*2,matlab*200,fluent*5000
-SLURM_CLUSTER_NAME=mycluster
 ```
 
 ### Slurm compute nodes
@@ -338,5 +350,3 @@ SLURM_PARTITION[2]="PartitionName=medium  Nodes=knl[01-99],hsw[01-99],skl[01-99]
 SLURM_PARTITION[3]="PartitionName=requeue Nodes=knl[01-99],hsw[01-99],skl[01-99]  Default=NO  Shared=NO      Priority=50  MaxTime=24:00:00  PreemptMode=requeue    GraceTime=120"
 SLURM_PARTITION[4]="PartitionName=low     Nodes=knl[01-99],hsw[01-99],skl[01-99]  Default=YES Shared=FORCE:1 Priority=25  MaxTime=168:00:00 PreemptMode=suspend"
 ```
-
- {% include links.html %}
