@@ -12,9 +12,9 @@ Each sNow! server will require at least two and up to five network bridges. If y
 
 The following diagrams represent common scenarios. Please review carefully which scenario you want to develop.
 
-{% include image.html file="scenario_a.jpg" url="./images/scenario_a.jpg" alt="scenario A" caption="Scenario A" %"}
-{% include image.html file="scenario_b.jpg" url="./images/scenario_b.jpg" alt="scenario B" caption="Scenario B" %"}
-{% include image.html file="scenario_c.jpg" url="./images/scenario_c.jpg" alt="scenario C" caption="Scenario C" %"}
+{% include image.html file="scenario_a.jpg" url="./images/scenario_a.jpg" alt="scenario A" caption="Scenario A" %}
+{% include image.html file="scenario_b.jpg" url="./images/scenario_b.jpg" alt="scenario B" caption="Scenario B" %}
+{% include image.html file="scenario_c.jpg" url="./images/scenario_c.jpg" alt="scenario C" caption="Scenario C" %}
 
 {% include note.html content="Figure 2: These diagrams represent three simple scenarios attending to the OS network requirements. Since the IPMI interface is completely independant from an OS point of view, the IPMI cables are not represented in these diagrams, but those cables are connected from the IPMI interface to the management switch." %}
 
