@@ -12,11 +12,12 @@ Each sNow! server will require at least two and up to five network bridges. If y
 
 The following diagrams represent common scenarios. Please review carefully which scenario you want to develop.
 
-Scenario A
-Scenario B
-Scenario C
+{% include image.html file="scenario_a.jpg" url="./images/scenario_a.jpg" alt="scenario A" caption="Scenario A" %"}
+{% include image.html file="scenario_b.jpg" url="./images/scenario_b.jpg" alt="scenario B" caption="Scenario B" %"}
+{% include image.html file="scenario_c.jpg" url="./images/scenario_c.jpg" alt="scenario C" caption="Scenario C" %"}
 
-Figure 2: These diagrams represent three simple scenarios attending to the OS network requirements. Since the IPMI interface is completely independant from an OS point of view, the IPMI cables are not represented in these diagrams, but those cables are connected from the IPMI interface to the management switch. 
+{% include note.html content="Figure 2: These diagrams represent three simple scenarios attending to the OS network requirements. Since the IPMI interface is completely independant from an OS point of view, the IPMI cables are not represented in these diagrams, but those cables are connected from the IPMI interface to the management switch." %}
+
 
 ## Scenario A (most popular)
 The snow system and the domains (VMs or containers) that need to be accessed by the users (login node, monitor node) have an IP of your LAN and are directly accessible for the users in the LAN.
@@ -33,4 +34,4 @@ There is only one sNow! server and it has a public IP address. In this case, the
 
 Edit /etc/network/interfaces and configure the network bridges as follows. You might need another interface for accessing the IPMI interfaces on the compute nodes in order to control them.
 
-If you are not familiar with network bridges, please read: https://wiki.xenproject.org/wiki/Xen_Networking
+{% include tip.html content="If you are not familiar with network bridges, please read: https://wiki.xenproject.org/wiki/Xen_Networking" %}
