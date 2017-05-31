@@ -25,8 +25,8 @@ Be aware that newer releases may include more parameters to setup and migrating 
 
 This document provides a short description of each parameter. 
 
-## NFS_SERVER
-Defines the NFS server where all the sNow! files will be stored. The /sNow filesystem is exported to the compute nodes via NFS for running the post-install scripts and for other purposes. If the NFS_SERVER matches with the sNow! server, the "snow init" command will apply the required changes in the system like adding the needed paths to /etc/exports. The default value for the NFS_SERVER is snow01 and it should be the same server you defined during installation.
+## NFS Server
+The ```NFS_SERVER``` defines the NFS server where all the sNow! files will be stored. The /sNow filesystem is exported to the compute nodes via NFS for running the post-install scripts and for other purposes. If the NFS_SERVER matches with the sNow! server, the "snow init" command will apply the required changes in the system like adding the needed paths to /etc/exports. The default value for the NFS_SERVER is snow01 and it should be the same server you defined during installation.
 
 ## sNow! paths
 The following paths define where the code and binaries are going to be stored. Most of them are NOT customizable yet but they will be in upcoming releases. Keep the following paths as static for the time being
@@ -51,8 +51,8 @@ SNOW_CONF=$SNOW_PATH/snow-configspace
 SNOW_TOOL=$SNOW_PATH/snow-tools
 ```
 
-## IMG_DST
-Defines where the domains OS files will be stored. This allows you to use root and swap filesystems for the domains in LVM volumes and  loopback files. 
+## Domains Image
+The following options define where the domains OS files will be stored. This allows you to use root and swap filesystems for the domains in LVM volumes and loopback files. 
 * LVM - The domains will be stored inside a Logical Volume created in the snow_vg Volume Group.
 ```
 IMG_DST='lvm=snow_vg'
@@ -67,7 +67,7 @@ IMG_DST='nfs=$NFS_SERVER:/sNow/domains' (experimental)
 ```
 {% include note.html content="The NFSROOT option requires complex manual intervention and it is still experimental." %}
 
-## SNOW_NODES
+## sNow! Nodes
 Defines the list of nodes which will be the sNow! management servers. The default value is snow01. If you use more than one sNow! management server then you should define here the list of hostnames in a space separated list.
 Example: 
 
@@ -75,26 +75,30 @@ Example:
 SNOW_NODES=( snow01 snow02 )
 ```
 
-## MASTER_PASSWORD
+## Master Password
 Defines the master password which will be used for setting up the root password for the deployed domains and compute nodes. It’s also the default password for the services installed in the domains (MySQL, LDAP, Slurm, etc.). We strongly recommend changing the default value which is ```MASTER_PASSWORD='HPCN0w!!'```.
 
 ## sNow! user definition
 Defines all the parameters of the snow user and group.
+
+```
 sNow_GID=2000
 sNow_GROUP=snow
 sNow_UID=2000
 sNow_USER=snow
-
+```
 ## HPCNow! user definition
 Defines all the parameters of the hpcnow user.
+
+```
 HPCNow_UID=2001
 HPCNow_GID=2000
 HPCNow_USER=hpcnow
-
-## ADMIN_USERS
+```
+## Admin Users
 Defines a list of admin users eligible to access via SSH to the domains and deployed compute nodes from the sNow! nodes. The default value is ADMIN_USERS="root snow"
 
-## ADMIN_GROUPS
+## Admin Groups
 Defines a list of admin groups eligible to access via SSH to the domains and deployed compute nodes from the sNow! nodes. The default value is ADMIN_GROUPS="root snow"
 
 ## Source control and continuous integration support
@@ -171,6 +175,13 @@ The following parameters will define how the nodes will boot in case you boot a 
 
 {% include note.html content="iThis means if you boot a range of 100 nodes it will boot BLOCKN nodes, then wait BLOCKD seconds, boot BLOCKN more nodes, wait BLOCKD seconds, and repeat this sequence until all of them are booted." %}
 
+## DHCP Network Interface
+The sNow! domain NIC that will be used for serving DHCP and PXE to the compute nodes is defined by ```DHCP_NIC```. If your sNow! implementation supports eIPoIB and your compute nodes allows booting from PXE over Infiniband, you may want to update this value in order to accelerate the boot process.
+
+```
+DHCP_NIC=eth0
+```
+
 ## Config manager
 sNow! allows you to integrate your prefered configuration manager. If you are using CFEngine, there is a role which partially integrates it. If you are using another one, you may want to create a new role. Since configuration managers are quite complex to setup and strongly depend on site implementation, this component is outside the sNow! scope and support. sNow! only provides integration but not deployment of this service. The default values are unset.
 * ```CM_SOFTWARE```: Defines the name of the configuration manager to be used. Default value is empty.
@@ -192,7 +203,7 @@ More information on this is available in section 6. The default value is centos-
 ```
 DEFAULT_CONSOLE_OPTIONS="console=tty0 console=ttyS0,115200n8"
 ```
-## CLUSTERS
+## Clusters
 sNow! can manage multiple clusters and architectures. For easier administration, each architecture should define a new cluster. This parameter contains a list of the clusters that sNow! will manage. From the sNow! point of view, each group of nodes using a different architecture defines a new cluster, so each architecture must have a different name unless you want to reuse the same binaries and libraries in newer architectures (strongly not recommended). The syntax is :
 
 ```
@@ -203,7 +214,7 @@ Example:
 ```
 CLUSTERS=([mycluster01]="knl[01-99]" [mycluster02]="hsw[01-99]")
 ```
-## GOLDEN_NODES
+## Golden Nodes
 When setting up a cluster there are actions which only need to be performed once per cluster. This parameter defines which nodes these actions are to be performed on. In the case of very heterogeneous architectures allocated in the same cluster, these actions may need to be performed once per architecture. This is for example the case of EasyBuild installation which will be required to run once per each architecture.
 
 ```
@@ -231,12 +242,6 @@ DNS_SERVERS=8.8.8.8,8.8.4.4
 DOMAIN=in.hpcnow.com
 ```
 
-## DHCP_NIC
-The sNow! domain NIC that will be used for serving DHCP and PXE to the compute nodes. If your sNow! implementation supports eIPoIB and your compute nodes allows booting from PXE over Infiniband, you may want to update this value in order to accelerate the boot process.
-
-```
-DHCP_NIC=eth0
-```
 ## Optional network services provided by the site/institution
 sNow! provides easy integration with your existing environment through the SITE_SERVICES variables. The following parameters define integration with standard services usually required by an HPC cluster. Other services can be integrated via hooks (see section 12 of the sNow! administrator documentation). 
 
