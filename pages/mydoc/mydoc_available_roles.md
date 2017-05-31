@@ -160,27 +160,16 @@ Key configuration files:
 
 |domain|snow-configspace|Function|
 |------|----------------|--------|
-etc/ganglia-webfrontend/apache.conf
-$SNOW_CONF/system_files/etc/ganglia-webfrontend/apache.conf
-Used to setup the Apache web server for Ganglia Web Frontend.
-/etc/ganglia/gmetad.conf
-$SNOW_CONF/system_files/etc/ganglia/gmetad.conf
-Used to setup the Gmetad.
-/etc/ganglia/gmond_${cluster}.conf
-$SNOW_CONF/system_files/etc/ganglia/gmond_${cluster}.conf
-Used to setup Gmond and collect the metrics consolidated for each cluster.
+|etc/ganglia-webfrontend/apache.conf||$SNOW_CONF/system_files/etc/ganglia-webfrontend/apache.conf|Used to setup the Apache web server for Ganglia Web Frontend.|
+|/etc/ganglia/gmetad.conf|$SNOW_CONF/system_files/etc/ganglia/gmetad.conf|Used to setup the Gmetad.|
+|/etc/ganglia/gmond_${cluster}.conf|$SNOW_CONF/system_files/etc/ganglia/gmond_${cluster}.conf|Used to setup Gmond and collect the metrics consolidated for each cluster.|
 
 Default ports
 
 | Port | Service | Function |
 |------|---------|----------|
-TCP/80
-HTTP
-Ganglia Web Frontend
-TCP/8650-86XX
-GMOND
-Gmond (each cluster has a dedicated port)
-
+|TCP/80|HTTP|Ganglia Web Frontend|
+|TCP/8650-86XX|GMOND|Gmond (each cluster has a dedicated port)|
 
 ## openvpn_as                    
 This role deploys OpenVPN Access Server (two free client connections for testing purposes). OpenVPN Access Server is a full featured secure network tunneling VPN software solution that integrates OpenVPN server capabilities, enterprise management capabilities, simplified OpenVPN Connect UI, and OpenVPN Client software packages that accommodate Windows, MAC, Linux, Android, and iOS environments. 
@@ -191,32 +180,21 @@ Key parameters in snow.conf
 
 |Parameter|Function|
 |---------|--------|
-Parameter
-Function
-MASTER_PASSWORD
-Used to define the default admin password of the OpenVPN Access Server web interface
+|MASTER_PASSWORD|Used to define the default admin password of the OpenVPN Access Server web interface|
 
 Key configuration files:
 
 |domain|snow-configspace|Function|
 |------|----------------|--------|
-/etc/openvpn_as
-SNOW_CONF/system_files/etc/openvpn_as
-Files used to setup the OpenVPN Access Server
+|/etc/openvpn_as|$SNOW_CONF/system_files/etc/openvpn_as|Files used to setup the OpenVPN Access Server|
 
 Default ports
 
 | Port | Service | Function |
 |------|---------|----------|
-TCP/443
-HTTPS
-OpenVPN daemon will automatically route browser traffic to TCP 943 by default.
-TCP/943
-HTTP(s)
-Port where the web server interface is listening by default.
-UDP/1194
-VPN
-OpenVPN
+|TCP/443|HTTPS|OpenVPN daemon will automatically route browser traffic to TCP 943 by default.|
+|TCP/943|HTTP(s)|Port where the web server interface is listening by default.|
+|UDP/1194|VPN|OpenVPN|
 
 ## proxy                         
 This role deploys a transparent proxy server based on Squid for HTTP(S),FTP and also relay servers for NTP and SMTP (Exim).
@@ -227,45 +205,29 @@ Key parameters in snow.conf
 
 |Parameter|Function|
 |---------|--------|
-Parameter
-Function
-SITE_MAIL_SERVER
-Used to define the server that will send emails. It allows you to setup a Gmail account as relay server.
-SITE_MAIL_USER
-Used to setup the user credentials for the real email server
-SITE_MAIL_PASSWORD
-Used to setup the user credentials for the real email server
+|SITE_MAIL_SERVER|Used to define the server that will send emails. It allows you to setup a Gmail account as relay server.|
+|SITE_MAIL_USER|Used to setup the user credentials for the real email server|
+|SITE_MAIL_PASSWORD|Used to setup the user credentials for the real email server|
 
 Key configuration files:
 
 |domain|snow-configspace|Function|
 |------|----------------|--------|
-/etc/ntp.conf
-SNOW_CONF/system_files/etc/ntp_server.conf
-Defines the NTP server configuration
-/etc/squid3/*
-$SNOW_CONF/system_files/etc/squid3/*
-Files that defines the Squid (proxy server) configuration
-/etc/exim4/*
-$SNOW_CONF/system_files/etc/exim4/*
-Files that defines the Exim email relay server
+|/etc/ntp.conf|SNOW_CONF/system_files/etc/ntp_server.conf|Defines the NTP server configuration|
+|/etc/squid3/*|$SNOW_CONF/system_files/etc/squid3/*|Files that defines the Squid (proxy server) configuration|
+|/etc/exim4/*|$SNOW_CONF/system_files/etc/exim4/*|Files that defines the Exim email relay server|
 
 Default ports
 
 | Port | Service | Function |
 |------|---------|----------|
-TCP/25
-SMTP
-Exim
-TCP/123
-NTP
-NTP
-TCP/8080
-Proxy
-Transparent proxy for HTTP, HTTPS, FTP
+|TCP/25|SMTP|Exim|
+|TCP/123|NTP|NTP|
+|TCP/8080|Proxy|Transparent proxy for HTTP, HTTPS, FTP|
 
 ## puppet                        
 Installs puppet upon the new guest system. Since configuration managers are quite complex to setup and also strongly depend on site implementation details, this component is outside the scope of sNow! and sNow! support. sNow! only provides the integration of this service and not its deployment and configuration.
+
 ## puppet-master                 
 Installs puppet master server. Since configuration managers are quite complex to setup and also strongly depend on site implementation details, this component is outside the scope of sNow! and sNow! support. sNow! only provides the integration of this service and not its deployment and configuration.
 
@@ -273,9 +235,7 @@ Default ports
 
 | Port | Service | Function |
 |------|---------|----------|
-TCP/8140
-puppet
-Puppet Master default port
+|TCP/8140|puppet|Puppet Master default port|
 
 
 ## slurmctld-master              
@@ -287,40 +247,26 @@ Key parameters in snow.conf
 
 |Parameter|Function|
 |---------|--------|
-Parameter
-Function
-SLURM_VERSION
-Used to define the version of Slurm to be installed. By default it installs the latest version available in the HPCNow! repository.
-SLURM_CONF
-Used to define the path to the main Slurm configuration file
-SLURM_GID
-SLURM_UID
-Used to define user GID and UID parameters
-LICENSES
-Used to define the number of licenses available for end user software packages
-SLURM_NODES[n]
-Used to define Slurm compute nodes
-SLURM_PARTITION[n]
-Used to define Slurm partitions
+|SLURM_VERSION|Used to define the version of Slurm to be installed. By default it installs the latest version available in the HPCNow! repository.|
+|SLURM_CONF|Used to define the path to the main Slurm configuration file|
+|SLURM_GID||
+|SLURM_UID|Used to define user GID and UID parameters|
+|LICENSES|Used to define the number of licenses available for end user software packages|
+|SLURM_NODES[n]|Used to define Slurm compute nodes|
+|SLURM_PARTITION[n]|Used to define Slurm partitions|
 
 Key configuration files:
 
 |domain|snow-configspace|Function|
 |------|----------------|--------|
-/etc/munge/munge.key
-$SNOW_CONF/system_files/etc/munge/munge.key
-Munge key file
-/etc/slurm/*
-$SNOW_CONF/system_files/etc/slurm/*
-Set of slurm configuration files
+|/etc/munge/munge.key|$SNOW_CONF/system_files/etc/munge/munge.key|Munge key file|
+|/etc/slurm/*|$SNOW_CONF/system_files/etc/slurm/*|Set of slurm configuration files|
 
 Default ports
 
 | Port | Service | Function |
 |------|---------|----------|
-TCP/6817
-slurmctld
-Slurm Controller Daemon
+|TCP/6817|slurmctld|Slurm Controller Daemon|
 
 
 ## slurmdbd                      
@@ -330,35 +276,24 @@ Key parameters in snow.conf
 
 |Parameter|Function|
 |---------|--------|
-Parameter
-Function
-SLURMDBD_USER
-Used to define the user which runs the Slurm DB daemon
-SLURMDBD_PASSWORD
-Used to define the password of the MySQL database
-SLURMDBD_NAME
-Used to define the name of the MySQL database
-ACCOUNTING_STORAGE_ENFORCE
-Used to enforce limits defined in the Slurm database and also defines the information to be stored
-SLURM_CLUSTER_NAME
-Used to define the name of the Slurm cluster
+|SLURMDBD_USER|Used to define the user which runs the Slurm DB daemon|
+|SLURMDBD_PASSWORD|Used to define the password of the MySQL database|
+|SLURMDBD_NAME|Used to define the name of the MySQL database|
+|ACCOUNTING_STORAGE_ENFORCE|Used to enforce limits defined in the Slurm database and also defines the information to be stored|
+|SLURM_CLUSTER_NAME|Used to define the name of the Slurm cluster|
 
 
 Key configuration files:
 
 |domain|snow-configspace|Function|
 |------|----------------|--------|
-/etc/slurm/slurmdbd.conf
-$SNOW_CONF/system_files/etc/slurm/slurmdbd.conf
-Slurm DB configuration file
+|/etc/slurm/slurmdbd.conf|$SNOW_CONF/system_files/etc/slurm/slurmdbd.conf|Slurm DB configuration file|
 
 Default ports
 
 | Port | Service | Function |
 |------|---------|----------|
-TCP/6819
-slurmdbd
-Slurm Database Daemon
+|TCP/6819|slurmdbd|Slurm Database Daemon|
 
 ## snow                          
 This role is responsible for setting up all the required clients and generating the configuration files. It is the default role that defines an operational domain, so any other role is executed after the snow role in order to guarantee the consistency across all the domains and services.
@@ -369,25 +304,18 @@ Key parameters in snow.conf
 
 |Parameter|Function|
 |---------|--------|
-Parameter
-Function
-SITE_PROXY_SERVER
-SITE_PROXY_PORT
-Used to define the institutional proxy server and the port available
-SITE_NTP_SERVER
-Used to define the institutional NTP server
-SITE_LDAP_SERVER
-SITE_LDAP_URI
-SITE_LDAP_TLS
-SITE_LDAP_PROTO
-SITE_LDAP_BASE
-Used to define the institutional LDAP server and associated parameters
-SITE_MAIL_SERVER
-SITE_MAIL_USER
-SITE_MAIL_PASSWORD
-Used to define the institutional email server and associated parameters
-SITE_SYSLOG_SERVER
-Used to define the institutional proxy server
+|SITE_PROXY_SERVER||
+|SITE_PROXY_PORT|Used to define the institutional proxy server and the port available|
+|SITE_NTP_SERVER|Used to define the institutional NTP server|
+|SITE_LDAP_SERVER||
+|SITE_LDAP_URI||
+|SITE_LDAP_TLS||
+|SITE_LDAP_PROTO||
+|SITE_LDAP_BASE|Used to define the institutional LDAP server and associated parameters|
+|SITE_MAIL_SERVER||
+|SITE_MAIL_USER||
+|SITE_MAIL_PASSWORD|Used to define the institutional email server and associated parameters|
+|SITE_SYSLOG_SERVER|Used to define the institutional proxy server|
 
 ## snow_reference_template       
 Template to help sNow! users develop their own roles quickly.
