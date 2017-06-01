@@ -117,10 +117,34 @@ entries:
       url: /mydoc_available_roles.html
       output: web, pdf
 
-    - title: Generate the config files
-      url: /mydoc_generate_config_files.html
+    - title: Initial configuration
+      url: /mydoc_initial_configuration.html
       output: web, pdf
 
-    - title: Download the sNow! template
-      url: /mydoc_download_snow_template.html
+    - title: Download the domain template
+      url: /mydoc_download_domain_template.html
+      output: web, pdf
+
+  - title: Compute Node Deployment and Template Management
+    output: web, pdf
+    folderitems:
+
+    - title: Deployment templates and basics
+      url: /mydoc_deployment_templates_and_basics.html
+      output: web, pdf
+
+    - title: Template Cloning
+      url: /mydoc_template_cloning.html
+      output: web, pdf
+
+    - title: OS deployment repository
+      url: /mydoc_os_deployment_repository.html
+      output: web, pdf
+
+    - title: How to collect the MAC addresses
+      url: /mydoc_how_to_collect_the_mac_addresses.html
+      output: web, pdf
+
+    - title: Deploy the first compute node
+      url: /mydoc_deploy_the_first_compute_node.html
       output: web, pdf
