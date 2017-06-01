@@ -125,7 +125,7 @@ entries:
       url: /mydoc_download_domain_template.html
       output: web, pdf
 
-  - title: Compute Node Deployment and Template Management
+  - title: Compute Node Deployment
     output: web, pdf
     folderitems:
 
@@ -148,3 +148,79 @@ entries:
     - title: Deploy the first compute node
       url: /mydoc_deploy_the_first_compute_node.html
       output: web, pdf
+
+  - title: Compute Node Cloning
+    output: web, pdf
+    folderitems:
+
+    - title: Image types
+      url: /mydoc_image_types.html
+      output: web, pdf
+
+    - title: Image management
+      url: /mydoc_image_management.html
+      output: web, pdf
+
+  - title: Administration
+    url: /mydoc_administration.html
+    output: web, pdf
+
+  - title: Report a New Bug and Request New Features
+    url: /mydoc_bug_report_feature_request.html
+    output: web, pdf
+
+  - title: Advanced Network Setup
+    output: web, pdf
+    folderitems:
+
+    - title: How to setup a sNow! bridge on top of a network bonding
+      url: /mydoc_network_bonding.html
+      output: web, pdf
+
+    - title: Enable Infiniband support with eIPoIB
+      url: /mydoc_infiniband_support.html
+      output: web, pdf
+
+  - title: Backup
+    url: /mydoc_backup.html
+    output: web, pdf
+
+  - title: Custom Roles
+    url: /mydoc_cutom_roles.html
+    output: web, pdf
+
+  - title: How to create custom LDAP certificates
+    url: /mydoc_create_ldap_certificates.html
+    output: web, pdf
+
+  - title: How to create a local repository in your sNow! system
+    url: /mydoc_create_local_repo.html
+    output: web, pdf
+
+  - title: Scalability and High Availability
+    output: web, pdf
+    folderitems:
+
+    - title: Native High Availability
+      url: /mydoc_native_ha.html
+      output: web, pdf
+
+    - title: High Availability for virtualization
+      output: web, pdf
+      subfolders:
+
+      - title: Shared Storage (SAN+LVM)
+        url: /mydoc_ha_san_lvm.html
+        output: web, pdf
+
+      - title: Shared Storage (DRDB+LVM)
+        url: /mydoc_ha_drdb_lvm.html
+        output: web, pdf
+          
+      - title: Shared File System (NFSROOT)
+        url: /mydoc_ha_nfsroot.html
+        output: web, pdf
+
+      - title: Shared File System (loopback files)
+        url: /mydoc_ha_loopback_files.html
+        output: web, pdf
