@@ -23,7 +23,22 @@ An IP on the ib0 Infiniband interface or in the high speed network interface of 
 3. In order to enable the required network bridges, follow the next four simple steps:
 
 Edit /etc/network/interfaces by following this [example file](examples/network_interfaces_scenario_a.txt) (please carefully review the file and adapt it to your real network environment)
-{% include examples/network_interfaces_scenario_a.txt %}
+<div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">/etc/network/interfaces</a>
+            </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                <pre>
+                {% include examples/network_interfaces_scenario_b.txt %}
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
 
 4. After the network configuration file is edited, reboot the system and check your configuration has been applied with the following commands:
 
