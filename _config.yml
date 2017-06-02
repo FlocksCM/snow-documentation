@@ -15,7 +15,7 @@ company_name: HPCNow!
 github_editme_path: HPCNow/snow-documentation/blob/gh-pages/
 # if you're using Github, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
 
-disqus_shortname: jordiblasco
+disqus_shortname: 
 # if you're using disqus for comments, add the shortname here. if not, leave this value blank.
 
 host: 127.0.0.1
