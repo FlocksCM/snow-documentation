@@ -14,15 +14,15 @@ We will define the following bridges:
 * xsnow0 as the private bridge for node deployment and administration. It uses the eth0 interface.
 * xpub0  as the public bridge for the house network. It uses the eth1 interface.
 
-1. Additionally we will define:
+Additionally we will define:
 An alias IP on the xsnow0 bridge to access the IPMI interfaces on the nodes (mandatory if they are not in the same network)
 
-2. Optionally we will define:
+Optionally we will define:
 An IP on the ib0 Infiniband interface or in the high speed network interface of your choice.
 
-3. In order to enable the required network bridges, follow the next four simple steps:
+In order to enable the required network bridges, follow the next four simple steps:
 
-Edit /etc/network/interfaces by following this [example file](examples/network_interfaces_scenario_a.txt) (please carefully review the file and adapt it to your real network environment)
+1. Edit /etc/network/interfaces by following this [example file](examples/network_interfaces_scenario_a.txt) (please carefully review the file and adapt it to your real network environment)
 <div class="panel-group" id="accordion">
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -39,15 +39,13 @@ Edit /etc/network/interfaces by following this [example file](examples/network_i
         </div>
     </div>
 </div>
-
-4. After the network configuration file is edited, reboot the system and check your configuration has been applied with the following commands:
+2. After the network configuration file is edited, reboot the system and check your configuration has been applied with the following commands:
 
 ```
 ifconfig
 ip addr show
 ```
-
-5. The expected output should be similar to the following, if you used ifconfig on the previous step:
+3. The expected output should be similar to the following, if you used ifconfig on the previous step:
 
 ```
 eth0  	Link encap:Ethernet  HWaddr 00:1e:67:d6:0e:4e  
@@ -98,13 +96,10 @@ xsnow0:mgmt Link encap:Ethernet  HWaddr 00:1e:67:d6:0e:4e
       	UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
 ```
 
-You can check the bridges and their associated network interfaces with the following command:
+4. You can check the bridges and their associated network interfaces with the following command:
 ```
 brctl show
 bridge name    bridge id   	    STP enabled    interfaces
 xpub0   	    8000.001e67d60e4f    no   	         eth1
 xsnow0   	    8000.001e67d60e4e    no   	         eth0
 ```
-{% include image.html file="killalljekyll.png" caption="iTerm profile settings to kill all Jekyll" %}
-
-{% include links.html %}
