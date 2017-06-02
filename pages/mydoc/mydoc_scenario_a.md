@@ -22,7 +22,8 @@ An IP on the ib0 Infiniband interface or in the high speed network interface of 
 
 3. In order to enable the required network bridges, follow the next four simple steps:
 
-Edit /etc/network/interfaces by following this example file (please carefully review the file and adapt it to your real network environment)
+Edit /etc/network/interfaces by following this [example file](examples/network_interfaces_scenario_a.txt) (please carefully review the file and adapt it to your real network environment)
+{% include examples/network_interfaces_scenario_a.txt %}
 
 4. After the network configuration file is edited, reboot the system and check your configuration has been applied with the following commands:
 

@@ -43,7 +43,7 @@ exclude:
 # feedback_link: "http://hpcnow.com/index.php/contact-en"
 # if you uncomment the previous line, it changes where the feedback link points to
 
-highlighter: green
+highlighter: rouge
 # library used for syntax highlighting
 
 markdown: kramdown
