@@ -18,23 +18,35 @@ The following example shows how to setup the public bridge, the sNow! network br
 * xdmz0  as the DMZ bridge for the house network. It uses the eth3 interface.
 * xllf0  as the Low Latency Fabric network bridge used by cluster filesystem and/or MPI. In this example, it uses the eth4 interface which is the virtual interface enabled by using Mellanox eIPoIB. More information in this regard available in section 9 (Advanced Network Setup).
 
-In order to enable the required network bridges, follow the next four simple steps:
+In order to enable the required network bridges, follow the next five simple steps:
 
-Add the following line in /etc/modules
-
+1. Add the following line in /etc/modules
 ```
 dummy numdummies=1
 ```
-Download the configuration file example for /etc/network/interfaces from our website, update the IP addresses and remove the configuration blocks that you do not need.
+2. Download the configuration file example for /etc/network/interfaces from our website, update the IP addresses and remove the configuration blocks that you do not need.
 Edit /etc/network/interfaces by following this [example file](examples/network_interfaces_scenario_c.txt) (please carefully review the file and adapt it to your real network environment)
-{% include examples/network_interfaces_scenario_c.txt %}
-
-After the network configuration file is edited, reboot the system and check your configuration has been applied with the following command:
-
+<div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">/etc/network/interfaces</a>
+            </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                <pre>
+                {% include examples/network_interfaces_scenario_c.txt %}
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
+3. After the network configuration file is edited, reboot the system and check your configuration has been applied with the following command:
 ```
 ip addr show
 ```
-The expected output should be similar to the following text:
+4. The expected output should be similar to the following text:
 
 ```
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default
@@ -57,8 +69,7 @@ The expected output should be similar to the following text:
        valid_lft forever preferred_lft forever
 ```
 
-After that, you need to setup the firewall. sNow! allows you to setup the firewall automatically by taking into account all the services available in domains.conf and dmz_portmap.conf, which contains all the NAT rules associated with each role. 
-sNow! uses the Uncomplicated Firewall (ufw) to manage IPTABLES. The following command lines will setup advanced and complex rules for you.
+5. After that, you need to setup the firewall. sNow! allows you to setup the firewall automatically by taking into account all the services available in domains.conf and dmz_portmap.conf, which contains all the NAT rules associated with each role. sNow! uses the Uncomplicated Firewall (ufw) to manage IPTABLES. The following command lines will setup advanced and complex rules for you.
 
 ```
 snow update firewall
@@ -66,10 +77,7 @@ ufw disable
 ufw enable
 ```
 You can modify or add new rules in the firewall by working with the standard ufw files or directly with IPTABLES. 
-IMPORTANT ADVICE: 
-These firewall rules are only required for Scenario C.
-The default port for SSH for the sNow! server is 22/TCP. It is recommend that you replace this with a higher port number in order to avoid automatic attacks. If you want to change it, you will need to update the OpenSSH config file (/etc/ssh/sshd_config) and also the firewall (/etc/ufw/applications.d/ufw-snow).
-If you are installing remotely, ensure that you have access to the console. Otherwise there is a high risk of losing the SSH connection due to a misconfiguration in the firewall.
-
-
-For the list of supported languages you can use (similar to `js` for JavaScript), see [Supported languages](https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers).
+{% include note.html content="These firewall rules are only required for Scenario C." %}
+{% include tip.html content="The default port for SSH for the sNow! server is 22/TCP. It is recommend that you replace this with a higher port number in order to avoid automatic attacks. If you want to change it, you will need to update the OpenSSH config file (/etc/ssh/sshd_config) and also the firewall (/etc/ufw/applications.d/ufw-snow)." %}
+{% include warning.html content="If you are installing remotely, ensure that you have access to the console. Otherwise there is a high risk of losing the SSH connection due to a misconfiguration in the firewall.
+" %}
