@@ -1,0 +1,55 @@
+auto eth0
+allow-hotplug eth0
+	iface eth0 inet manual
+	bond-master bond0
+
+auto eth1
+allow-hotplug eth1
+ 	iface eth1 inet manual
+ 	bond-master bond0
+
+auto eth2
+allow-hotplug eth2
+ 	iface eth2 inet manual
+ 	bond-master bond1
+
+auto eth3
+allow-hotplug eth3
+     iface eth3 inet manual
+ 	bond-master bond1
+
+auto bond0
+allow-hotplug bond0
+     iface bond0 inet manual
+    	bond-mode balance-tlb
+    	bond-miimon 100
+    	bond-downdelay 200
+    	bond-updelay 200
+    	bond-slaves eth0 eth1
+
+auto bond1
+allow-hotplug bond1
+     iface bond1 inet manual
+    	bond-mode balance-tlb
+    	bond-miimon 100
+    	bond-downdelay 200
+    	bond-updelay 200
+    	bond-slaves eth2 eth3
+
+auto xsnow0
+iface xsnow0 inet static
+        bridge_ports bond1
+        address 192.168.7.1
+        netmask 255.255.255.0
+        network 192.168.7.0
+        broadcast 192.168.7.255
+
+auto xpub0
+iface xpub0 inet static
+        bridge_ports bond0
+        address 150.241.212.36
+        gateway 150.241.212.1
+        netmask 255.255.255.0
+        broadcast 150.241.212.255
+        network 150.241.212.0
+        dns-nameservers 150.241.212.11 150.241.212.26

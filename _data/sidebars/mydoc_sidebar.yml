@@ -162,12 +162,24 @@ entries:
       output: web, pdf
 
   - title: Administration
-    url: /mydoc_administration.html
     output: web, pdf
+    folderitems:
+
+    - title: Quick Reference Sheet
+      url: /mydoc_quick_reference_sheet.html
+      output: web, pdf
+
+    - title: sNow! CLI
+      url: /mydoc_snow_cli.html
+      output: web, pdf
 
   - title: Report a New Bug and Request New Features
-    url: /mydoc_bug_report_feature_request.html
     output: web, pdf
+    folderitems:
+
+    - title: Report a New Bug and Request New Features
+      url: /mydoc_bug_report_feature_request.html
+      output: web, pdf
 
   - title: Advanced Network Setup
     output: web, pdf
@@ -190,7 +202,7 @@ entries:
     output: web, pdf
 
   - title: How to create custom LDAP certificates
-    url: /mydoc_create_ldap_certificates.html
+    url: /mydoc_how_to_create_custom_ldap_certificates.html
     output: web, pdf
 
   - title: How to create a local repository in your sNow! system
@@ -201,8 +213,12 @@ entries:
     output: web, pdf
     folderitems:
 
+    - title: Scalability and HA Overview
+      url: /mydoc_scalability_and_ha_overview.html
+      output: web, pdf
+
     - title: Native High Availability
-      url: /mydoc_native_ha.html
+      url: /mydoc_ha_native.html
       output: web, pdf
 
     - title: High Availability for virtualization

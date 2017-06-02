@@ -21,6 +21,8 @@ The following example shows how to setup the DMZ bridge where the domains will b
 In order to enable the required network bridges, follow the next four simple steps:
 
 Download the example configuration file from our website, update the IP addresses and remove the configuration blocks that you do not need.
+Edit /etc/network/interfaces by following this [example file](examples/network_interfaces_scenario_b.txt) (please carefully review the file and adapt it to your real network environment)
+{% include examples/network_interfaces_scenario_b.txt %}
 
 After the network configuration file is edited, reboot the system and check your configuration has been applied with the following command:
 
