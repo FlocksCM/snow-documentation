@@ -3,7 +3,7 @@ title: List of available roles
 tags: [domains, roles, vms, vm, containers]
 keywords: includes, conref, dita, transclusion, transclude, inclusion, reference
 last_updated: July 3, 2016
-summary: "You can reuse chunks of content by storing these files in the includes folder. You then choose to include the file where you need it. This works similar to conref in DITA, except that you can include the file in any content type."
+summary: "This section explains what services are installing each role. It also provides information regarding protocols used and configuration files used."
 sidebar: mydoc_sidebar
 permalink: mydoc_available_roles.html
 folder: mydoc
