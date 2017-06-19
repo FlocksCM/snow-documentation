@@ -125,6 +125,14 @@ entries:
       url: /mydoc_download_domain_template.html
       output: web, pdf
 
+    - title: Custom Roles
+      url: /mydoc_cutom_roles.html
+      output: web, pdf
+
+    - title: How to create custom LDAP certificates
+      url: /mydoc_how_to_create_custom_ldap_certificates.html
+      output: web, pdf
+
   - title: Compute Node Deployment
     output: web, pdf
     folderitems:
@@ -173,6 +181,14 @@ entries:
       url: /mydoc_snow_cli.html
       output: web, pdf
 
+    - title: Backup
+      url: /mydoc_backup.html
+      output: web, pdf
+
+    - title: How to create a local repository in your sNow! system
+      url: /mydoc_create_local_repo.html
+      output: web, pdf
+
   - title: Report a New Bug and Request New Features
     output: web, pdf
     folderitems:
@@ -192,22 +208,6 @@ entries:
     - title: Enable Infiniband support with eIPoIB
       url: /mydoc_infiniband_support.html
       output: web, pdf
-
-  - title: Backup
-    url: /mydoc_backup.html
-    output: web, pdf
-
-  - title: Custom Roles
-    url: /mydoc_cutom_roles.html
-    output: web, pdf
-
-  - title: How to create custom LDAP certificates
-    url: /mydoc_how_to_create_custom_ldap_certificates.html
-    output: web, pdf
-
-  - title: How to create a local repository in your sNow! system
-    url: /mydoc_create_local_repo.html
-    output: web, pdf
 
   - title: Scalability and High Availability
     output: web, pdf
@@ -240,3 +240,11 @@ entries:
       - title: Shared File System (loopback files)
         url: /mydoc_ha_loopback_files.html
         output: web, pdf
+
+  - title: Development
+    output: web, pdf
+    folderitems:
+
+    - title: Contribute Back
+      url: /mydoc_contribute_back.html
+      output: web, pdf

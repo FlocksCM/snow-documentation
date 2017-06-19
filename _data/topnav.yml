@@ -13,15 +13,15 @@ topnav_dropdowns:
     - title: Documentation
       folderitems:
         - title: sNow! Documentation
-          url: /mydoc_introduction.html
-        - title: User Guide
+          url: /index.html
+        - title: Quick Reference Guide
           url: /p1_landing_page.html
         - title: Man Pages
           url: /p2_landing_page.html
     - title: Development
       folderitems:
         - title: Source Code
-          external_url: http://bitbucket.org/hpcnow/
+          external_url: http://bitbucket.org/hpcnow/snow-tools
         - title: Build Reports
           external_url: http://snow.hpcnow.com/build_reports.html
         - title: Issue Tracking
