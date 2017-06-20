@@ -68,4 +68,3 @@ apt-get install bridge-utils gawk lvm2 sudo wget git ca-certificates lsb-release
 ## External shared file system servers (home directory and /sNow folder)
 If you are using an external NFS server or a cluster file system to share the home directory and the /sNow folder, then those file systems should be available before installing sNow!
 
-{% include links.html %}

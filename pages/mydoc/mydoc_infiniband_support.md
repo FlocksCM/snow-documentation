@@ -25,4 +25,3 @@ For example, on a system with dual port HCA, the following two interfaces might 
 To see the list of IPoIB interfaces enslaved under eth_ipoib interface. 
 ```cat /sys/class/net/ethX/eth/vifs```
 
-{% include links.html %}

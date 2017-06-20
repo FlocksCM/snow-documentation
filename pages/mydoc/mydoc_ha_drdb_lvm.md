@@ -6,4 +6,3 @@ permalink: mydoc_ha_drdb_lvm.html
 folder: mydoc
 ---
 
-{% include links.html %}

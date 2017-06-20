@@ -15,4 +15,3 @@ The following needs will define the way you need to setup your sNow! environment
 Understanding what services you need from the very beginning will save a lot of time.
 Understanding how to integrate with your existing infrastructure will save even more time.
 
-{% include links.html %}

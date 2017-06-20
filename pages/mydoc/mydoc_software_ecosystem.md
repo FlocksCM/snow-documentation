@@ -32,4 +32,3 @@ Figure 1: Integrated services of the sNow! Suite.
 
 The sNow! technology allows one to perform critical migrations without stopping the system or its services as all services can be cloned and upgraded while the original is still running. Once the upgraded clone is up and running the clients can be migrated to the new service provider without disruption. Therefore, in scenarios where the services can not be interrupted, an update of the batch queue manager or a firmware upgrade on the nodes does not require a downtime anymore, but a progressive upgrade process that can be completed in a matter of hours or weeks. The length of time would depend on on the complexity of the task to perform, the length of running jobs, and the checkpoint-restart capabilities used to migrate jobs to another node, etc.
 
-{% include links.html %}

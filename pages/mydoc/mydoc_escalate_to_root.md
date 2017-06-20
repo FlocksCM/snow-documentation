@@ -14,4 +14,3 @@ sudo su -
 
 The root user and sNow! user are able to access as a root, all domains and servers managed by sNow! but only from the sNow! servers. This means that you will be not able to escalate to root privileges from the login node, a compute node or any domain.
 
-{% include links.html %}

@@ -43,4 +43,3 @@ Setup the LOCALREPODIR variable inside the script and run it to update the CentO
 * sync-centos-hpcnow.sh (syncronize HPCNOw! CentOS repo)
 * sync-centos-local.sh (create your custom repo)
 
-{% include links.html %}

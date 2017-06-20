@@ -6,4 +6,3 @@ permalink: mydoc_ha_loopback_files.html
 folder: mydoc
 ---
 
-{% include links.html %}

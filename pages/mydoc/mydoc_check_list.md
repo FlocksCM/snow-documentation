@@ -34,4 +34,3 @@ Check list test
 | NTP1                         |               |
 | NTP2                         |               |
 
-{% include links.html %}

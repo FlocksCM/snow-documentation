@@ -141,4 +141,3 @@ folder: mydoc
 ### Known Issues
 * Included NFSROOT option in overlayfs but it doesn't allow to apply live changes in ro NFS image due a bug in OverlayFS. Remount is required to enable changes performed in NFS image.
 
-{% include links.html %}

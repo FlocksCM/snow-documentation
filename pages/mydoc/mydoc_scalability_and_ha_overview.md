@@ -12,4 +12,3 @@ The easiest and preferred way to setup domains in HA mode is by taking advantage
 
 The following sections explain in detail how to setup different HA implementations. The suitability of those implementations will depend on your needs and expectations.
 
-{% include links.html %}

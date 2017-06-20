@@ -14,4 +14,3 @@ This solution can solve the most common problems related to traditional HPC mast
 
 It’s written in comprehensive BASH and provides several hooks in the most important steps which significantly reduces development complexity.
 
-{% include links.html %}
