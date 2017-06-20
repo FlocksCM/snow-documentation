@@ -22,6 +22,6 @@ Visit the official [bitbucket project](https://bitbucket.org/hpcnow/snow-tools/i
   * critical
   * blocker
 
-{% include image.html file="gitflow.png" url="./images/bitbucket_create_issue.png" alt="Bitbucket Issue creation" caption="Report an issue via bitbucket." %}
+{% include image.html file="bitbucket_create_issue.png" url="./images/bitbucket_create_issue.png" alt="Bitbucket Issue creation" caption="Report an issue via bitbucket." %}
 
 ## Request New Features
