@@ -12,4 +12,3 @@ folder: mydoc
 LINK to PDF
 ```{% include custom/series_acme_next.html %}```
 
-{% include links.html %}

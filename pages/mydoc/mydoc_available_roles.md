@@ -428,4 +428,3 @@ Default ports
 |------|---------|----------|
 |TCP/5900+ | VNC| Virtual Network Computing (VNC) |
 
-{% include links.html %}

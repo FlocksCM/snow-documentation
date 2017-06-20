@@ -6,4 +6,3 @@ permalink: mydoc_ha_san_lvm.html
 folder: mydoc
 ---
 
-{% include links.html %}

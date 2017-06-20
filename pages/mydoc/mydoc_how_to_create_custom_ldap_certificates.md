@@ -50,4 +50,3 @@ ldapmodify -Y EXTERNAL -H ldapi:/// -f /root/ssl.ldif
 
 11. Transfer the complete LDAP configuration to /sNow/snow-configspace
 
-{% include links.html %}

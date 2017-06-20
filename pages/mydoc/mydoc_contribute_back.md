@@ -147,4 +147,3 @@ In order to roll back to the stable version, execute:
 ```
 git checkout master
 ```
-{% include links.html %}

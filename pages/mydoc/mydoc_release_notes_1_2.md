@@ -15,4 +15,3 @@ folder: mydoc
 
 If you want to upgrade from an earlier version, ...
 
-{% include links.html %}

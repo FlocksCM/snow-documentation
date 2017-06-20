@@ -45,4 +45,3 @@ slurmdb01   slurmdbd
 proxy01     proxy
 deploy01    deploy
 ```
-{% include links.html %}

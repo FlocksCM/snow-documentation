@@ -20,4 +20,3 @@ You will need to transfer a copy of the snow user SSH key to your desktop comput
 ## Allow access for professional remote administration and support
 You will need to provide the HPCNow! user name and the SSH key or password to the remote administration engineer.
 
-{% include links.html %}

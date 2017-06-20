@@ -19,4 +19,3 @@ Example:
 YOUR_LAN_IP     snow01-pub.hpcnow.com        snow01-pub
 192.168.7.1     snow01
 ```
-{% include links.html %}

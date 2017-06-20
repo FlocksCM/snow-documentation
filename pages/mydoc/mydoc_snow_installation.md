@@ -101,5 +101,4 @@ If you want to review the changes on the config files made by the sNow! installa
 ```
 find /etc -name "*-snowbkp" -print
 ```
-{% include links.html %}
 

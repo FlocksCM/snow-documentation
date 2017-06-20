@@ -1,5 +1,6 @@
 ---
 title: Backup
+tags: [backup]
 summary: "This section explains how to setup the backup of sNow!"
 last_updated: July 3, 2016
 sidebar: mydoc_sidebar
@@ -14,7 +15,6 @@ For the purpose of this guide we are going to backup under /sNow/backup/201611. 
 mkdir -p /sNow/backup/201611 
 ```
 2. Backup configuration of the sNow! nodes.
-
 Backup the installed package list and the /etc/ directory of each sNow node. We assume here we have only snow01.
 ```    
 dpkg --get-selections | awk ' { print $1 } ' | xargs > /sNow/backup/201611/package-list.txt
@@ -29,7 +29,6 @@ tar --exclude=backup/* -zcvf /sNow/backup/201611/sNow.tar.gz *
 ```
 4. VM backup
 It's time to backup the VMs. To do that you will create a snapshot and then dd it to a file.
-
 Obtaining a list of the working VMs (if you have VMs that are not powered on and you need to backup then please take it into consideration):
 ```
 snow list| egrep -v "Name|Domain-0"|gawk '{print $1}'
@@ -54,4 +53,3 @@ Finally remove the LVM snapshots:
 ```
 for i in `lvs | grep snap | awk ' { print $1 } '`; do lvremove snow_vg/$i; done
 ```
-{% include links.html %}

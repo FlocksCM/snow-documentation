@@ -15,4 +15,3 @@ The most critical services already have native HA support, which doesn’t rely 
 
 The installation of the two or more sNow! servers is quite simple as long as the /sNow folder is shared across the nodes, including the sNow! servers. We suggest using NFS servers or a cluster file system to share this folder.
 
-{% include links.html %}

@@ -20,4 +20,3 @@ HPCNow! also offers a full line of services for sNow!, including:
 
 Please, [contact us](mailto:info@hpcnow.com) for questions regarding the professional services offered by [HPCNow!](http://www.hpcnow.com).
 
-{% include links.html %}

@@ -121,4 +121,3 @@ updates the default sNow! firewall rules (only for sNow! with public IP address 
 chroot <image>
 provides chroot environment inside a read-only nfsroot image. The prompt provided by this command also shows that the shell session is allocated inside a particular image chroot. In order to exit from this environment, type exit or press Ctrl+d.
 
-{% include links.html %}

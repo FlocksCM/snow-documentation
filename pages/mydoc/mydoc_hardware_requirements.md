@@ -20,4 +20,3 @@ Depending on your workload and especially if you run MPI applications or you nee
 * Redundant power supply recommended.
 * You must have internet access in order to install sNow!.
 
-{% include links.html %}

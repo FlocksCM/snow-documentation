@@ -103,4 +103,3 @@ Example: Install a new package
 [ centos-minimal ] # yum install htop -y
 ```
 
-{% include links.html %}

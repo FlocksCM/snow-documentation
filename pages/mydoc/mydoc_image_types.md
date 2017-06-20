@@ -17,4 +17,3 @@ Nodes can boot from PXE and load the OS from the NFS server. While the root file
 The current release supports diskless images based on read-only SquashFS and OverlayFS to load the root file system in-memory. Compared to other stateless solutions (ramdisks, tmpfs, etc.), SquashFS significantly reduces the memory footprint because the root file system is compressed.
 Nodes can boot from PXE and load the OS from the NFS server or TFTP server (deploy role). While the main root file system is read only, the system allows applying some changes in memory by using OverlayFS on top of tmpfs. This is suitable for updating a few configuration files, PID files and some logs. Major changes should be applied directly in the image, otherwise the memory footprint may be even higher.
 
-{% include links.html %}

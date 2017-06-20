@@ -6,4 +6,3 @@ permalink: mydoc_ha_nfsroot.html
 folder: mydoc
 ---
 
-{% include links.html %}
