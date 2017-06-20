@@ -14,6 +14,7 @@ Check list test
 
 ## Network configuration
 ### Internal Network
+
 |                              | network       |
 |------------------------------|---------------|
 | Administration               | 10.0.0.0/16   |
@@ -22,6 +23,7 @@ Check list test
 | DMZ (optional)               | 172.16.0.0/16 |
  
 ### Site Network
+
 |                              | value         |
 |------------------------------|---------------|
 | Public network               |               |

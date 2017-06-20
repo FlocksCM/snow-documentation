@@ -91,13 +91,16 @@ Issue a pull request for your branch into the main sNow! repository, as follows:
 1. go to your git repo hosted in bitbucket: https://bitbucket.org/<YOUR_BITBUCKET_ACCOUNT>/snow-tools
 2. issue a pull request (see previous screenshot) for your branch to the develop branch of the main sNow! repository.
 3. Add any comment you consider relevant for the development team.
+
 ### Review process
 A member of the HPCNow! development team will then review your pull request, paying attention to what you're contributing, how you implemented it and code style. See Review process for contributions for more details.
 Most likely, some remarks will be made on your pull request. Note that this is nothing personal, we're just trying to keep the sNow! codebase as high quality as possible. Even when an sNow! team member makes changes, the same public review process is followed.
 Try and act on the remarks made, either by committing additional changes to your branch, or by replying to the remarks to clarify your work.
+
 ### Aftermath
 Once your pull request has been reviewed and remarks have been processed, your contribution will be merged into the develop branch of the main sNow! repository.
 On frequent occasions, the develop branch is merged into the master branch and a new version is tagged, and your contribution truly becomes part of sNow!.
+
 ## Branching strategy
 The workflow used in sNow! Development is based on Gitflow, which has demonstrated a solid and strong community based collaboration. The workflow below is derived from Vincent Driessen at nvie.
 
@@ -120,7 +123,9 @@ Given a version number MAJOR.MINOR.PATCH, increment the:
 * MAJOR version when you make incompatible API changes,
 * MINOR version when you add functionality in a backwards-compatible manner, and
 * PATCH version when you make backwards-compatible bug fixes.
+
 Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
+
 ## Testing new features available in the development version.
 In order to evaluate new features available in the development version, you only need to pull the latest changes from the HPCNow! git repository.
 To do so, just add the remote repo with the following instructions:

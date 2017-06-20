@@ -15,16 +15,16 @@ topnav_dropdowns:
         - title: sNow! Documentation
           url: /index.html
         - title: Quick Reference Guide
-          url: /p1_landing_page.html
-        - title: Man Pages
-          url: /p2_landing_page.html
+          url: /pdf/snow-quick-reference.pdf
+#        - title: Man Pages
+#          url: /p2_landing_page.html
     - title: Development
       folderitems:
         - title: Source Code
           external_url: http://bitbucket.org/hpcnow/snow-tools
-        - title: Build Reports
-          external_url: http://snow.hpcnow.com/build_reports.html
+#        - title: Build Reports
+#          external_url: http://snow.hpcnow.com/build_reports.html
         - title: Issue Tracking
-          external_url: https://bitbucket.org/hpcnow/snow-tools/issues
+          external_url: https://bitbucket.org/hpcnow/snow-tools/issues?status=new&status=open
         - title: Contributing Back
-          url: /p2_landing_page.html
+          url: /p2_contributing_back.html
