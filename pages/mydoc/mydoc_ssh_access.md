@@ -6,11 +6,9 @@ sidebar: mydoc_sidebar
 folder: mydoc
 ---
 
-{% include tip.html content="For a better terminal emulator on Windows, use [Git Bash](https://git-for-windows.github.io/). Git Bash gives you Linux-like control on Windows." %}
-
-During the installation process two users have been created:
-The sNow! user (snow) is the admin user which will be able to install scientific applications and to escalate to root privileges.  
-The HPCNow! user (hpcnow) can also escalate to root privileges and is meant to be used for remote administration and support. 
+During the installation process one or two users have been created:
+* The sNow! user (snow) is the admin user which will be able to install scientific applications and to escalate to root privileges.  
+* [optional] The HPCNow! user (hpcnow) can also escalate to root privileges and is meant to be used for remote administration and support. 
 
 By default, the only way to access the system as the sNow! or HPCNow! user is by using the SSH key located in the user’s home directory. Note that at this point, those users do not have a password. If you want to enable password access, you will need to setup a password first.
 

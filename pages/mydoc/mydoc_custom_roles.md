@@ -7,15 +7,6 @@ permalink: mydoc_custom_roles.html
 folder: mydoc
 ---
 
-Custom hooks
-Path
-Template base
-Copier les notes que hi ha dins del template
-Custom first boot hooks
-Explicar perquè 
-En quin moment s’executa
-
-
 ## Create a new role
 sNow! roles are shell scripts which make them easy to develop and to understand. Keep in mind the following tips and tricks which will help you  develop new roles:
 

@@ -4,7 +4,7 @@ tags: [network, bonding]
 last_updated: November 30, 2015
 keywords: bridge, bridges, network, networking, bonding
 summary: "This section explains how to setup network bridges with bonding in order to achieve high availability and better performance."
-permalink: mydoc_shuffle.html
+permalink: mydoc_network_bonding.html
 sidebar: mydoc_sidebar
 folder: mydoc
 ---
