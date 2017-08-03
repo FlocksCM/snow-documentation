@@ -4,7 +4,7 @@ topnav:
 - title: Topnav
   items:
     - title: Website
-      external_url: http://snow.hpcnow.com
+      external_url: https://hpcnow.github.io/snow-web/
 
 #Topnav dropdowns
 topnav_dropdowns:
@@ -15,9 +15,7 @@ topnav_dropdowns:
         - title: sNow! Documentation
           url: /index.html
         - title: Quick Reference Guide
-          url: /pdf/snow-quick-reference.pdf
-#        - title: Man Pages
-#          url: /p2_landing_page.html
+          url: ./pdf/snow-quick-reference.pdf
     - title: Development
       folderitems:
         - title: Source Code
@@ -27,4 +25,4 @@ topnav_dropdowns:
         - title: Issue Tracking
           external_url: https://bitbucket.org/hpcnow/snow-tools/issues?status=new&status=open
         - title: Contributing Back
-          url: /p2_contributing_back.html
+          url: /mydoc_contribute_back.html

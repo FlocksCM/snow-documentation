@@ -17,6 +17,7 @@ HPCNow! also offers a full line of services for sNow!, including:
 * Configuration assistance
 * Training
 * Customization
+{% include image.html file="1200px-GPLv3_Logo.svg.png" max-width="300" %}
 
 Please, [contact us](mailto:info@hpcnow.com) for questions regarding the professional services offered by [HPCNow!](http://www.hpcnow.com).
 

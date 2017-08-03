@@ -1,16 +1,13 @@
 ---
 title: sNow! Command Line Interface Administratrion
 tags: [special_layouts]
-keywords: layouts, information design, presentation
+keywords: CLI
 last_updated: July 3, 2016
 summary: "This theme has a few special layouts. Special layouts include the JS files they need directly in the page. The JavaScript for each special layout does not load by default for every page in the site."
 sidebar: mydoc_sidebar
-permalink: mydoc_administration.html
+permalink: mydoc_snow_cli.html
 folder: mydoc
 ---
-
-
-{% include note.html content="By \"layout,\" I'm not referring to the layouts in \_layouts in the project files. I'm referring to special ways of presenting information on the same \"page\" layout." %} 
 
 The snow command is the most important administration command you will use to manage your cluster. It allows you to do the initial configuration, deploy the domains and compute nodes, boot or power cycle them when needed, open the console, PXE install the compute nodes, etc. This command interacts with the cluster in two ways:
 When focused on a domain or VM, it is a wrapper which runs the appropriate XEN commands to control the domain.

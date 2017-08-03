@@ -1,6 +1,6 @@
 ---
 title: Setup Network Bridges
-keywords: atom, text editor,
+keywords: network bridge
 last_updated: March 20, 2016
 summary: "Setup network bridges."
 sidebar: mydoc_sidebar

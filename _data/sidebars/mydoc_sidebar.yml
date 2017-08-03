@@ -57,8 +57,12 @@ entries:
     folderitems:
 
     - title: OS as sNow! Installation 
-      url: /mydoc_os_installation.html
       output: web, pdf
+      folderitems:
+
+      - title: Debian
+        url: /mydoc_os_installation.html
+        output: web, pdf
 
     - title: sNow! installation
       url: /mydoc_snow_installation.html
@@ -126,7 +130,7 @@ entries:
       output: web, pdf
 
     - title: Custom Roles
-      url: /mydoc_cutom_roles.html
+      url: /mydoc_custom_roles.html
       output: web, pdf
 
     - title: How to create custom LDAP certificates

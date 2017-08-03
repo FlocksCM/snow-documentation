@@ -3,7 +3,6 @@ title: Selecting domains
 tags: [domains]
 keywords: domains, roles, vms, containers
 last_updated: July 3, 2016
-summary: "You can implement advanced conditional logic that includes if statements, or statements, unless, and more. This conditional logic facilitates single sourcing scenarios in which you're outputting the same content for different audiences."
 sidebar: mydoc_sidebar
 permalink: mydoc_selecting_domains.html
 folder: mydoc
