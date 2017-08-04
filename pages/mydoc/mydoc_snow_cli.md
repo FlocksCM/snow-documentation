@@ -25,13 +25,12 @@ There is a manpage covering the usage of the snow command. We encourage you to r
 * domains.conf
 
 ## Version and help
-| Function | Description |
-|----------|-------------|
-|version   | shows the version of sNow!|
-|help      |  prints the standard help message|
+`version`
+  shows the version of sNow!
+`help`
+  prints the standard help message
 
 ## Power up/down/cycle
--------
 
 `boot <domain>`
   boots a specific domain
@@ -48,6 +47,9 @@ There is a manpage covering the usage of the snow command. We encourage you to r
 `reboot <domain|node>`
   reboot a specific domain or node(s)
 
+`reset <domain|node>`
+  force rebooting a specific domain or node(s)
+
 `shutdown <domain|node>`
   shutdown a specific domain or node(s)
 
@@ -57,11 +59,15 @@ There is a manpage covering the usage of the snow command. We encourage you to r
 `destroy <domain|node>`
   force stop a specific domain or node(s) simulating a power button press
 
-`reset <domain|node>`
-  force rebooting a specific domain or node(s)
-
 `poweroff <domain|node>`
   initiate a soft-shutdown of the OS via ACPI for domain(s) or node(s)
+
+{% include important.html content="Differences between shutdown, destroy and poweroff: <br>
+<b>shutdown</b> requires access to the OS in order to be able to trigger "systemctl poweroff" command.<br>
+<b>destroy</b> forces to stop specific domain or node simulating a power button press. This is performed at the IPMI or API level in those situations where the system is up but is not responsive (i.e. a boot failure in PXE).<br>
+<b>poweroff</b> initiates a soft-shutdown of the OS via ACPI. This is usefull when for some reason you don't have access through SSH but you have access from console (i.e. the system booted without network configuration)" %}
+
+
 
 ## Provisioning
 `deploy <domain|node> <template> <force>`
