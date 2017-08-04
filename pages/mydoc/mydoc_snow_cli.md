@@ -25,98 +25,99 @@ There is a manpage covering the usage of the snow command. We encourage you to r
 * domains.conf
 
 ## Version and help
-`version`
+```version```
   shows the version of sNow!
-`help`
+
+```help```
   prints the standard help message
 
 ## Power up/down/cycle
 
-`boot <domain>`
+```boot <domain>```
   boots a specific domain
-  
-`boot <node> <image>`
+
+```boot <node> <image>```
   boots specific node(s) with an optional image
 
-`boot domains`
+```boot domains```
   boot all domains (all services not available under sNow! HA)
 
-`boot cluster <clustername>`
+```boot cluster <clustername>```
   boot all the compute nodes of the selected cluster (by default 12 nodes at once)
 
-`reboot <domain|node>`
+```reboot <domain|node>```
   reboot a specific domain or node(s)
 
-`reset <domain|node>`
+```reset <domain|node>```
   force rebooting a specific domain or node(s)
 
-`shutdown <domain|node>`
+```shutdown <domain|node>```
   shutdown a specific domain or node(s)
 
-`shutdown cluster <clustername>`
+```shutdown cluster <clustername>```
   shutdown all the compute nodes of the selected cluster
 
-`destroy <domain|node>`
+```destroy <domain|node>```
   force stop a specific domain or node(s) simulating a power button press
 
-`poweroff <domain|node>`
+```poweroff <domain|node>```
   initiate a soft-shutdown of the OS via ACPI for domain(s) or node(s)
 
-{% include important.html content="Differences between shutdown, destroy and poweroff: <br><b>shutdown</b> requires access to the OS in order to be able to trigger "systemctl poweroff" command.<br><b>destroy</b> forces to stop specific domain or node simulating a power button press. This is performed at the IPMI or API level in those situations where the system is up but is not responsive (i.e. a boot failure in PXE).<br><b>poweroff</b> initiates a soft-shutdown of the OS via ACPI. This is usefull when for some reason you don't have access through SSH but you have access from console (i.e. the system booted without network configuration)" %}
-
+<!--{% include important.html content="Differences between shutdown, destroy and poweroff: <br><b>shutdown</b> requires access to the OS in order to be able to trigger "systemctl poweroff" command.<br><b>destroy</b> forces to stop specific domain or node simulating a power button press. This is performed at the IPMI or API level in those situations where the system is up but is not responsive (i.e. a boot failure in PXE).<br><b>poweroff</b> initiates a soft-shutdown of the OS via ACPI. This is usefull when for some reason you don't have access through SSH but you have access from console (i.e. the system booted without network configuration)" %}
+-->
 
 
 ## Provisioning
-`deploy <domain|node> <template> <force>`
+```deploy <domain|node> <template> <force>```
   deploy a specific domain/node (optional: with specific template or force deploying existing domain/server)
 
-`add node <node> [--option value]`
+```add node <node> [--option value]```
   adds a new node in the sNow! database. Available options: cluster, image, template, install_repo, console_options
 
-`set node <node> [--option value]`
+```set node <node> [--option value]```
   sets parameters in the node description. Available options: cluster, image, template, install_repo, console_options
 
-`clone template <old> <new> <description>`
+```clone template <old> <new> <description>```
   creates a new template based on an existing one
 
-`clone image <old> <new> <description>`
+```clone image <old> <new> <description>```
   creates a new image based on an existing one
 
-`clone node <node> <image> <type>`
+```clone node <node> <image> <type>```
   creates an image to boot the compute nodes diskless. Available types (nfsroot, stateless).
 
-`remove domain <domain>`
+```remove domain <domain>```
   removes an existing domain deployed with sNow!
 
-`remove node <node>`
+```remove node <node>```
   removes an existing node from sNow! configuration
 
-`remove template <template>`
+```remove template <template>```
   removes an existing template
 
-`remove image <image>`
+```remove image <image>```
   removes an existing image
 
-`list domains`
+```list domains```
   list the current domains (services) and their status
 
-`list templates`
+```list templates```
   list the templates installed in the system
 
-`list nodes`
+```list nodes```
   list the available compute nodes and their status
 
-`list roles`
+```list roles```
   list the available roles for domains (services)
 
-`list images`
+```list images```
   list the images generated or downloaded
 
-`show nodes <node>`
+```show nodes <node>```
   shows the node(s) configuration.
 
 ## Console
-`console <domain|node>`
+```console <domain|node>```
   console access to specific domain or node
 
   Use ENTER followed by ~. to exit an IPMI (compute node) console.
@@ -132,25 +133,25 @@ To exit the console you will need an additional ~ for each SSH session. In this 
 ```
 
 ## Update sNow!
-`update tools`
+```update tools```
   updates the sNow! Tools
 
-`update configspace`
+```update configspace```
   updates configuration files from the private Git repository
 
-`update template`
+```update template```
   updates the sNow! image used to create new domains
 
 ## Configuration
-`init`
+```init```
   initiates the system configuration according to the parameters defined in snow.conf and active-domains.conf
 
-`config`
+```config```
   dumps the information available in snow.conf and domains.conf. Use it to keep track of changes.
 
-`update firewall`
+```update firewall```
   updates the default sNow! firewall rules (only for sNow! with public IP address and internal DMZ)
 
-`chroot <image>`
+```chroot <image>```
   provides chroot environment inside a read-only nfsroot image. The prompt provided by this command also shows that the shell session is allocated inside a particular image chroot. In order to exit from this environment, type exit or press Ctrl+d.
 
