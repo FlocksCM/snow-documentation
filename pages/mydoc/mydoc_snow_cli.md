@@ -53,6 +53,8 @@ There is a manpage covering the usage of the snow command. We encourage you to r
 
 * ```poweroff <domain|node>``` initiate a soft-shutdown of the OS via ACPI for domain(s) or node(s)
 
+{% include callout.html content="Differences between shutdown, destroy and poweroff: <br>**shutdown** requires access to the OS in order to be able to trigger 'systemctl poweroff' command.<br>**destroy** forces to stop specific domain or node simulating a power button press. This is performed at the IPMI or API level in those situations where the system is up but is not responsive (i.e. a boot failure in PXE).<br>**poweroff** initiates a soft-shutdown of the OS via ACPI. This is usefull when for some reason you don't have access through SSH but you have access from console (i.e. the system booted without network configuration). " type="success" %} 
+
 ## Provisioning
 * ```deploy <domain|node> <template> <force>``` deploy a specific domain/node (optional: with specific template or force deploying existing domain/server)
 
@@ -88,6 +90,18 @@ There is a manpage covering the usage of the snow command. We encourage you to r
 
 ## Console
 * ```console <domain|node>``` console access to specific domain or node
+{% include callout.html content="* Use ENTER followed by ```~.``` to exit an IPMI (compute node) console.
+* Use <CTRL> ] to exit a XEN (VM) console." type="success" %}
+
+{% include tip.html content="Each SSH session captures one ```~``` char, so if you are in a situation like:<br>
+```
+# ssh snow01
+# snow console n001
+```
+To exit the console you will need an additional ```~``` for each SSH session. In this case: ```~~. ```" %}
+
+
+
 
 ## Update sNow!
 * ```update tools``` updates the sNow! Tools
