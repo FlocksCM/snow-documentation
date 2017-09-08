@@ -222,8 +222,16 @@ Execute the ```crm configure``` and define the first service in HA as follows:
 ```
 primitive deploy01 ocf:heartbeat:Xen \
  params xmfile="/sNow/snow-tools/etc/domains/deploy01.cfg" \
- op monitor interval="20s" \
+ op monitor interval="40s" \
  meta target-role="started" allow-migrate="true"
+```
+
+Some operations like the live migration requires some extra time. Specially when the VM uses a reasonable amount of memory. 
+It's highly recommended to increase the default timeout to avoid cancelling the live migration due a short time limit. 
+The following example, setup 120s as default timeout. You can tune this value attending at your VM needs.
+
+```
+crm_attribute --type op_defaults --attr-name timeout --attr-value 120s
 ```
 
 ### Test!
@@ -321,4 +329,3 @@ crm(live)configure# location cli-prefer-syslog01 syslog01 role=Started inf: snow
 crm(live)configure# commit
 crm(live)configure# bye
 ```
-
