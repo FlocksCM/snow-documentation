@@ -225,25 +225,26 @@ entries:
       url: /mydoc_ha_native.html
       output: web, pdf
 
-    - title: High Availability for virtualization
-      output: web, pdf
       subfolders:
-
-      - title: Shared Storage (SAN+LVM)
-        url: /mydoc_ha_san_lvm.html
+      - title: High Availability for virtualization
         output: web, pdf
+        subfolderitems:
 
-      - title: Shared Storage (DRDB+LVM)
-        url: /mydoc_ha_drdb_lvm.html
-        output: web, pdf
+        - title: Shared File System (loopback files)
+          url: /mydoc_ha_loopback_files.html
+          output: web, pdf
+
+        - title: Shared Storage (SAN+LVM)
+          url: /mydoc_ha_san_lvm.html
+          output: web, pdf
+
+        - title: Shared Storage (DRDB+LVM)
+          url: /mydoc_ha_drdb_lvm.html
+          output: web, pdf
           
-      - title: Shared File System (NFSROOT)
-        url: /mydoc_ha_nfsroot.html
-        output: web, pdf
-
-      - title: Shared File System (loopback files)
-        url: /mydoc_ha_loopback_files.html
-        output: web, pdf
+        - title: Shared File System (NFSROOT)
+          url: /mydoc_ha_nfsroot.html
+          output: web, pdf
 
   - title: Development
     output: web, pdf
