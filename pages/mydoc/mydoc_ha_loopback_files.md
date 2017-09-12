@@ -151,12 +151,14 @@ Review if /etc/default/xendomains has an empty value for XENDOMAINS_SAVE variabl
 Execute the following commands in order to certify that the para-virtual machines can be migrated across the sNow! nodes:
 
 From snow01 you can execute the following commands:
+
 ```
 snow boot deploy01
 xl migrate deploy01 snow02
 ```
 
 If it works as expected, you should see a output message similar to the following example:
+
 ```
 [4287] snow01:~ $ xl migrate deploy01 snow02
 migration target: Ready to receive domain.
