@@ -13,6 +13,8 @@ The sNow! default configuration will setup a completely functional HPC cluster. 
 ## Default install (recommended)
 
 ```
+apt install git
+cd /sNow
 git clone http://bitbucket.org/hpcnow/snow-tools.git
 cd snow-tools
 ./install.sh
