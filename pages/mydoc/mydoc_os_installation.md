@@ -62,7 +62,7 @@ deb-src http://ftp.es.debian.org/debian/ jessie-updates main contrib non-free
 Install the following packages, which are needed by the sNow! installation scripts:
 
 ```
-apt-get install bridge-utils gawk lvm2 sudo wget git ca-certificates lsb-release
+apt-get install bridge-utils gawk lvm2 sudo wget git ca-certificates lsb-release git
 ```
 
 ## External shared file system servers (home directory and /sNow folder)
