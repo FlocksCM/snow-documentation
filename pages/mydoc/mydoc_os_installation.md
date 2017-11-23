@@ -26,7 +26,7 @@ Boot from the Debian DVD or USB and choose Install.
 7. Choose manual partition, and create a small partition for ```/boot```
 
 ```
-/boot	ext2	1GB
+/boot	ext4	1GB
 ```
 8. Create another partition and lvm	rest of the disk
 9. Go to the Logical Volume Manager configuration and write changes to disk.
