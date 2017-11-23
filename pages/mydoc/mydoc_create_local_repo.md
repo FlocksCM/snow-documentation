@@ -11,18 +11,18 @@ folder: mydoc
 
 To be able to install from a local Centos DVD image, follow these instructions to download and copy the installation files to a suitable location:
 ```
-mkdir /sNow/common/CentOS-7-1611-DVD1
+mkdir /sNow/common/CentOS-7-1708
 cd /tmp
-wget http://centos.uvigo.es/7/isos/x86_64/CentOS-7-x86_64-DVD-1611.iso
-mount -o loop /tmp/CentOS-7-x86_64-DVD-1611.iso /mnt
-cp -pr /mnt/* /sNow/common/CentOS-7-1611-DVD1
+wget wget http://mirror.tedra.es/CentOS/7/isos/x86_64/CentOS-7-x86_64-DVD-1708.iso
+mount -o loop /tmp/CentOS-7-x86_64-DVD-1708.iso /mnt
+cp -pr /mnt/* /sNow/common/CentOS-7-1708
 umount /mnt
 rm /tmp/CentOS-7-x86_64-DVD-1611.iso
 ```
 
 Then modify the install_repo in the json node file by:
 ```
-snow set node bbgn[001-018] --install_repo nfs:<NFS_SERVER_IP>:/sNow/common/CentOS-7-1611-DVD1
+snow set node bbgn[001-018] --install_repo nfs:<NFS_SERVER_IP>:/sNow/common/CentOS-7-1708
 ```
 
 In many cases you will also need additional repositories, like EPEL, or a site specific RPM repo. In order to accommodate these requirements you will need native CentOS tools.
