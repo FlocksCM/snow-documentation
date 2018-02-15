@@ -6,40 +6,66 @@ permalink: mydoc_ha_loopback_files.html
 folder: mydoc
 ---
 
-The following notes descrive how to setup a High Availability (HA) cluster based on loopback images for domains (Para-virtualised xen VMs) and a BeeGFS shared file system provided by other servers.
+The following notes descrive how to setup a High Availability (HA) cluster based on loopback images for domains (Para-virtualised Xen VMs) and a BeeGFS or NFS shared file system provided by external servers.
 
-IMG SCHEMA TBD
+This guide asumes that:
 
-## Enabling cluster file system re-export from sNow! nodes
-If this is a new installation, you can jump to the next section.
+* You have at least two nodes to install sNow!
+* The BeeGFS (or NFS) client has been installed in sNow! nodes
+* The /sNow path is mounted directly from BeeGFS/NFS or it's a mount bind to that path
+* The /home path is mounted directly from BeeGFS/NFS or it's a mount bind to that path
+* You have followed the instructions defined [here](mydoc_os_installation.html)
 
-In the following file you can define which file systems are going to be re-exported. sNow! relies NFS for deploying the compute nodes, so /sNow and /home are expected to be shared through NFS.
+{% include image.html file="ha_loopback_images_over_cfs.png" max-width="300" %}
 
-Content of /etc/exports.d/snow.exports should be similar to:
+
+
+## Enabling cluster file system re-export
+
+In the following file you can define which file systems are going to be re-exported from an external server. sNow! relies NFS for deploying the compute nodes, so /sNow and /home are expected to be shared through NFSv4. 
+
+Assuming that the content of /sNow and /home are located in /beegfs the file /etc/exports.d/snow.exports should be similar to:
 
 ```
-/sNow            192.168.8.0/255.255.0.0(rw,async,fsid=0,crossmnt,no_subtree_check,no_root_squash)
-/home            192.168.8.0/255.255.0.0(rw,sync,fsid=1,crossmnt,no_subtree_check,no_root_squash)
-```
-
-Then you can transfer the same file to the other sNow! nodes:
-
-```
-scp -pr /etc/exports.d/snow.exports snow02:/etc/exports.d/
+/beegfs           10.1.0.0/255.255.0.0(rw,async,fsid=0,crossmnt,no_subtree_check,no_root_squash)
 ```
 
 ## Enabling the /sNow path to the compute nodes
-You can setup a simple simbolic link to the path where /sNow folder is located in the BeeGFS, for example: /beegfs/sNow
+You can setup a simple mount bind to the path where /sNow folder is located in the BeeGFS, for example: /beegfs/sNow. Include the following line in the snow.conf in order to enable that.
 
 ```
-ln -s /beegfs/sNow /sNow
+MOUNT_NFS[1]="/beegfs/sNow                     /sNow          none   x-systemd.requires=/beegfs/sNow,x-systemd.mount-timout=infinity,retry=10000,defaults,bind   0 0"
 ```
-<!--
-Otherwise, you can setup a mount bind 
-MOUNT_NFS[1]="/scratch/sNow                     /sNow          none   x-systemd.requires=/scratch/sNow,defaults,bind   0 0"
--->
 
-## Enable Debian Backports
+## Install sNow! software
+Install the first node (snow01) following the instructions defined [here](mydoc_os_installation.html).
+
+Once the sNow! installation is completed in the first node, you can proceed with the other sNow! nodes installation.
+
+Note that after installing sNow!, a reboot is required in order to boot with the new kernel and configuration.
+
+Configure sNow! by setting snow.conf and active_domains.conf as described [here](mydoc_customize_your_cluster.html)
+
+{% include note.html content="The SNOW_NODES defined in snow.conf must contain all the nodes of the HA cluster." %}
+
+{% include note.html content="The gateway defined by NET_SNOW and NET_COMP in snow.conf must be setup to a virtual IP which will be setup later (i.e. 10.1.0.254)." %}
+
+
+
+
+On the other nodes of the HA cluster, the ```snow init``` will deliver the following warning message.
+At this point, it's safe to proceed. Please, don't consider to run this command in a production environment.
+
+```
+root@snow02:~# snow init
+[W] sNow! configuration had been initiated before.
+[W] Please, do not run this command in a production environment
+[W] Do you want to proceed? (y/N)
+```
+
+Once all the nodes 
+
+## Enable Debian Backports - Only for Debian 8 (Jessie)
 
 Include Debian Backports in the sources.list:
 
@@ -52,7 +78,7 @@ Do the same in the other sNow! nodes
 
 ```
 aptitude update
-aptitude install -t jessie-backports libqb0 fence-agents pacemaker corosync pacemaker-cli-utils crmsh drbd-utils -y
+aptitude install libqb0 fence-agents pacemaker corosync pacemaker-cli-utils crmsh drbd-utils -y
 ```
 Do the same in the other sNow! nodes
 
@@ -76,12 +102,6 @@ Gathering 1024 bits for key from /dev/random.
 Press keys on your keyboard to generate entropy.
 ```
 
-In order to accelerate this process, you can install and execute haveged.
-
-```
-aptitude install haveged
-```
-
 ### Setup the right permissions
 
 ```
@@ -95,7 +115,8 @@ scp -p /etc/corosync/authkey snow02:/etc/corosync/authkey
 ```
 
 ### Configuring corosync 
-The content of /etc/corosync/corosync.conf should be something similar to the following example. Note that this cluster only has two nodes (snow01 and snow02).
+
+The content of /etc/corosync/corosync.conf should be something similar to the following example. Note that this cluster only has two nodes (snow01 and snow02). 
 
 ```
 # egrep -v "^$|#" /etc/corosync/corosync.conf
@@ -141,6 +162,14 @@ nodelist {
         nodeid: 2
     }
 }
+```
+
+You can download the following example file and adapt it to accomodate your needs.
+
+Edit ```/etc/corosync/corosync.conf``` in snow01 and transfer this file to the other nodes:
+
+```
+scp -p /etc/corosync/corosync.conf snow02:/etc/corosync/corosync.conf
 ```
 
 ## Xen configuration
@@ -196,7 +225,26 @@ Migration successful.
 
 ## Setup Pacemaker
 
-Iniciate the setup without STONITH. The last section explains how to setup STONITH using a fence device based on IPMI.
+The following steps can be automated taking advantage of the following script: [setup_domains_ha.sh](https://github.com/HPCNow/snow-ci/blob/master/debian/setup_domains_ha.sh)
+
+<div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">setup_domains_ha.sh</a>
+            </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse noCrossRef">
+            <div class="panel-body">
+                <pre>
+                {% include examples/setup_domains_ha.sh %}
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
+
+Iniciate the setup without STONITH. The last section explains how to setup STONITH using a fence device based on Xen.
 
 ```
 [4242] snow01:~ $ crm configure
@@ -270,26 +318,7 @@ crm resource move deploy01 snow01
 
 ### Define all the HA services
 
-Since this is quite repetitive task, the following script will help you to generate the multiple commands to define the HA services.
-
-```
-[4332] snow01:~ $ cat migrate.sh
-#!/bin/bash
-
-for i in proxy01 monitor01 nis01 syslog01 maui01 nis02 flexlm01; do
-    echo "primitive $i ocf:heartbeat:Xen \\
-          params xmfile=\"/sNow/snow-tools/etc/domains/$i.cfg\" \\
-          op monitor interval=\"20s\" \\
-          meta target-role=\"started\" allow-migrate=\"true\"
-         "
-done
-echo commit
-echo bye
-```
-
-Finally, copy the output data into ```crm configure``` to setup the rest of HA services.
-
-The expected outcome should be something like this:
+Follow the previous instructions to setup the services required to be in HA mode. The expected outcome should be something like this:
 
 ```
 Stack: corosync
@@ -313,6 +342,21 @@ maui01  (ocf::heartbeat:Xen):   Started snow02
 nis02   (ocf::heartbeat:Xen):   Started snow01
 flexlm01        (ocf::heartbeat:Xen):   Started snow02
 ```
+
+### Define floating IP for gateway
+
+sNow! servers play a gateway role. The following instructions define HA for this service.
+
+Execute the ```crm configure``` and define the ```xsnow-vip``` service as follows:
+
+```
+primitive xsnow-vip ocf:heartbeat:IPaddr2 params ip="10.1.0.254" nic="xsnow0" op monitor interval="10s"
+commit
+bye
+```
+
+Notice that this IP ```10.1.0.254``` must match with the IP defined in ```NET_SNOW``` and ```NET_COMP``` in the snow.conf
+
 
 ## Service placement
 
