@@ -16,7 +16,7 @@ This guide asumes that:
 * The /home path is mounted directly from BeeGFS/NFS or it's a mount bind to that path
 * You have followed the instructions defined [here](mydoc_os_installation.html)
 
-{% include image.html file="ha_loopback_images_over_cfs.png" max-width="300" %}
+{% include image.html file="ha_loopback_images_over_cfs.png" max-width="600" %}
 
 
 
