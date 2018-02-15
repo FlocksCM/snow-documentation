@@ -47,6 +47,7 @@ This is just an example. You can choose other partition layouts that fit your ne
 ## Extend the repos with contrib and non-free 
 Edit /etc/apt/sources.list and add "contrib non-free" after each deb line.
 
+For Debian 8:
 ```
 deb http://ftp.es.debian.org/debian/ jessie main contrib non-free
 deb-src http://ftp.es.debian.org/debian/ jessie main contrib non-free
@@ -58,11 +59,24 @@ deb-src http://security.debian.org/ jessie/updates main contrib non-free
 deb http://ftp.es.debian.org/debian/ jessie-updates main contrib non-free
 deb-src http://ftp.es.debian.org/debian/ jessie-updates main contrib non-free
 ```
+For Debian 9:
+```
+deb http://ftp.es.debian.org/debian/ stretch main contrib non-free
+deb-src http://ftp.es.debian.org/debian/ stretch main contrib non-free
+
+deb http://security.debian.org/debian-security stretch/updates main contrib non-free
+deb-src http://security.debian.org/debian-security stretch/updates main contrib non-free
+
+# stretch-updates, previously known as 'volatile'
+deb http://ftp.es.debian.org/debian/ stretch-updates main contrib non-free
+deb-src http://ftp.es.debian.org/debian/ stretch-updates main contrib non-free
+```
+
 ## Install pre-required software
 Install the following packages, which are needed by the sNow! installation scripts:
 
 ```
-apt-get install bridge-utils gawk lvm2 sudo wget git ca-certificates lsb-release
+apt-get install bridge-utils gawk lvm2 sudo wget git ca-certificates lsb-release git
 ```
 
 ## External shared file system servers (home directory and /sNow folder)
