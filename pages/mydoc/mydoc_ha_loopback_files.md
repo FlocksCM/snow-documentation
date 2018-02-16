@@ -34,7 +34,8 @@ Assuming that the content of /sNow and /home are located in /beegfs the file /et
 You can setup a simple mount bind to the path where /sNow folder is located in the BeeGFS, for example: /beegfs/sNow. Include the following line in the snow.conf in order to enable that.
 
 ```
-MOUNT_NFS[1]="/beegfs/sNow                     /sNow          none   x-systemd.requires=/beegfs/sNow,x-systemd.mount-timout=infinity,retry=10000,defaults,bind   0 0"
+MOUNT_NFS[1]="/beegfs/sNow                     /sNow          none   noauto,x-systemd.automount,x-systemd.device-timeout=60,_netdev,bind,x-systemd.requires=/beegfs/sNow   0 0"
+MOUNT_NFS[2]="/beegfs/home                     /home          none   noauto,x-systemd.automount,x-systemd.device-timeout=60,_netdev,bind,x-systemd.requires=/beegfs/home   0 0"
 ```
 
 ## Install sNow! software
