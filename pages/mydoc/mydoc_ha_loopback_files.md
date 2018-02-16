@@ -65,20 +65,12 @@ root@snow02:~# snow init
 
 Once all the nodes 
 
-## Enable Debian Backports - Only for Debian 8 (Jessie)
-
-Include Debian Backports in the sources.list:
-
-```
-echo "deb http://ftp.debian.org/debian jessie-backports main" >> /etc/apt/sources.list
-```
-Do the same in the other sNow! nodes
 
 ## Install the required software packages
 
 ```
-aptitude update
-aptitude install libqb0 fence-agents pacemaker corosync pacemaker-cli-utils crmsh drbd-utils -y
+apt update
+apt install libqb0 fence-agents pacemaker corosync pacemaker-cli-utils crmsh drbd-utils -y
 ```
 Do the same in the other sNow! nodes
 
@@ -172,6 +164,12 @@ Edit ```/etc/corosync/corosync.conf``` in snow01 and transfer this file to the o
 scp -p /etc/corosync/corosync.conf snow02:/etc/corosync/corosync.conf
 ```
 
+Start corosync service on all the nodes
+
+```
+systemctl start corosync
+```
+
 ## Xen configuration
 Review if /etc/default/xendomains has an empty value for XENDOMAINS_SAVE variable or if it's commented. Otherwise, comment this variable.
 
@@ -223,27 +221,44 @@ migration sender: Target reports successful startup.
 Migration successful.
 ```
 
-## Setup Pacemaker
+## Pacemaker
+
+### Setup the right permissions and check the cluster health
+
+```
+chown -R hacluster:haclient /var/lib/pacemaker
+chmod 750 /var/lib/pacemaker
+ssh snow02 chown -R hacluster:haclient /var/lib/pacemaker
+ssh snow02 chmod 750 /var/lib/pacemaker
+crm cluster health | more 
+```
+### Setup Pacemaker
 
 The following steps can be automated taking advantage of the following script: [setup_domains_ha.sh](https://github.com/HPCNow/snow-ci/blob/master/debian/setup_domains_ha.sh)
 
-<div class="panel-group" id="accordion">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">setup_domains_ha.sh</a>
-            </h4>
-        </div>
-        <div id="collapseOne" class="panel-collapse collapse noCrossRef">
-            <div class="panel-body">
-                <pre>
-                {% include examples/setup_domains_ha.sh %}
-                </pre>
-            </div>
-        </div>
-    </div>
-</div>
+```bash
+#!/bin/bash
+domain_list=$(snow list domains | egrep -v "Domain|------" | gawk '{print $1}')
+crm_attribute --type op_defaults --attr-name timeout --attr-value 120s
+rm -f pacemaker.cfg
+echo "property stonith-enabled=no" > pacemaker.cfg
+echo "property no-quorum-policy=ignore" >>  pacemaker.cfg
+echo "property default-resource-stickiness=100" >> pacemaker.cfg
+echo "primitive xsnow-vip ocf:heartbeat:IPaddr2 params ip=\"10.1.0.254\" nic=\"xsnow0\" op monitor interval=\"10s\"" >> pacemaker.cfg
+for domain in ${domain_list}; do
+    echo "primitive $domain ocf:heartbeat:Xen \\
+          params xmfile=\"/sNow/snow-tools/etc/domains/$domain.cfg\" \\
+          op monitor interval=\"40s\" \\
+          meta target-role=\"started\" allow-migrate=\"true\"
+         " >> pacemaker.cfg
+done
+echo commit >> pacemaker.cfg
+echo bye >> pacemaker.cfg
+crm configure < pacemaker.cfg
+```
+Otherwise, you can follow the next steps to setup Pacemaker:
 
+### Define global configuration
 Iniciate the setup without STONITH. The last section explains how to setup STONITH using a fence device based on Xen.
 
 ```
@@ -255,15 +270,7 @@ crm(live)configure# commit
 crm(live)configure# bye
 ```
 
-### Setup the right permissions and check the cluster health
 
-```
-chown -R hacluster:haclient /var/lib/pacemaker
-chmod 750 /var/lib/pacemaker
-ssh snow02 chown -R hacluster:haclient /var/lib/pacemaker
-ssh snow02 chmod 750 /var/lib/pacemaker
-crm cluster health | more 
-```
 
 ### Define the first service in HA
 
