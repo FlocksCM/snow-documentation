@@ -246,6 +246,10 @@ entries:
           url: /mydoc_ha_nfsroot.html
           output: web, pdf
 
+        - title: Migrate from single sNow! server to sNow! HA cluster
+          url: /mydoc_ha_migration.html
+          output: web, pdf
+          
   - title: Development
     output: web, pdf
     folderitems:
