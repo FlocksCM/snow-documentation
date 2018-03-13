@@ -3,7 +3,7 @@ title: Licensing and Enterprise Support
 tags: [getting_started, troubleshooting]
 keywords: questions, troubleshooting, contact, support
 last_updated: July 3, 2016
-summary: "Contact me for any support issues."
+summary: "Contact us for any support issues."
 sidebar: mydoc_sidebar
 permalink: mydoc_support.html
 folder: mydoc
@@ -20,4 +20,3 @@ HPCNow! also offers a full line of services for sNow!, including:
 {% include image.html file="1200px-GPLv3_Logo.svg.png" max-width="300" %}
 
 Please, [contact us](mailto:info@hpcnow.com) for questions regarding the professional services offered by [HPCNow!](http://www.hpcnow.com).
-

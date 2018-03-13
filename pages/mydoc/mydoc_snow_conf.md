@@ -1,12 +1,12 @@
 ---
-title: Customize your cluster before initializing
+title: sNow! Configuration
 tags:
   - configuration
   - snow.conf
 keywords: "snow.conf, configuration"
 last_updated: "November 30, 2016"
 sidebar: mydoc_sidebar
-permalink: mydoc_customize_your_cluster.html
+permalink: mydoc_snow_conf.html
 folder: mydoc
 ---
 
@@ -22,7 +22,7 @@ Be aware that newer releases may include more parameters to setup and migrating 
 
 {% include warning.html content="Please ensure this snow.conf file belongs to root:root and has permissions 600 as it will contain passwords in plain text." %}
 
-This document provides a short description of each parameter. 
+This document provides a short description of each parameter.
 
 ## NFS Server
 The ```NFS_SERVER``` defines the NFS server where all the sNow! files will be stored. The /sNow filesystem is exported to the compute nodes via NFS for running the post-install scripts and for other purposes. If the NFS_SERVER matches with the sNow! server, the "snow init" command will apply the required changes in the system like adding the needed paths to /etc/exports. The default value for the NFS_SERVER is snow01 and it should be the same server you defined during installation.
@@ -51,7 +51,7 @@ SNOW_TOOL=$SNOW_PATH/snow-tools
 ```
 
 ## Domains Image
-The following options define where the domains OS files will be stored. This allows you to use root and swap filesystems for the domains in LVM volumes and loopback files. 
+The following options define where the domains OS files will be stored. This allows you to use root and swap filesystems for the domains in LVM volumes and loopback files.
 * LVM - The domains will be stored inside a Logical Volume created in the snow_vg Volume Group.
 ```
 IMG_DST='lvm=snow_vg'
@@ -68,7 +68,7 @@ IMG_DST='nfs=$NFS_SERVER:/sNow/domains' (experimental)
 
 ## sNow! Nodes
 Defines the list of nodes which will be the sNow! management servers. The default value is snow01. If you use more than one sNow! management server then you should define here the list of hostnames in a space separated list.
-Example: 
+Example:
 
 ```
 SNOW_NODES=( snow01 snow02 )
@@ -170,7 +170,7 @@ The following parameters provide the required information to interact with the c
 The following parameters will define how the nodes will boot in case you boot a large set of nodes. Instead of booting them all at exactly the same time, and in order to avoid unnecessary circuit overload and unbalanced loading in the power distribution, the nodes will be booted in blocks.
 * ```BLOCKN```: Number of nodes to boot per cycle. Default value is 12 nodes.
 * ```BLOCKD```:Delay before booting the next group of BLOCKD nodes. Default value is 4 seconds.
-* ```BOOT_DELAY```: The expected time for the compute node to start to boot from PXE. After this period of time, the PXE configuration will roll back to the default boot defined in the snow.conf. Default value is 300 seconds. 
+* ```BOOT_DELAY```: The expected time for the compute node to start to boot from PXE. After this period of time, the PXE configuration will roll back to the default boot defined in the snow.conf. Default value is 300 seconds.
 
 {% include note.html content="iThis means if you boot a range of 100 nodes it will boot BLOCKN nodes, then wait BLOCKD seconds, boot BLOCKN more nodes, wait BLOCKD seconds, and repeat this sequence until all of them are booted." %}
 
@@ -190,14 +190,14 @@ sNow! allows you to integrate your prefered configuration manager. If you are us
 ## Cluster provisioning: deployment system
 The following parameters define the information required to deploy and boot new compute nodes as well as the golden nodes which will play a key role in the deployment of applications in the shared file system as well as the cloning system.
 * ```DEFAULT_BOOT```: All the nodes will boot via PXE and the PXE server will define when the node should boot from the network or any other device. You can setup a default image here or define different images for a specific nodes through snow CLI. The default value is localboot.
-* ```DEFAULT_TEMPLATE```: By default sNow! will deploy all the compute nodes with the template defined in this parameter. You can also deploy nodes using a different template by adding the template name as an option in the snow CLI: 
+* ```DEFAULT_TEMPLATE```: By default sNow! will deploy all the compute nodes with the template defined in this parameter. You can also deploy nodes using a different template by adding the template name as an option in the snow CLI:
 
 ```
 snow deploy n-[001-200] custom_template
 ```
 More information on this is available in section 6. The default value is centos-7-default
 
-* ```DEFAULT_CONSOLE_OPTIONS```: Some compute nodes may require different options in order to interact with the remote console during the PXE boot. This option is used as default. You can also setup different console options for a specific node through snow CLI. The default value is: 
+* ```DEFAULT_CONSOLE_OPTIONS```: Some compute nodes may require different options in order to interact with the remote console during the PXE boot. This option is used as default. You can also setup different console options for a specific node through snow CLI. The default value is:
 
 ```
 DEFAULT_CONSOLE_OPTIONS="console=tty0 console=ttyS0,115200n8"
@@ -234,7 +234,7 @@ KEYMAP=us
 TIMEZONE=Europe/Amsterdam
 ```
 ## Mandatory network parameters and services required by sNow!
-The following parameters must be setup in order to deploy and use the cluster properly. The DNS servers are used by the deploy role to setup the internal DNS. 
+The following parameters must be setup in order to deploy and use the cluster properly. The DNS servers are used by the deploy role to setup the internal DNS.
 
 ```
 DNS_SERVERS=8.8.8.8,8.8.4.4
@@ -242,7 +242,7 @@ DOMAIN=in.hpcnow.com
 ```
 
 ## Optional network services provided by the site/institution
-sNow! provides easy integration with your existing environment through the SITE_SERVICES variables. The following parameters define integration with standard services usually required by an HPC cluster. Other services can be integrated via hooks (see section 12 of the sNow! administrator documentation). 
+sNow! provides easy integration with your existing environment through the SITE_SERVICES variables. The following parameters define integration with standard services usually required by an HPC cluster. Other services can be integrated via hooks (see section 12 of the sNow! administrator documentation).
 
 ```
 SITE_PROXY_SERVER=192.168.7.1
@@ -292,7 +292,7 @@ SLURMDBD_NAME=slurm_acct_db
 
 ### Slurm Accounting and Fair Share
 
-The following option forces the use of associations and QoS for accounting. 
+The following option forces the use of associations and QoS for accounting.
 
 ```
 ACCOUNTING_STORAGE_ENFORCE=associations,qos
@@ -341,9 +341,9 @@ LICENSES=intel*2,matlab*200,fluent*5000
 The following lines define multiple subsets of nodes using Slurm syntax. More information on this is available in the Slurm documentation.
 
 ```
-SLURM_NODES[1]="NodeName=knl[01-99] RealMemory=128000  Sockets=2  CoresPerSocket=72 ThreadsPerCore=4 State=UNKNOWN" 
-SLURM_NODES[2]="NodeName=hsw[01-99] RealMemory=256000  Sockets=2  CoresPerSocket=12 ThreadsPerCore=1 State=UNKNOWN" 
-SLURM_NODES[3]="NodeName=skl[01-99] RealMemory=512000  Sockets=4  CoresPerSocket=24 ThreadsPerCore=1 State=UNKNOWN" 
+SLURM_NODES[1]="NodeName=knl[01-99] RealMemory=128000  Sockets=2  CoresPerSocket=72 ThreadsPerCore=4 State=UNKNOWN"
+SLURM_NODES[2]="NodeName=hsw[01-99] RealMemory=256000  Sockets=2  CoresPerSocket=12 ThreadsPerCore=1 State=UNKNOWN"
+SLURM_NODES[3]="NodeName=skl[01-99] RealMemory=512000  Sockets=4  CoresPerSocket=24 ThreadsPerCore=1 State=UNKNOWN"
 ```
 ### Slurm partitions
 The following lines define multiple partitions using the Slurm syntax. More information is available in the Slurm documentation.

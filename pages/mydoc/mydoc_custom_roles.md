@@ -1,6 +1,6 @@
 ---
 title: Custom Roles
-summary: "This section explains how to develop new custome sNow! doamin roles."
+summary: "This section explains how to develop new custom sNow! domain roles."
 last_updated: July 3, 2016
 sidebar: mydoc_sidebar
 permalink: mydoc_custom_roles.html
@@ -90,8 +90,8 @@ $SNOW_CONF/boot                </pre>
     </div>
 </div>
 
-The template snow_reference_template will help you to develop new roles (available in /sNow/snow-tools/etc/role.d/snow_reference_template). 
-Consider to share the new role uptream following the instructions detailed [here](mydoc_contribute_back.html)
+The template snow_reference_template will help you to develop new roles (available in /sNow/snow-tools/etc/role.d/snow_reference_template).
+Consider to share the new role upstream following the instructions detailed [here](mydoc_contribute_back.html)
 ``` bash
 #!/bin/bash
 # Configure the new image for sNow! HPC suite
@@ -102,12 +102,12 @@ Consider to share the new role uptream following the instructions detailed [here
 
 # Now! roles are shell scripts easy to develop and to understand
 # Keep in mind the following tips and tricks which will help you to develop new roles:
-# (1) Use enviroment variables defined in snow.conf, and extend them if you need new 
+# (1) Use environment variables defined in snow.conf, and extend them if you need new
 #     variables to work with
-# (2) When you generate a new configuration file, remember to copy the file in the 
-#     deployed system and also /sNow/snow-confispace/system_files. If there is a file 
+# (2) When you generate a new configuration file, remember to copy the file in the
+#     deployed system and also /sNow/snow-confispace/system_files. If there is a file
 #     in this path, avoid to overwrite it and used it to setup your new system. i
-#     This will help to integrate Continous Integration into your system.
+#     This will help to integrate Continuous Integration into your system.
 # (3) Place comments inside complex sections of the code in order to help people to understand what you are doing
 # (4) Use chroot ${prefix} to run commands inside the new deployed system
 # (5) Use installDebianPackage ${prefix} to install packages
@@ -138,28 +138,28 @@ if [[ -f /sNow/snow-tools/share/common.sh ]]; then
 fi
 
 ##############     EVALUATE WHO PROVIDES THE SERVICE (SITE, SNOW or BOTH)     ###############
-# Setup New Serivce Client
+# Setup New Service Client
 # get the IP of the server offering this service
 SNOW_NEWSERVICE_SERVER=$(gawk '{if($2 ~ /service/){print $4}}' $SNOW_TOOL/etc/domains.conf)
 # If the site is offering the server already and sNow! is also deploying the server,
-# then we asume that sNow server will act as a proxy or relay server (usefull to avoid DOS of performance degradation)
+# then we assume that sNow server will act as a proxy or relay server (useful to avoid DOS of performance degradation)
 # Otherwise, we will use the only available service.
-if  [[ ! -z "$SNOW_NEWSERVICE_SERVER" && ! -z "$SITE_NEWSERVICE_SERVER" ]]; then 
+if  [[ ! -z "$SNOW_NEWSERVICE_SERVER" && ! -z "$SITE_NEWSERVICE_SERVER" ]]; then
     NEWSERVICE_SERVER=$SNOW_NEWSERVICE_SERVER
 else
     NEWSERVICE_SERVER="${SITE_NEWSERVICE_SERVER:-$SNOW_NEWSERVICE_SERVER}"
 fi
 
 ##############     EVALUATE IF THE SERVER IS AVAILABLE/EXPECTED OR NOT     ###############
-if  [[ ! -z "$NEWSERVICE_SERVER" ]]; then 
+if  [[ ! -z "$NEWSERVICE_SERVER" ]]; then
     # Install the required packages
     installDebianPackage ${prefix} whatever
     # Check if the configuration file already exists
-    if [[ -e /sNow/snow-configspace/system_files/etc/NEWSERVICE.conf ]]; then 
+    if [[ -e /sNow/snow-configspace/system_files/etc/NEWSERVICE.conf ]]; then
         # Transfer the existing file to the final destination
         cp -p /sNow/snow-configspace/system_files/etc/NEWSERVICE.conf ${prefix}/etc/NEWSERVICE.conf
     else
-        # Parse the default configuration file provided by the OS distribution or your advanced 
+        # Parse the default configuration file provided by the OS distribution or your advanced
         # configuration template located in etc/config_template.d/NEWSERVICE/NEWSERVICE.conf
         # cp -p etc/config_template.d/NEWSERVICE/NEWSERVICE.conf ${prefix}/etc/NEWSERVICE.conf
         sed -i 's|__NEW_SERVICE_PARAMETER__|$NEW_SERVICE_PARAMETER|g' ${prefix}/etc/NEWSERVICE.conf

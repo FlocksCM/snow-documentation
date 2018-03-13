@@ -8,7 +8,7 @@ permalink: mydoc_snow_installation.html
 folder: mydoc
 ---
 
-The sNow! default configuration will setup a completely functional HPC cluster. Additional changes may be required to customize the cluster to suit your needs. Access as root user in the sNow! server and follow one of the two following installation methods:
+The sNow! default configuration will setup a completely functional HPC cluster. Additional changes may be required to customise the cluster to suit your needs. Access as root user in the sNow! server and follow one of the two following installation methods:
 
 ## Default install (recommended)
 
@@ -62,7 +62,7 @@ export SNOW_HOME=/home
 ### Admin users
 sNow! creates one user by default called snow. If you have already arranged HPCNow! support, an additional user called hpcnow will be created. If the default user/group name, UID or GID are already in use, you can update them by exporting the following variables.
 
-The sNow! user (snow) plays the main admin role. 
+The sNow! user (snow) plays the main admin role.
 
 ```
 export sNow_USER=snow
@@ -101,4 +101,3 @@ If you want to review the changes on the config files made by the sNow! installa
 ```
 find /etc -name "*-snowbkp" -print
 ```
-

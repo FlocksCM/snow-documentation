@@ -3,7 +3,7 @@ title: Download Domain Template
 tags: [template domain]
 keywords: template, domain, domains, roles
 last_updated: July 16, 2016
-summary: ""
+summary: "This section details the download process of the pre-built domain images which are used as a template in role deployment."
 sidebar: mydoc_sidebar
 permalink: mydoc_download_domain_template.html
 folder: mydoc

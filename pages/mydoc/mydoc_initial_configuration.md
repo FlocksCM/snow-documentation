@@ -1,10 +1,10 @@
 ---
-title: Initial Configuration of sNow! Management Node
+title: Initialise sNow! Configuration
 tags: [domains]
 keywords: domains
 summary: "The sNow! domain configuration file (domains.conf) provides a table of parameters for each sNow! domain, including the associated roles which define the services provided by each domain (see active-domains.conf) and also the network parameters."
 sidebar: mydoc_sidebar
-permalink: mydoc_initial_configuration.html
+permalink: mydoc_initialise_configuration.html
 folder: mydoc
 ---
 The sNow! domain configuration file (domains.conf) provides a table of parameters for each sNow! domain, including the associated roles which define the services provided by each domain (see active-domains.conf) and also the network parameters.
@@ -48,6 +48,22 @@ If a domain can have multiple roles, each role will be executed in the order def
 * gw_vif1
 
 The following lines represent a typical example of domains.conf configuration file:
+
+```
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
+#   hostname                     role   vif0          ip_vif0   br_vif0          mac_vif0        masq_vif0          gw_vif0   vif1          ip_vif1   br_vif1          mac_vif1        masq_vif1          gw_vif1 #
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------#
+    snow01	                   snow   eth0         10.1.0.1    xsnow0 76:fd:31:9e:01:01      255.255.0.0         10.1.0.1   eth1             none     xpub0 76:fd:31:9e:01:02                              dhcp
+    snow02	                   snow   eth0         10.1.0.2    xsnow0 76:fd:31:9e:02:01      255.255.0.0         10.1.0.1   eth1             none     xpub0 76:fd:31:9e:02:02                              dhcp
+    deploy01	               deploy   eth0         10.1.0.3    xsnow0 76:fd:31:9e:03:01      255.255.0.0         10.1.0.1   eth1             none     xpub0 76:fd:31:9e:03:02                              dhcp
+      ldap01	          ldap-master   eth0         10.1.0.4    xsnow0 76:fd:31:9e:04:01      255.255.0.0         10.1.0.1   eth1             none     xpub0 76:fd:31:9e:04:02                              dhcp
+    syslog01	               syslog   eth0         10.1.0.5    xsnow0 76:fd:31:9e:05:01      255.255.0.0         10.1.0.1   eth1             none     xpub0 76:fd:31:9e:05:02                              dhcp
+     proxy01	                proxy   eth0         10.1.0.6    xsnow0 76:fd:31:9e:06:01      255.255.0.0         10.1.0.1   eth1             none     xpub0 76:fd:31:9e:06:02                              dhcp
+   slurmdb01	             slurmdbd   eth0         10.1.0.7    xsnow0 76:fd:31:9e:07:01      255.255.0.0         10.1.0.1   eth1             none     xpub0 76:fd:31:9e:07:02                              dhcp
+     slurm01	     slurmctld-master   eth0         10.1.0.8    xsnow0 76:fd:31:9e:08:01      255.255.0.0         10.1.0.1   eth1             none     xpub0 76:fd:31:9e:08:02                              dhcp
+   monitor01	              monitor   eth0         10.1.0.9    xsnow0 76:fd:31:9e:09:01      255.255.0.0         10.1.0.1   eth1             none     xpub0 76:fd:31:9e:09:02                              dhcp
+     login01	            login,cfs   eth0        10.1.0.10    xsnow0 76:fd:31:9e:10:01      255.255.0.0         10.1.0.1   eth1             none     xpub0 76:fd:31:9e:10:02                              dhcp
+```
 
 {% include warning.html content="If the sNow! server is also the NFS server, you will need to restart the NFS daemon at this stage. The standard exportfs -ra will not work." %}
 

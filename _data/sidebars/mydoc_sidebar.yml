@@ -23,15 +23,15 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Get started
+    - title: About sNow!
       url: /index.html
       output: web, pdf
       type: homepage
 
-    - title: Licensing and enterprise support
+    - title: Licensing and Enterprise Support
       url: /mydoc_support.html
       output: web, pdf
-      
+
     - title: Why sNow!
       url: /mydoc_why_snow.html
       output: web, pdf
@@ -48,80 +48,72 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: 1.1 Release notes
+    - title: 1.1 Release Notes
       url: /mydoc_release_notes_1_1.html
       output: web, pdf
 
-  - title: Installation
+  - title: Installation Guide
     output: web, pdf
     folderitems:
 
-    - title: OS as sNow! Installation 
+    - title: Quick Installation Notes
+      url: /mydoc_quick_installation.html
+      output: web, pdf
+
+    - title: OS Installation
       output: web, pdf
       folderitems:
 
       - title: Debian
-        url: /mydoc_os_installation.html
+        url: /mydoc_os_installation_debian.html
         output: web, pdf
 
-    - title: sNow! installation
+    - title: sNow! Installation
       url: /mydoc_snow_installation.html
       output: web, pdf
 
-    - title: SSH access
+    - title: SSH Access
       url: /mydoc_ssh_access.html
       output: web, pdf
-      
-    - title: Escalate to root user
+
+    - title: Escalate to Root User
       url: /mydoc_escalate_to_root.html
-      output: web, pdf      
+      output: web, pdf
 
-  - title: Configuration
-    output: web, pdf
-
-    folderitems:
-    - title: Check List
+    - title: Configuration Check List
       url: /mydoc_check_list.html
       output: web, pdf
 
       subfolders:
-      - title: Network configuration
+      - title: Network Configuration
         output: web, pdf
         subfolderitems:
 
-        - title: Setup network bridges
+        - title: Setup Network Bridges
           url: /mydoc_setup_network_bridges.html
           output: web
-          
-        - title: Configuration example for Scenario A
+
+        - title: Configuration Example for Scenario A
           url: /mydoc_scenario_a.html
           output: web
-         
-        - title: Configuration example for Scenario B
+
+        - title: Configuration Example for Scenario B
           url: /mydoc_scenario_b.html
           output: web
 
-        - title: Configuration example for Scenario C
+        - title: Configuration Example for Scenario C
           url: /mydoc_scenario_c.html
           output: web
-          
-    - title: Hostname setting
+
+    - title: Hostname Setting
       url: /mydoc_hostname_setting.html
       output: web, pdf
 
-    - title: Customize your cluster before initializing
+    - title: sNow! Configuration
       url: /mydoc_customize_your_cluster.html
       output: web, pdf
 
-    - title: Selecting domains
-      url: /mydoc_selecting_domains.html
-      output: web, pdf
-
-    - title: List of available roles
-      url: /mydoc_available_roles.html
-      output: web, pdf
-
-    - title: Initial configuration
+    - title: Initialize Cluster
       url: /mydoc_initial_configuration.html
       output: web, pdf
 
@@ -129,15 +121,23 @@ entries:
       url: /mydoc_download_domain_template.html
       output: web, pdf
 
+  - title: Role Management
+    output: web, pdf
+    folderitems:
+
+    - title: List Roles
+      url: /mydoc_list_roles.html
+      output: web, pdf
+
+    - title: Available Roles
+      url: /mydoc_available_roles.html
+      output: web, pdf
+
     - title: Custom Roles
       url: /mydoc_custom_roles.html
       output: web, pdf
 
-    - title: How to create custom LDAP certificates
-      url: /mydoc_how_to_create_custom_ldap_certificates.html
-      output: web, pdf
-
-  - title: Compute Node Deployment
+  - title: Template Management
     output: web, pdf
     folderitems:
 
@@ -145,8 +145,56 @@ entries:
       url: /mydoc_deployment_templates_and_basics.html
       output: web, pdf
 
-    - title: Template Cloning
+    - title: List
+      url: /mydoc_deploy_the_first_compute_node.html
+      output: web, pdf
+
+    - title: Cloning
       url: /mydoc_template_cloning.html
+      output: web, pdf
+
+    - title: Import & Export?
+      url: /mydoc_deploy_the_first_compute_node.html
+      output: web, pdf
+
+    - title: Remove
+      url: /mydoc_deploy_the_first_compute_node.html
+      output: web, pdf
+
+  - title: Image Management
+    output: web, pdf
+    folderitems:
+
+    - title: Image types
+      url: /mydoc_image_types.html
+      output: web, pdf
+
+    - title:
+      url: /mydoc_image_management.html
+      output: web, pdf
+
+    - title: List
+      url: /mydoc_deploy_the_first_compute_node.html
+      output: web, pdf
+
+    - title: Cloning
+      url: /mydoc_template_cloning.html
+      output: web, pdf
+
+    - title: Import & Export?
+      url: /mydoc_deploy_the_first_compute_node.html
+      output: web, pdf
+
+    - title: Remove
+      url: /mydoc_deploy_the_first_compute_node.html
+      output: web, pdf
+
+  - title: Compute Node Management
+    output: web, pdf
+    folderitems:
+
+    - title: Deployment templates and basics
+      url: /mydoc_deployment_templates_and_basics.html
       output: web, pdf
 
     - title: OS deployment repository
@@ -161,16 +209,36 @@ entries:
       url: /mydoc_deploy_the_first_compute_node.html
       output: web, pdf
 
-  - title: Compute Node Cloning
-    output: web, pdf
-    folderitems:
-
-    - title: Image types
-      url: /mydoc_image_types.html
+    - title: List & Show
+      url: /mydoc_deploy_the_first_compute_node.html
       output: web, pdf
 
-    - title: Image management
-      url: /mydoc_image_management.html
+    - title: Cloning
+      url: /mydoc_template_cloning.html
+      output: web, pdf
+
+    - title: Add
+      url: /mydoc_deploy_the_first_compute_node.html
+      output: web, pdf
+
+    - title: Remove
+      url: /mydoc_deploy_the_first_compute_node.html
+      output: web, pdf
+
+    - title: Boot
+      url: /mydoc_deploy_the_first_compute_node.html
+      output: web, pdf
+
+    - title: Shutdown and Power Cycle
+      url: /mydoc_deploy_the_first_compute_node.html
+      output: web, pdf
+
+    - title: Deploy
+      url: /mydoc_deploy_the_first_compute_node.html
+      output: web, pdf
+
+    - title: Console
+      url: /mydoc_deploy_the_first_compute_node.html
       output: web, pdf
 
   - title: Administration
@@ -241,7 +309,7 @@ entries:
         - title: Shared Storage (DRDB+LVM)
           url: /mydoc_ha_drdb_lvm.html
           output: web, pdf
-          
+
         - title: Shared File System (NFSROOT)
           url: /mydoc_ha_nfsroot.html
           output: web, pdf
@@ -249,7 +317,7 @@ entries:
         - title: Migrate from single sNow! server to sNow! HA cluster
           url: /mydoc_ha_migration.html
           output: web, pdf
-          
+
   - title: Development
     output: web, pdf
     folderitems:
