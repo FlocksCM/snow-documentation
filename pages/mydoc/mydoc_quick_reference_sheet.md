@@ -9,6 +9,7 @@ permalink: mydoc_quick_reference_sheet.html
 folder: mydoc
 ---
 
-[Download](pdf/snow-quick-reference.pdf)
+[Download](images/snow-quick-reference.pdf)
 
-{% include /pdf/snow-quick-reference.pdf %}
+
+{% include image.html file="snow-quick-reference.pdf" alt="Quick Reference" caption="snow-quick-reference" %}
