@@ -61,7 +61,7 @@ entries:
       output: web, pdf
 
     - title: Configuration Check List
-      url: pdf/configuration_check_list.pdf
+      url: /pdf/configuration_check_list.pdf
       output: web, pdf
 
       subfolders:
