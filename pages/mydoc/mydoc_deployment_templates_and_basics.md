@@ -19,7 +19,7 @@ centos-7.3-default                Default template based on CentOS 7.3
 ```
 {% include note.html content="You need to configure your compute nodes to boot from PXE from the first (usually) network interface." %}
 
-In the folder defined in the template path you will find: 
+In the folder defined in the template path you will find:
 * The main postconfig script which is distribution agnostic (postconfig.sh)
 * The list of required kernels to boot the system from PXE. These are usually downloaded during the sNow! server installation and defined in pxe_kernels.conf. This file only needs to be updated if you are using custom kernels and you also want to setup continuous integration or a disaster recovery environment.
 * The templates are defined by a subset of files located in a folder with the same name of the template.
@@ -27,7 +27,7 @@ In the folder defined in the template path you will find:
 The schema of the template is defined in the following example based on the default CentOS 7 template, which is located in the following folder:
 /sNow/snow-configspace/boot/templates/centos-7.3-default
 
-* ```initrd.img``` is a scheme for loading a temporary root file system into memory, which may be used as part of the Linux startup process. 
+* ```initrd.img``` is a scheme for loading a temporary root file system into memory, which may be used as part of the Linux startup process.
 * ```vmlinuz``` is a compressed Linux kernel, and it is capable of loading the operating system into memory via PXE so that the computer becomes usable and applications can be run.
 * ```config``` contains environment variables used during installation. By default, it contains the sNow! and HPCNow! user UID and GID.
 * ```repos``` contains a list of package repositories and the url to the keys (if required). It supports unix path, https, http and ftp protocols.
@@ -55,7 +55,7 @@ In the next picture you can find an example of the Console Redirection configura
 
 If you want to change the console redirection settings for a specific node in the cluster you have to interact with the node JSON file. To do this:
 
-```
+```json
 root@snow01:~# snow show nodes node019
 {
   "cluster": "mycluster",

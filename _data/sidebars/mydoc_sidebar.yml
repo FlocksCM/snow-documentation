@@ -111,7 +111,7 @@ entries:
       output: web, pdf
 
     - title: sNow! Configuration
-      url: /mydoc_customize_your_cluster.html
+      url: /mydoc_snow_conf.html
       output: web, pdf
 
     - title: Initialize Cluster

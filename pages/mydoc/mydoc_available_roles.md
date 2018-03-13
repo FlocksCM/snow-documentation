@@ -1,5 +1,5 @@
 ---
-title: List of available roles
+title: Available Roles
 tags: [domains, roles, vms, vm, containers]
 keywords: includes, conref, dita, transclusion, transclude, inclusion, reference
 last_updated: July 3, 2016
@@ -58,7 +58,7 @@ Key configuration files:
 |/etc/beegfs/beegfs-mounts.conf|-|Defines the BeeGFS client setup|
 
 ## deploy                        
-The role “deploy” configures Dnsmasq to provide PXE, TFTP, DHCP and DNS. Those services are also integrated with sNow! CLI in order to deploy systems with kickstart (RHEL/CentOS), pressed (Debian/Ubuntu) and autoyast (SuSE) based on predefined templates. It also interacts with the sNow! CLI to generate and boot diskless images based on previously deployed systems. 
+The role “deploy” configures Dnsmasq to provide PXE, TFTP, DHCP and DNS. Those services are also integrated with sNow! CLI in order to deploy systems with kickstart (RHEL/CentOS), pressed (Debian/Ubuntu) and autoyast (SuSE) based on predefined templates. It also interacts with the sNow! CLI to generate and boot diskless images based on previously deployed systems.
 The role also installs the fishermac utility, which simplifies the “painful” process of collecting MAC addresses from the compute nodes. This utility allows populating /etc/ethers, which contains the table of IPs and MAC addresses used by dnsmasq to identify each node.
 
 Key parameters in snow.conf
@@ -87,7 +87,7 @@ Default ports
 ## docker
 Installs and sets up Docker Community Edition to accommodate Docker based services. You will need to follow the standard proceedures to deploy, initialize and manage Docker containers in the domains deployed with this role. If you have a complex workflow or a large set of Docker containers, consider using Docker Swarm roles described below.
 As the system doesn’t know what services are going to be allocated in that domain, no firewall filters will be applied.
-More information regarding Docker management is available here: https://docs.docker.com/get-started/ 
+More information regarding Docker management is available here: https://docs.docker.com/get-started/
 
 Key parameters in snow.conf
 
@@ -172,9 +172,9 @@ Default ports
 |TCP/8650-86XX|GMOND|Gmond (each cluster has a dedicated port)|
 
 ## openvpn_as                    
-This role deploys OpenVPN Access Server (two free client connections for testing purposes). OpenVPN Access Server is a full featured secure network tunneling VPN software solution that integrates OpenVPN server capabilities, enterprise management capabilities, simplified OpenVPN Connect UI, and OpenVPN Client software packages that accommodate Windows, MAC, Linux, Android, and iOS environments. 
+This role deploys OpenVPN Access Server (two free client connections for testing purposes). OpenVPN Access Server is a full featured secure network tunneling VPN software solution that integrates OpenVPN server capabilities, enterprise management capabilities, simplified OpenVPN Connect UI, and OpenVPN Client software packages that accommodate Windows, MAC, Linux, Android, and iOS environments.
 OpenVPN Access Server supports a wide range of configurations, including secure and granular remote access to internal and/ or private cloud network resources and applications with fine-grained access control.
-Learn more about this software here: https://openvpn.net/index.php/access-server/docs.html 
+Learn more about this software here: https://openvpn.net/index.php/access-server/docs.html
 
 Key parameters in snow.conf
 
@@ -198,8 +198,8 @@ Default ports
 
 ## proxy                         
 This role deploys a transparent proxy server based on Squid for HTTP(S),FTP and also relay servers for NTP and SMTP (Exim).
-More information regarding Squid is available here: http://www.squid-cache.org/Doc/ 
-More information regarding Exim is available here: http://www.exim.org/docs.html 
+More information regarding Squid is available here: http://www.squid-cache.org/Doc/
+More information regarding Exim is available here: http://www.exim.org/docs.html
 
 Key parameters in snow.conf
 
@@ -240,7 +240,7 @@ Default ports
 
 ## slurmctld-master              
 This role deploys and installs the Slurm master server and is configured based on the parameters available in snow.conf
-Slurm is one of the most popular job scheduling systems.  It is open-source, fault-tolerant, and highly scalable, suitable for small to very large Linux clusters. 
+Slurm is one of the most popular job scheduling systems.  It is open-source, fault-tolerant, and highly scalable, suitable for small to very large Linux clusters.
 As a cluster workload manager, Slurm has three key functions. First, it allocates exclusive and/or non-exclusive access to resources (compute nodes) to users for some duration of time so they can perform work. Second, it provides a framework for starting, executing, and monitoring work (normally a parallel job) on the set of allocated nodes. Finally, it handles the contention for resources by managing a queue of pending work. Optional plugins can be used for accounting, advanced reservation, gang scheduling (time sharing for parallel jobs), backfill scheduling, topology optimized resource selection, resource limits by user or bank account, and sophisticated multifactor job prioritization algorithms.
 
 Key parameters in snow.conf
@@ -322,7 +322,7 @@ Template to help sNow! users develop their own roles quickly.
 
 ## swarm-manager
 Installs and sets up the Docker Swarm Manager to accommodate Docker based services.
-This role installs Portainer by default, which is a simple management solution for Docker. It consists of a web UI that allows you to easily manage your Docker containers, images, networks and volumes. In addition to that, the role also deploys “hello-world” Docker containers which are populated and replicated across all the swarm workers. 
+This role installs Portainer by default, which is a simple management solution for Docker. It consists of a web UI that allows you to easily manage your Docker containers, images, networks and volumes. In addition to that, the role also deploys “hello-world” Docker containers which are populated and replicated across all the swarm workers.
 
 Important note: Portainer requires you to setup a password the first time you initiate the service. Please access the Portainer allocated in your swarm-manager domain and setup the admin password before to move the service to production.
 
@@ -330,7 +330,7 @@ Since the system doesn’t know what services are going to be allocated in that 
 
 General information regarding Docker Swarm is available here: https://docs.docker.com/engine/swarm/
 More information regarding the swarm mode routing mesh is available here: https://docs.docker.com/engine/swarm/ingress/
-More information regarding swarm for production is available here: http://docs.master.dockerproject.org/swarm/plan-for-production/ 
+More information regarding swarm for production is available here: http://docs.master.dockerproject.org/swarm/plan-for-production/
 
 Default ports
 
@@ -390,7 +390,7 @@ Default ports
 |TCP/514|rsyslog|Default port for the RSYSLOG logging server|
 
 ## torque-master
-This role is responsible for installing and setting up the TORQUE workload manager and generates the install packages for the compute nodes. TORQUE stands for “Terascale Open-source Resource and QUEue Manager” and it is a distributed resource manager which provides control over batch jobs and distributed compute nodes. TORQUE can integrate with the non-commercial Maui Cluster Scheduler or the commercial Moab Workload Manager to improve overall utilization, scheduling and administration on a cluster. This role also installs Maui Cluster Scheduler if the TORQUE version is compatible with Maui. 
+This role is responsible for installing and setting up the TORQUE workload manager and generates the install packages for the compute nodes. TORQUE stands for “Terascale Open-source Resource and QUEue Manager” and it is a distributed resource manager which provides control over batch jobs and distributed compute nodes. TORQUE can integrate with the non-commercial Maui Cluster Scheduler or the commercial Moab Workload Manager to improve overall utilization, scheduling and administration on a cluster. This role also installs Maui Cluster Scheduler if the TORQUE version is compatible with Maui.
 
 Important note: At the time of writing, Maui 3.3.2 is not compatible with the latest stable version of TORQUE 6.1.1.1. In order to have Maui and TORQUE working, you should should consider installing TORQUE 5.1.3.
 
@@ -427,4 +427,3 @@ Default ports
 | Port | Service | Function |
 |------|---------|----------|
 |TCP/5900+ | VNC| Virtual Network Computing (VNC) |
-

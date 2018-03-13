@@ -1,5 +1,5 @@
 ---
-title: sNow! Configuration
+title: sNow! Configuration File
 tags:
   - configuration
   - snow.conf

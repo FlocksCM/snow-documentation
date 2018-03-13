@@ -20,22 +20,6 @@ The following example shows how to setup the DMZ bridge where the domains will b
 In order to enable the required network bridges, follow the next four simple steps:
 
 1. Download the example configuration file from our website, update the IP addresses and remove the configuration blocks that you do not need. Edit /etc/network/interfaces by following this [example file](examples/network_interfaces_scenario_b.txt) (please carefully review the file and adapt it to your real network environment)
-<div class="panel-group" id="accordion">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">/etc/network/interfaces</a>
-            </h4>
-        </div>
-        <div id="collapseOne" class="panel-collapse collapse noCrossRef">
-            <div class="panel-body">
-                <pre>
-                {% include examples/network_interfaces_scenario_b.txt %}
-                </pre>
-            </div>
-        </div>
-    </div>
-</div>
 2. After the network configuration file is edited, reboot the system and check your configuration has been applied with the following command:
 ```
 ip addr show

@@ -1,10 +1,10 @@
 ---
-title: Selecting domains
+title: List Roles
 tags: [domains]
 keywords: domains, roles, vms, containers
 last_updated: July 3, 2016
 sidebar: mydoc_sidebar
-permalink: mydoc_selecting_domains.html
+permalink: mydoc_list_roles.html
 folder: mydoc
 ---
 

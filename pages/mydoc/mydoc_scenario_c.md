@@ -25,28 +25,11 @@ dummy numdummies=1
 ```
 2. Download the configuration file example for /etc/network/interfaces from our website, update the IP addresses and remove the configuration blocks that you do not need.
 Edit /etc/network/interfaces by following this [example file](examples/network_interfaces_scenario_c.txt) (please carefully review the file and adapt it to your real network environment)
-<div class="panel-group" id="accordion">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">/etc/network/interfaces</a>
-            </h4>
-        </div>
-        <div id="collapseOne" class="panel-collapse collapse noCrossRef">
-            <div class="panel-body">
-                <pre>
-                {% include examples/network_interfaces_scenario_c.txt %}
-                </pre>
-            </div>
-        </div>
-    </div>
-</div>
 3. After the network configuration file is edited, reboot the system and check your configuration has been applied with the following command:
 ```
 ip addr show
 ```
 4. The expected output should be similar to the following text:
-
 ```
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -67,15 +50,13 @@ ip addr show
     inet 192.168.7.1/24 brd 192.168.7.255 scope global xsnow0
        valid_lft forever preferred_lft forever
 ```
-
 5. After that, you need to setup the firewall. sNow! allows you to setup the firewall automatically by taking into account all the services available in domains.conf and dmz_portmap.conf, which contains all the NAT rules associated with each role. sNow! uses the Uncomplicated Firewall (ufw) to manage IPTABLES. The following command lines will setup advanced and complex rules for you.
-
 ```
 snow update firewall
 ufw disable
 ufw enable
 ```
-You can modify or add new rules in the firewall by working with the standard ufw files or directly with IPTABLES. 
+You can modify or add new rules in the firewall by working with the standard ufw files or directly with IPTABLES.
 {% include note.html content="These firewall rules are only required for Scenario C." %}
 {% include tip.html content="The default port for SSH for the sNow! server is 22/TCP. It is recommend that you replace this with a higher port number in order to avoid automatic attacks. If you want to change it, you will need to update the OpenSSH config file (/etc/ssh/sshd_config) and also the firewall (/etc/ufw/applications.d/ufw-snow)." %}
 {% include warning.html content="If you are installing remotely, ensure that you have access to the console. Otherwise there is a high risk of losing the SSH connection due to a misconfiguration in the firewall.

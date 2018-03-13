@@ -1,10 +1,10 @@
 ---
-title: Initialise sNow! Configuration
+title: Initial sNow! Configuration
 tags: [domains]
 keywords: domains
 summary: "The sNow! domain configuration file (domains.conf) provides a table of parameters for each sNow! domain, including the associated roles which define the services provided by each domain (see active-domains.conf) and also the network parameters."
 sidebar: mydoc_sidebar
-permalink: mydoc_initialise_configuration.html
+permalink: mydoc_initial_configuration.html
 folder: mydoc
 ---
 The sNow! domain configuration file (domains.conf) provides a table of parameters for each sNow! domain, including the associated roles which define the services provided by each domain (see active-domains.conf) and also the network parameters.

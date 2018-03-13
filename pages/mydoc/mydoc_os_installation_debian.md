@@ -4,7 +4,7 @@ tags: [getting_started, troubleshooting]
 keywords:
 summary: "OS installation notes for Debian 9 sNow! servers"
 sidebar: mydoc_sidebar
-permalink: mydoc_os_installation.html
+permalink: mydoc_os_installation_debian.html
 folder: mydoc
 ---
 In the following chapters we will discuss how to start from scratch until you have a fully working HPC Cluster.

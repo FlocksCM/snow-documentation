@@ -23,30 +23,12 @@ An IP on the ib0 Infiniband interface or in the high speed network interface of 
 In order to enable the required network bridges, follow the next four simple steps:
 
 1. Edit /etc/network/interfaces by following this [example file](examples/network_interfaces_scenario_a.txt) (please carefully review the file and adapt it to your real network environment)
-<div class="panel-group" id="accordion">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">/etc/network/interfaces</a>
-            </h4>
-        </div>
-        <div id="collapseOne" class="panel-collapse collapse noCrossRef">
-            <div class="panel-body">
-                <pre>
-                {% include examples/network_interfaces_scenario_b.txt %}
-                </pre>
-            </div>
-        </div>
-    </div>
-</div>
 2. After the network configuration file is edited, reboot the system and check your configuration has been applied with the following commands:
-
 ```
 ifconfig
 ip addr show
 ```
 3. The expected output should be similar to the following, if you used ifconfig on the previous step:
-
 ```
 eth0  	Link encap:Ethernet  HWaddr 00:1e:67:d6:0e:4e  
       	UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
@@ -95,7 +77,6 @@ xsnow0:mgmt Link encap:Ethernet  HWaddr 00:1e:67:d6:0e:4e
       	inet addr:192.168.100.1  Bcast:192.168.100.255  Mask:255.255.255.0
       	UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
 ```
-
 4. You can check the bridges and their associated network interfaces with the following command:
 ```
 brctl show
