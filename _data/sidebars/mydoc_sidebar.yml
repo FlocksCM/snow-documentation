@@ -61,7 +61,7 @@ entries:
       output: web, pdf
 
     - title: Configuration Check List
-      url: /pdf/configuration_check_list.pdf
+      url: https://github.com/HPCNow/snow-documentation/raw/master/pdf/configuration_check_list.pdf
       output: web, pdf
 
       subfolders:
@@ -247,7 +247,7 @@ entries:
     folderitems:
 
     - title: Quick Reference Sheet
-      url: /mydoc_quick_reference_sheet.html
+      url: https://github.com/HPCNow/snow-documentation/raw/master/pdf/snow-quick-reference.pdf
       output: web, pdf
 
     - title: sNow! CLI
