@@ -11,4 +11,4 @@ folder: mydoc
 
 [Download](pdf/snow-quick-reference.pdf)
 
-{% include pdf/snow-quick-reference.pdf %}
+{% include /pdf/snow-quick-reference.pdf %}

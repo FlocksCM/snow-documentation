@@ -11,4 +11,4 @@ folder: mydoc
 
 Consider to downloading and filling up the [PDF](pdf/configuration_check_list.pdf) form.
 
-{% include pdf/configuration_check_list.pdf %}
+{% include /pdf/configuration_check_list.pdf %}
