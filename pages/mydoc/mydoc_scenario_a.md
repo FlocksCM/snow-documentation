@@ -28,7 +28,7 @@ In order to enable the required network bridges, follow the next four simple ste
 ifconfig
 ip addr show
 ```
-3. The expected output should be similar to the following, if you used ifconfig on the previous step:
+3. The expected output should be similar to the following, if you used ifconfig on the previous step: 
 ```
 eth0  	Link encap:Ethernet  HWaddr 00:1e:67:d6:0e:4e  
       	UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1

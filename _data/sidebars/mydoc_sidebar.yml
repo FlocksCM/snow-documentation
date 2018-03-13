@@ -142,24 +142,28 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Deployment templates and basics
-      url: /mydoc_deployment_templates_and_basics.html
+    - title: Overview
+      url: /mydoc_template_overview.html
       output: web, pdf
 
-    - title: List
-      url: /mydoc_deploy_the_first_compute_node.html
+    - title: Available Templates
+      url: /mydoc_template_available.html
       output: web, pdf
 
-    - title: Cloning
-      url: /mydoc_template_cloning.html
+    - title: List Templates
+      url: /mydoc_template_list.html
       output: web, pdf
 
-    - title: Import & Export?
-      url: /mydoc_deploy_the_first_compute_node.html
+    - title: Clone Templates
+      url: /mydoc_template_clone.html
       output: web, pdf
 
-    - title: Remove
-      url: /mydoc_deploy_the_first_compute_node.html
+#    - title: Import & Export Templates
+#      url: /mydoc_template_import_export.html
+#      output: web, pdf
+
+    - title: Remove Templates
+      url: /mydoc_template_remove.html
       output: web, pdf
 
   - title: Image Management
@@ -170,24 +174,24 @@ entries:
       url: /mydoc_image_types.html
       output: web, pdf
 
-    - title:
-      url: /mydoc_image_management.html
+    - title: Available Images
+      url: /mydoc_image_available.html
       output: web, pdf
 
-    - title: List
-      url: /mydoc_deploy_the_first_compute_node.html
+    - title: List Images
+      url: /mydoc_image_list.html
       output: web, pdf
 
-    - title: Cloning
-      url: /mydoc_template_cloning.html
+    - title: Clone Images
+      url: /mydoc_image_clone.html
       output: web, pdf
 
-    - title: Import & Export?
-      url: /mydoc_deploy_the_first_compute_node.html
+    - title: Import & Export Images
+      url: /mydoc_image_import_export.html
       output: web, pdf
 
-    - title: Remove
-      url: /mydoc_deploy_the_first_compute_node.html
+    - title: Remove Images
+      url: /mydoc_image_remove.html
       output: web, pdf
 
   - title: Compute Node Management
@@ -211,35 +215,35 @@ entries:
       output: web, pdf
 
     - title: List & Show
-      url: /mydoc_deploy_the_first_compute_node.html
+      url: /mydoc_node_list_and_show.html
       output: web, pdf
 
     - title: Cloning
-      url: /mydoc_template_cloning.html
+      url: /mydoc_node_clone.html
       output: web, pdf
 
     - title: Add
-      url: /mydoc_deploy_the_first_compute_node.html
+      url: /mydoc_node_add.html
       output: web, pdf
 
     - title: Remove
-      url: /mydoc_deploy_the_first_compute_node.html
+      url: /mydoc_node_remove.html
       output: web, pdf
 
     - title: Boot
-      url: /mydoc_deploy_the_first_compute_node.html
+      url: /mydoc_node_boot.html
       output: web, pdf
 
-    - title: Shutdown and Power Cycle
-      url: /mydoc_deploy_the_first_compute_node.html
+    - title: Shutdown
+      url: /mydoc_node_shutdown.html
       output: web, pdf
 
     - title: Deploy
-      url: /mydoc_deploy_the_first_compute_node.html
+      url: /mydoc_node_deploy.html
       output: web, pdf
 
     - title: Console
-      url: /mydoc_deploy_the_first_compute_node.html
+      url: /mydoc_node_console.html
       output: web, pdf
 
   - title: Administration

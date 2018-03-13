@@ -1,11 +1,11 @@
 ---
-title: Deployment Templates and Basics
+title: Deployment Template Overview
 tags: [troubleshooting]
 keywords: deployment, templates, compute nodes
 last_updated: July 3, 2016
 summary: ""
 sidebar: mydoc_sidebar
-permalink: mydoc_deployment_templates_and_basics.html
+permalink: mydoc_template_overview.html
 folder: mydoc
 ---
 sNow! supports multiple Linux distributions for the deployment for compute nodes. It currently provides a template to deploy CentOS and OpenSuSE Leap and the development roadmap includes providing out of the box deployment compatibility with the most popular Linux distributions. If you need a Linux flavour other than CentOS or OpenSuSE Leap, please contact HPCNow! or a sysadmin specialist in order tailor the solution to your needs. You can list all of the available templates with the following command:
