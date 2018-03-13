@@ -1,21 +1,19 @@
 ## sNow! documentation website repo
-Execute the following commands to test the changes performed before to push any changes in the production branch:
+Execute the following commands to test the changes performed before to push any changes in the master branch:
 
 ```
 scl enable rh-ruby22 bash
 git fetch
-git checkout release-X.Y.Z
+git checkout -b release-X.Y.Z
 git pull
 JEKYLL_ENV=production bundle exec jekyll serve
 ```
 
-In order to visualise the changes, create a SSH tunnel and open a web browser
+In order to visualise the changes, create a SSH tunnel and open this URL (http://localhost:22080) with your web browser:
 
 ```
 ssh -L 22080:localhost:4000 USER@SERVER.hpcnow.com -p X
 ```
-
-http://localhost:22080
 
 ## Requirements
 1. Install ruby as root:

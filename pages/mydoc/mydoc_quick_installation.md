@@ -5,7 +5,7 @@ last_updated: July 3, 2016
 keywords: quick install, reference, guide, snow, cli
 summary: "Quick and semi-automated installation of sNow! cluster manager allows to provision a new cluster from scratch with a predefined configuration."
 sidebar: mydoc_sidebar
-permalink: mydoc_quick_reference_sheet.html
+permalink: mydoc_quick_installation.html
 folder: mydoc
 ---
 
