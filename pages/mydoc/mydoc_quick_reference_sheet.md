@@ -12,4 +12,4 @@ folder: mydoc
 [Download](images/snow-quick-reference.pdf)
 
 
-{% include image.html file="snow-quick-reference.pdf" alt="Quick Reference" caption="snow-quick-reference" %}
+{% include image.html file="snow-quick-reference.png" alt="Quick Reference Sheet" caption="sNow! Quick Reference Sheet" %}
