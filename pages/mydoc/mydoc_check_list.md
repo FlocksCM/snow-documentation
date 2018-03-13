@@ -9,7 +9,6 @@ permalink: mydoc_check_list.html
 folder: mydoc
 ---
 
-# Checklist before installation
-This section provides a reasonable list of parameters that need to known and actions to be performed before to initiate the installation.
-
 Consider to downloading and filling up the [PDF](pdf/configuration_check_list.pdf) form.
+
+{% include pdf/configuration_check_list.pdf %}

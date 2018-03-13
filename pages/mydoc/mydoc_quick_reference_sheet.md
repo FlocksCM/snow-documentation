@@ -9,6 +9,6 @@ permalink: mydoc_quick_reference_sheet.html
 folder: mydoc
 ---
 
-LINK to PDF
-```{% include custom/series_acme_next.html %}```
+[Download](pdf/snow-quick-reference.pdf)
 
+{% include pdf/snow-quick-reference.pdf %}
