@@ -118,6 +118,10 @@ entries:
       url: /mydoc_install_initial_configuration.html
       output: web, pdf
 
+    - title: Next Steps
+      url: /mydoc_install_next_steps.html
+      output: web, pdf
+
   - title: Role Management
     output: web, pdf
     folderitems:
