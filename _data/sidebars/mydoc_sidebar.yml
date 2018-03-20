@@ -60,10 +60,6 @@ entries:
       url: /mydoc_install_quick_installation.html
       output: web, pdf
 
-    - title: Configuration Check List
-      url: /mydoc_install_check_list.html
-      output: web, pdf
-
       subfolders:
       - title: OS Installation
         output: web, pdf

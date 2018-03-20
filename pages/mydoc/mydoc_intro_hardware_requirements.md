@@ -1,9 +1,10 @@
 ---
 title: Hardware Requirements
 sidebar: mydoc_sidebar
-permalink: mydoc_install_hardware_requirements.html
+permalink: mydoc_intro_hardware_requirements.html
 folder: mydoc
 ---
+
 
 1. An internal network switch with enough ports available
 * 1 port per node, minimum, for ethernet provisioning
