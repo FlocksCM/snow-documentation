@@ -8,10 +8,7 @@ permalink: mydoc_install_snow.html
 folder: mydoc
 ---
 
-{% include tip.html content="The following check list can help to define all the information required to install an HPC cluster.
-Consider downloading and filling up the [PDF](images/configuration_check_list.pdf) form before to get started." %}
-
-[<i class="glyphicon glyphicon-download gi-5x"></i>](images/configuration_check_list.pdf)
+<div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i> The following check list can help to define all the information required to install an HPC cluster. Consider downloading and filling up the [PDF](images/configuration_check_list.pdf) form before to get started.</div>
 
 The sNow! default configuration will setup a completely functional HPC cluster. Additional changes may be required to customise the cluster to suit your needs. Access as root user in the sNow! server and follow one of the two following installation methods:
 
