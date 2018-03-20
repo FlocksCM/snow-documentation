@@ -21,9 +21,9 @@ folder: mydoc
 <td markdown="span" align="center"><i class="fa fa-line-chart fa-5x"></i></td>
 </tr>
 <tr>
-<td markdown="span" align="center">###Fast Learning Curve</td>
-<td markdown="span" align="center">###Flexibility</td>
-<td markdown="span" align="center">###Scalability</td>
+<td markdown="span" align="center">### Fast Learning Curve</td>
+<td markdown="span" align="center">### Flexibility</td>
+<td markdown="span" align="center">### Scalability</td>
 </tr>
 <tr>
 <td markdown="span" align="center">Intuitive and easy to learn CLI allows to get the basic skills to control your computing resources.</td>
@@ -46,9 +46,9 @@ folder: mydoc
 <td markdown="span" align="center"><i class="fa fa-trophy fa-5x"></i></td>
 </tr>
 <tr>
-<td markdown="span" align="center">###Community Driven</td>
-<td markdown="span" align="center">###Professional Support</td>
-<td markdown="span" align="center">###Best User Experience</td>
+<td markdown="span" align="center">### Community Driven</td>
+<td markdown="span" align="center">### Professional Support</td>
+<td markdown="span" align="center">### Best User Experience</td>
 </tr>
 <tr>
 <td markdown="span" align="center">sNow! is not only Open Source, it's community driven. Your feedback, suggestions, and requirements have an impact on the development and in the roadmap of the project.</td>
