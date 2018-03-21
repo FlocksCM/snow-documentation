@@ -9,7 +9,6 @@ permalink: mydoc_admin_quick_reference_sheet.html
 folder: mydoc
 ---
 
-[Download](images/snow-quick-reference.pdf)
-
+<div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i> The quick reference guide provides the most popular and common actions for every day operations. Consider downloading and print a copy of this <a href="images/snow-quick-reference.pdf">PDF</a> document.</div>
 
 {% include image.html file="snow-quick-reference.png" alt="Quick Reference Sheet" caption="sNow! Quick Reference Sheet" %}
