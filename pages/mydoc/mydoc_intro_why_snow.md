@@ -3,6 +3,7 @@ title: Why sNow!
 keywords: Fast learning, flexibility, scalability, community driven, professional support, user experience
 last_updated: July 3, 2016
 tags: [getting_started]
+toc: false
 sidebar: mydoc_sidebar
 permalink: mydoc_intro_why_snow.html
 folder: mydoc
@@ -10,7 +11,7 @@ folder: mydoc
 
 
 <div class="row">
-        <div class="col-md-3 col-sm-6">
+        <div class="col-md-4 col-sm-6">
             <div class="panel panel-default text-center">
                 <div class="panel-heading">
                     <span class="fa-stack fa-5x">
@@ -25,7 +26,7 @@ folder: mydoc
                 </div>
             </div>
         </div>
-        <div class="col-md-3 col-sm-6">
+        <div class="col-md-4 col-sm-6">
             <div class="panel panel-default text-center">
                 <div class="panel-heading">
                     <span class="fa-stack fa-5x">
@@ -40,7 +41,7 @@ folder: mydoc
                 </div>
             </div>
         </div>
-        <div class="col-md-3 col-sm-6">
+        <div class="col-md-4 col-sm-6">
             <div class="panel panel-default text-center">
                 <div class="panel-heading">
                     <span class="fa-stack fa-5x">
@@ -55,11 +56,11 @@ folder: mydoc
                 </div>
             </div>
         </div>
-    </div>
+</div>
 
 
-    <div class="row">
-            <div class="col-md-3 col-sm-6">
+<div class="row">
+            <div class="col-md-4 col-sm-6">
                 <div class="panel panel-default text-center">
                     <div class="panel-heading">
                         <span class="fa-stack fa-5x">
@@ -74,7 +75,7 @@ folder: mydoc
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-4 col-sm-6">
                 <div class="panel panel-default text-center">
                     <div class="panel-heading">
                         <span class="fa-stack fa-5x">
@@ -89,7 +90,7 @@ folder: mydoc
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-4 col-sm-6">
                 <div class="panel panel-default text-center">
                     <div class="panel-heading">
                         <span class="fa-stack fa-5x">
@@ -104,4 +105,4 @@ folder: mydoc
                     </div>
                 </div>
             </div>
-        </div>
+</div>
