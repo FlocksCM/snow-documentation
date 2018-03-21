@@ -9,7 +9,7 @@ permalink: mydoc_install_quick_installation.html
 folder: mydoc
 ---
 
-<div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i> The following check list can help to define all the information required to install an HPC cluster. Consider downloading and filling up the <a href="images/configuration_check_list.pdf">PDF</a>form before to get started.</div>
+<div class="alert alert-success" role="alert"><i class="fa fa-download fa-lg"></i> The following check list can help to define all the information required to install an HPC cluster. Consider downloading and filling up the <a href="images/configuration_check_list.pdf">PDF</a> form before to get started.</div>
 
 1. Boot the sNow! master node with a Debian 9.
 2. Press Escape key.

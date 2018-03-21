@@ -11,13 +11,13 @@ The following steps will guide you to setup the cluster and the services as you 
 
 ## Domains Deployment
 Each domain usually takes between one and two minutes to be deployed and booted, although this will mostly depend on your system's IO performance. Follow the instructions detailed in the [domain deploy](mydoc_domain_deploy.html) section.
-## Hardware Stress on Compute nodes
+## Hardware Stress on Compute Nodes
 sNow! installs by default a small OS image which allows to stress the compute nodes to detect potential hardware issues early.
 Consider to run those tests while you are deploying the first node or customising the deployment templates. This image can also be used to generate the mac addresses database (see next section).
 ```
 snow boot node[001-999] stress-x64
 ```
-## Mac Addresses gathering
+## Mac Addresses Gathering
 Collecting the MAC addresses in a cluster is simple but can be time consuming. This [section](mydoc_node_how_to_collect_the_mac_addresses.html) explains some tricks to avoid spending too much time doing this.
 ## Compute Node Deployment
 sNow! supports multiple Linux distributions for the deployment for compute nodes. You can list all of the available templates with the following command:

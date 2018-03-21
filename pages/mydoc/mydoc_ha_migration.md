@@ -22,21 +22,26 @@ This guide asumes that:
 
 By default, the domains OS images are stored in logical volumes managed by LVM2.
 
-The parameter ```IMG_DST``` defines how the images are stored. 
-* ```IMG_DST='lvm=snow_vg'```: the domains OS images are stored inside a Logical Volume created in the snow_vg Volume Group. 
+The parameter ```IMG_DST``` defines how the images are stored.
+* ```IMG_DST='lvm=snow_vg'```: the domains OS images are stored inside a Logical Volume created in the snow_vg Volume Group.
 * ```IMG_DST='dir=/sNow/domains'```: the domains OS images are stored inside loopback files located inside /sNow/domains folder.
 * ```IMG_DST='nfs=$NFS_SERVER:/sNow/domains'```: the domains OS images are stored and exposed through a NFS server.
 
 If your ```IMG_DST``` is set to ```IMG_DST='lvm=snow_vg'```, you will need to migrate those images to a loopback image files or to create additional NFS exports to enable HA mode over a shared file system. The following steps will guide you to migrate domain OS images from LVM to loopback files.
 
-1. Stop the domains: 
+1. Stop the domains:
 ```snow shutdown domains```
-2. Dump the files system to a loopback file for each domain: 
-```dd if=/dev/snow_vg/domain_name_root of=/sNow/domains/domain_name/domain_name_root```
-```dd if=/dev/snow_vg/domain_name_swap of=/sNow/domains/domain_name/domain_name_swap```
+2. Dump the files system to a loopback file for each domain:
+```dd if=/dev/snow_vg/domain_name-root of=/sNow/domains/domain_name/domain_name-root```
+```dd if=/dev/snow_vg/domain_name-swap of=/sNow/domains/domain_name/domain_name-swap```
 where ```domain_name``` is the name of the domain OS image to be migrated.
 3. Update the domain configuration files:
-```sed -i 's|phy://|file://|g' /sNow/snow-tools/etc/domains/domain_name.cfg```
+```bash
+for i in $(ls -1 /sNow/snow-tools/etc/domains/*.cfg);
+do
+    sed -e "s|phy:/dev/snow_vg/|tap:aio:/sNow/domains/deploy01/|g" $i
+done
+```
 4. Try to boot the domain:
 ```snow boot domain_name```
 5. Repeat the same operation for each domain.
@@ -105,9 +110,9 @@ chmod 400 /etc/corosync/authkey
 scp -p /etc/corosync/authkey snow02:/etc/corosync/authkey
 ```
 
-### Configuring corosync 
+### Configuring corosync
 
-The content of /etc/corosync/corosync.conf should be something similar to the following example. Note that this cluster only has two nodes (snow01 and snow02). 
+The content of /etc/corosync/corosync.conf should be something similar to the following example. Note that this cluster only has two nodes (snow01 and snow02).
 
 ```
 # egrep -v "^$|#" /etc/corosync/corosync.conf
@@ -229,7 +234,7 @@ chown -R hacluster:haclient /var/lib/pacemaker
 chmod 750 /var/lib/pacemaker
 ssh snow02 chown -R hacluster:haclient /var/lib/pacemaker
 ssh snow02 chmod 750 /var/lib/pacemaker
-crm cluster health | more 
+crm cluster health | more
 ```
 ### Setup Pacemaker
 
@@ -282,8 +287,8 @@ primitive deploy01 ocf:heartbeat:Xen \
  meta target-role="started" allow-migrate="true"
 ```
 
-Some operations like the live migration requires some extra time. Specially when the VM uses a reasonable amount of memory. 
-It's highly recommended to increase the default timeout to avoid cancelling the live migration due a short time limit. 
+Some operations like the live migration requires some extra time. Specially when the VM uses a reasonable amount of memory.
+It's highly recommended to increase the default timeout to avoid cancelling the live migration due a short time limit.
 The following example, setup 120s as default timeout. You can tune this value attending at your VM needs.
 
 ```
@@ -366,7 +371,7 @@ Notice that this IP ```10.1.0.254``` must match with the IP defined in ```NET_SN
 
 ## Service placement
 
-In order to balance services across the two nodes and also to distribute additional services with native HA (i.e slurm-master slurm-slave) you can use the following instructions to define the preferred hosts. 
+In order to balance services across the two nodes and also to distribute additional services with native HA (i.e slurm-master slurm-slave) you can use the following instructions to define the preferred hosts.
 Failback is useful to define well balanced services, but if you have an ongoing issue, you could trigger a failback in a “semi-faulty” node.
 
 ```
