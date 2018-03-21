@@ -23,145 +23,154 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Get started
+    - title: About sNow!
       url: /index.html
       output: web, pdf
       type: homepage
 
-    - title: Licensing and enterprise support
-      url: /mydoc_support.html
+    - title: Licensing and Enterprise Support
+      url: /mydoc_intro_support.html
       output: web, pdf
-      
+
     - title: Why sNow!
-      url: /mydoc_why_snow.html
+      url: /mydoc_intro_why_snow.html
       output: web, pdf
 
     - title: Software ecosystem
-      url: /mydoc_software_ecosystem.html
+      url: /mydoc_intro_software_ecosystem.html
       output: web, pdf
 
     - title: Hardware requirements
-      url: /mydoc_hardware_requirements.html
+      url: /mydoc_intro_hardware_requirements.html
       output: web, pdf
 
   - title: Release Notes
     output: web, pdf
     folderitems:
 
-    - title: 1.1 Release notes
+    - title: 1.1 Release Notes
       url: /mydoc_release_notes_1_1.html
       output: web, pdf
 
-  - title: Installation
+  - title: Installation Guide
     output: web, pdf
     folderitems:
 
-    - title: OS as sNow! Installation 
-      output: web, pdf
-      folderitems:
-
-      - title: Debian
-        url: /mydoc_os_installation.html
-        output: web, pdf
-
-    - title: sNow! installation
-      url: /mydoc_snow_installation.html
-      output: web, pdf
-
-    - title: SSH access
-      url: /mydoc_ssh_access.html
-      output: web, pdf
-      
-    - title: Escalate to root user
-      url: /mydoc_escalate_to_root.html
-      output: web, pdf      
-
-  - title: Configuration
-    output: web, pdf
-
-    folderitems:
-    - title: Check List
-      url: /mydoc_check_list.html
-      output: web, pdf
+#    - title: Quick Installation
+#      url: /mydoc_install_quick_installation.html
+#      output: web, pdf
 
       subfolders:
-      - title: Network configuration
+      - title: OS Installation
         output: web, pdf
         subfolderitems:
 
-        - title: Setup network bridges
-          url: /mydoc_setup_network_bridges.html
-          output: web
-          
-        - title: Configuration example for Scenario A
-          url: /mydoc_scenario_a.html
-          output: web
-         
-        - title: Configuration example for Scenario B
-          url: /mydoc_scenario_b.html
+        - title: Debian
+          url: /mydoc_install_os_debian.html
           output: web
 
-        - title: Configuration example for Scenario C
-          url: /mydoc_scenario_c.html
+    - title: sNow! Installation
+      url: /mydoc_install_snow.html
+      output: web, pdf
+
+    - title: SSH Access
+      url: /mydoc_install_ssh_access.html
+      output: web, pdf
+
+    - title: Escalate to Root User
+      url: /mydoc_install_escalate_to_root.html
+      output: web, pdf
+
+      subfolders:
+      - title: Network Configuration
+        output: web, pdf
+        subfolderitems:
+
+        - title: Setup Network Bridges
+          url: /mydoc_install_setup_network_bridges.html
           output: web
-          
-    - title: Hostname setting
-      url: /mydoc_hostname_setting.html
+
+        - title: Configuration Example for Scenario A
+          url: /mydoc_install_scenario_a.html
+          output: web
+
+        - title: Configuration Example for Scenario B
+          url: /mydoc_install_scenario_b.html
+          output: web
+
+        - title: Configuration Example for Scenario C
+          url: /mydoc_install_scenario_c.html
+          output: web
+
+        - title: How to setup a sNow! bridge on top of a network bonding
+          url: /mydoc_install_network_bonding.html
+          output: web, pdf
+
+        - title: Enable Infiniband support with eIPoIB
+          url: /mydoc_install_infiniband_support.html
+          output: web, pdf
+
+    - title: Hostname Setting
+      url: /mydoc_install_hostname_setting.html
       output: web, pdf
 
-    - title: Customize your cluster before initializing
-      url: /mydoc_customize_your_cluster.html
+    - title: sNow! Configuration
+      url: /mydoc_install_snow_conf.html
       output: web, pdf
 
-    - title: Selecting domains
-      url: /mydoc_selecting_domains.html
+    - title: Initialize Cluster
+      url: /mydoc_install_initial_configuration.html
       output: web, pdf
 
-    - title: List of available roles
-      url: /mydoc_available_roles.html
+    - title: Next Steps
+      url: /mydoc_install_next_steps.html
       output: web, pdf
 
-    - title: Initial configuration
-      url: /mydoc_initial_configuration.html
-      output: web, pdf
-
-    - title: Download the domain template
-      url: /mydoc_download_domain_template.html
-      output: web, pdf
-
-    - title: Custom Roles
-      url: /mydoc_custom_roles.html
-      output: web, pdf
-
-    - title: How to create custom LDAP certificates
-      url: /mydoc_how_to_create_custom_ldap_certificates.html
-      output: web, pdf
-
-  - title: Compute Node Deployment
+  - title: Role Management
     output: web, pdf
     folderitems:
 
-    - title: Deployment templates and basics
-      url: /mydoc_deployment_templates_and_basics.html
+    - title: List Roles
+      url: /mydoc_role_list.html
       output: web, pdf
 
-    - title: Template Cloning
-      url: /mydoc_template_cloning.html
+    - title: Available Roles
+      url: /mydoc_role_available.html
       output: web, pdf
 
-    - title: OS deployment repository
-      url: /mydoc_os_deployment_repository.html
+    - title: Custom Roles
+      url: /mydoc_role_custom.html
       output: web, pdf
 
-    - title: How to collect the MAC addresses
-      url: /mydoc_how_to_collect_the_mac_addresses.html
+  - title: Template Management
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /mydoc_template_overview.html
       output: web, pdf
 
-    - title: Deploy the first compute node
-      url: /mydoc_deploy_the_first_compute_node.html
+    - title: Available Templates
+      url: /mydoc_template_available.html
       output: web, pdf
 
-  - title: Compute Node Cloning
+    - title: List Templates
+      url: /mydoc_template_list.html
+      output: web, pdf
+
+    - title: Clone Templates
+      url: /mydoc_template_clone.html
+      output: web, pdf
+
+#    - title: Import & Export Templates
+#      url: /mydoc_template_import_export.html
+#      output: web, pdf
+
+    - title: Remove Templates
+      url: /mydoc_template_remove.html
+      output: web, pdf
+
+  - title: Image Management
     output: web, pdf
     folderitems:
 
@@ -169,8 +178,108 @@ entries:
       url: /mydoc_image_types.html
       output: web, pdf
 
-    - title: Image management
-      url: /mydoc_image_management.html
+#    - title: Available Images
+#      url: /mydoc_image_available.html
+#      output: web, pdf
+
+    - title: List Images
+      url: /mydoc_image_list.html
+      output: web, pdf
+
+    - title: Clone Images
+      url: /mydoc_image_clone.html
+      output: web, pdf
+
+#    - title: Import & Export Images
+#      url: /mydoc_image_import_export.html
+#      output: web, pdf
+
+    - title: Remove Images
+      url: /mydoc_image_remove.html
+      output: web, pdf
+
+  - title: Domain Management
+    output: web, pdf
+    folderitems:
+
+    - title: Download the domain template
+      url: /mydoc_domain_download_template.html
+      output: web, pdf
+
+    - title: Deploy Domains
+      url: /mydoc_domain_deploy.html
+      output: web, pdf
+
+    - title: List & Show
+      url: /mydoc_domain_list_and_show.html
+      output: web, pdf
+
+    - title: Cloning
+      url: /mydoc_domain_clone.html
+      output: web, pdf
+
+    - title: Add
+      url: /mydoc_domain_add.html
+      output: web, pdf
+
+    - title: Remove
+      url: /mydoc_domain_remove.html
+      output: web, pdf
+
+    - title: Boot
+      url: /mydoc_domain_boot.html
+      output: web, pdf
+
+    - title: Shutdown
+      url: /mydoc_domain_shutdown.html
+      output: web, pdf
+
+    - title: Console
+      url: /mydoc_domain_console.html
+      output: web, pdf
+
+  - title: Compute Node Management
+    output: web, pdf
+    folderitems:
+
+    - title: OS deployment repository
+      url: /mydoc_node_os_deployment_repository.html
+      output: web, pdf
+
+    - title: How to collect the MAC addresses
+      url: /mydoc_node_how_to_collect_the_mac_addresses.html
+      output: web, pdf
+
+    - title: Deploy
+      url: /mydoc_node_deploy.html
+      output: web, pdf
+
+    - title: List & Show
+      url: /mydoc_node_list_and_show.html
+      output: web, pdf
+
+    - title: Cloning
+      url: /mydoc_node_clone.html
+      output: web, pdf
+
+    - title: Add
+      url: /mydoc_node_add.html
+      output: web, pdf
+
+    - title: Remove
+      url: /mydoc_node_remove.html
+      output: web, pdf
+
+    - title: Boot
+      url: /mydoc_node_boot.html
+      output: web, pdf
+
+    - title: Shutdown
+      url: /mydoc_node_shutdown.html
+      output: web, pdf
+
+    - title: Console
+      url: /mydoc_node_console.html
       output: web, pdf
 
   - title: Administration
@@ -178,19 +287,19 @@ entries:
     folderitems:
 
     - title: Quick Reference Sheet
-      url: /mydoc_quick_reference_sheet.html
+      url: /mydoc_admin_quick_reference_sheet.html
       output: web, pdf
 
     - title: sNow! CLI
-      url: /mydoc_snow_cli.html
+      url: /mydoc_admin_snow_cli.html
       output: web, pdf
 
     - title: Backup
-      url: /mydoc_backup.html
+      url: /mydoc_admin_backup.html
       output: web, pdf
 
     - title: How to create a local repository in your sNow! system
-      url: /mydoc_create_local_repo.html
+      url: /mydoc_admin_create_local_repo.html
       output: web, pdf
 
   - title: Report a New Bug and Request New Features
@@ -198,19 +307,7 @@ entries:
     folderitems:
 
     - title: Report a New Bug and Request New Features
-      url: /mydoc_bug_report_feature_request.html
-      output: web, pdf
-
-  - title: Advanced Network Setup
-    output: web, pdf
-    folderitems:
-
-    - title: How to setup a sNow! bridge on top of a network bonding
-      url: /mydoc_network_bonding.html
-      output: web, pdf
-
-    - title: Enable Infiniband support with eIPoIB
-      url: /mydoc_infiniband_support.html
+      url: /mydoc_devel_bug_report_feature_request.html
       output: web, pdf
 
   - title: Scalability and High Availability
@@ -218,7 +315,7 @@ entries:
     folderitems:
 
     - title: Scalability and HA Overview
-      url: /mydoc_scalability_and_ha_overview.html
+      url: /mydoc_ha_overview.html
       output: web, pdf
 
     - title: Native High Availability
@@ -241,7 +338,7 @@ entries:
         - title: Shared Storage (DRDB+LVM)
           url: /mydoc_ha_drdb_lvm.html
           output: web, pdf
-          
+
         - title: Shared File System (NFSROOT)
           url: /mydoc_ha_nfsroot.html
           output: web, pdf
@@ -249,7 +346,7 @@ entries:
         - title: Migrate from single sNow! server to sNow! HA cluster
           url: /mydoc_ha_migration.html
           output: web, pdf
-          
+
   - title: Development
     output: web, pdf
     folderitems:
