@@ -9,6 +9,28 @@ permalink: mydoc_intro_why_snow.html
 folder: mydoc
 ---
 
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header">Service List</h2>
+    </div>
+    <div class="col-md-12">
+        <div class="media">
+            <div class="pull-left">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fa fa-paper-plane fa-stack-1x fa-inverse"></i>
+                </span>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">Fast Learning Curve</h4>
+                <p>Intuitive and easy to learn CLI allows to get the basic skills to control your computing resources.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 
 <div class="row">
         <div class="col-md-4 col-sm-6">
