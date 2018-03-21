@@ -30,22 +30,28 @@ The parameter ```IMG_DST``` defines how the images are stored.
 If your ```IMG_DST``` is set to ```IMG_DST='lvm=snow_vg'```, you will need to migrate those images to a loopback image files or to create additional NFS exports to enable HA mode over a shared file system. The following steps will guide you to migrate domain OS images from LVM to loopback files.
 
 1. Stop the domains:
-```snow shutdown domains```
-2. Dump the files system to a loopback file for each domain:
-```dd if=/dev/snow_vg/domain_name-root of=/sNow/domains/domain_name/domain_name-root```
-```dd if=/dev/snow_vg/domain_name-swap of=/sNow/domains/domain_name/domain_name-swap```
-where ```domain_name``` is the name of the domain OS image to be migrated.
-3. Update the domain configuration files:
+```
+snow shutdown domains
+```
+2. Create a script with the following content. This will dump the file system to a loopback file for each domain and update the domain configuration files:
 ```bash
-for i in $(ls -1 /sNow/snow-tools/etc/domains/*.cfg);
-do
-    sed -e "s|phy:/dev/snow_vg/|tap:aio:/sNow/domains/deploy01/|g" $i
+#Content of migrate_lvm2loopback
+domain_list="deploy01 monitor01 login01 slurm01 slurmdb01 ldap01 proxy01"
+for domain in ${domain_list}; do
+    mkdir -p /sNow/domains/$domain
+    dd if=/dev/snow_vg/${domain}-root of=/sNow/domains/${domain}/${domain}-root
+    dd if=/dev/snow_vg/${domain}-swap of=/sNow/domains/${domain}/${domain}-swap
+    sed -i "s|phy:/dev/snow_vg/|tap:aio:/sNow/domains/$domain/|g" /sNow/snow-tools/etc/domains/$domain.cfg
 done
 ```
+3. Run the script:
+```
+./migrate_lvm2loopback
+```
 4. Try to boot the domain:
-```snow boot domain_name```
-5. Repeat the same operation for each domain.
-
+```
+snow boot domain_name
+```
 ## Install sNow! software in the new sNow! servers
 
 At this point, the new sNow! servers should have the NFS client setup and the sNow! release should be the latest stable release.

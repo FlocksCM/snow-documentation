@@ -102,6 +102,14 @@ entries:
           url: /mydoc_install_scenario_c.html
           output: web
 
+        - title: How to setup a sNow! bridge on top of a network bonding
+          url: /mydoc_install_network_bonding.html
+          output: web, pdf
+
+        - title: Enable Infiniband support with eIPoIB
+          url: /mydoc_install_infiniband_support.html
+          output: web, pdf
+
     - title: Hostname Setting
       url: /mydoc_install_hostname_setting.html
       output: web, pdf
@@ -300,18 +308,6 @@ entries:
 
     - title: Report a New Bug and Request New Features
       url: /mydoc_devel_bug_report_feature_request.html
-      output: web, pdf
-
-  - title: Advanced Network Setup
-    output: web, pdf
-    folderitems:
-
-    - title: How to setup a sNow! bridge on top of a network bonding
-      url: /mydoc_install_network_bonding.html
-      output: web, pdf
-
-    - title: Enable Infiniband support with eIPoIB
-      url: /mydoc_install_infiniband_support.html
       output: web, pdf
 
   - title: Scalability and High Availability
