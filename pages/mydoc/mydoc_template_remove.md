@@ -1,11 +1,11 @@
 ---
-title: Template Clone
-tags: [template deployment cloning]
+title: Template Remove
+tags: [template deployment remove]
 keywords: template, deployment, cloning
 last_updated: July 3, 2016
 summary: ""
 sidebar: mydoc_sidebar
-permalink: mydoc_template_clone.html
+permalink: mydoc_template_remove.html
 folder: mydoc
 ---
 
