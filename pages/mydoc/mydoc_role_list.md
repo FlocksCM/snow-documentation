@@ -4,7 +4,7 @@ tags: [domains]
 keywords: domains, roles, vms, containers
 last_updated: July 3, 2016
 sidebar: mydoc_sidebar
-permalink: mydoc_roles_list.html
+permalink: mydoc_role_list.html
 folder: mydoc
 ---
 
@@ -54,13 +54,11 @@ If a domain has multiple roles, each role script will be executed in the order d
 The roles are responsible for populating most of the files located in ```$SNOW_CONF``` but there is no mechanism to synchronise those files. Whatever is modified in the  ```$SNOW_CONF```, inside a domain or inside a compute node, is not going to be synchronised across the cluster. In order to do that, you should consider using a configuration manager like Ansible, CFEngine or Puppet. Given the complexity involved, configuration managers are outside the scope of sNow!
 
 To continue with the sNow installation:
-Copy the example file as your working file
-
+Copy the example file as your working file:
 ```
 cp -p /sNow/snow-tools/etc/active-domains.conf-example /sNow/snow-tools/etc/active-domains.conf
 ```
 The following lines represent a typical example of an active-domains.conf configuration file. Add or delete lines as required by your installation needs.
-
 ```
 hostname    roles
 -----------------------------

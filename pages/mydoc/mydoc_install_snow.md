@@ -13,7 +13,6 @@ folder: mydoc
 The sNow! default configuration will setup a completely functional HPC cluster. Additional changes may be required to customise the cluster to suit your needs. Access as root user in the sNow! server and follow one of the two following installation methods:
 
 ## Default install (recommended)
-
 ```
 cd /sNow
 git clone http://bitbucket.org/hpcnow/snow-tools.git
@@ -21,14 +20,11 @@ cd snow-tools
 ./install.sh
 ```
 ### Custom install
-
 ```
 git clone http//bitbucket.org/hpcnow/snow-tools.git
 cd snow-tools
 ```
-
 You can customise the installation by exporting environment variables according to your needs. After several installations we have seen a common need for updating the sNow! admin user UID and GID in order to avoid conflicts with the existing users in LDAP. Other than that, the rest of default options are suitable for most cases.
-
 ### Define sNow! nodes
 By default, sNow! assumes that the current node is the only sNow! management node, which is also a NFS server. If you are installing an additional sNow! management node or you are using an external NFS server, the following environment variables will modify the install process.
 
@@ -41,7 +37,6 @@ This must match the hostname of the sNow! master node. If the node where you are
 export NFS_SERVER=snow00
 ```
 The name of the host that will be used as an NFS server to serve the /sNow filesystem and the home directory.
-
 ### Virtualization technology
 At the time this document is written, XEN is the stable technology. LXD and DOCKER requires a complex manual intervention and they are still considered experimental. Note that LXD is only available for Ubuntu.
 ```
@@ -61,12 +56,10 @@ The following are the paths used by the sNow! installation and shared across the
 ```
 export SNOW_HOME=/home
 ```
-
 ### Admin users
 sNow! creates one user by default called snow. If you have already arranged HPCNow! support, an additional user called hpcnow will be created. If the default user/group name, UID or GID are already in use, you can update them by exporting the following variables.
 
 The sNow! user (snow) plays the main admin role.
-
 ```
 export sNow_USER=snow
 export sNow_UID=2000
@@ -74,7 +67,6 @@ export sNow_GROUP=snow
 export sNow_GID=2000
 ```
 The HPCNow! user (hpcnow) is intended only to enable remote support.
-
 ```
 export HPCNow_USER=hpcnow
 export HPCNow_UID=2001
@@ -83,24 +75,20 @@ export HPCNow_GID=2000
 ```
 Please note that to allow the local snow and hpcnow users to log into the system you will to need either:
 
-A. Set a password for the users with passwd
-B. Use the created SSH key under ```/home/$USER/.ssh```
-
+a. Set a password for the users with passwd
+b. Use the created SSH key under ```/home/$USER/.ssh```
 ### Install sNow!
 Finally, run the following command in order to perform the installation.
-
 ```
 ./install.sh
 ```
+If all the stages are successful, you will see a report messages like these:
 
-If all the stages are successful, you will see a report messages like this:
-
-IMG
+{% include image.html file="snow_install_logs.png" max-width="300" %}
 
 If any of the stages fail please check the installation log file at ```/tmp/snow-install-*.log``` to troubleshoot.
 
 If you want to review the changes on the config files made by the sNow! installation you can find the ```*-snowbkp``` backup files to see the differences.
-
 ```
 find /etc -name "*-snowbkp" -print
 ```
