@@ -35,14 +35,16 @@ snow shutdown domains
 ```
 2. Create a script with the following content. This will dump the file system to a loopback file for each domain and update the domain configuration files:
 ```bash
-#Content of migrate_lvm2loopback
-domain_list="deploy01 monitor01 login01 slurm01 slurmdb01 ldap01 proxy01"
-for domain in ${domain_list}; do
-    mkdir -p /sNow/domains/$domain
-    dd if=/dev/snow_vg/${domain}-root of=/sNow/domains/${domain}/${domain}-root
-    dd if=/dev/snow_vg/${domain}-swap of=/sNow/domains/${domain}/${domain}-swap
-    sed -i "s|phy:/dev/snow_vg/|tap:aio:/sNow/domains/$domain/|g" /sNow/snow-tools/etc/domains/$domain.cfg
+#!/bin/bash
+for domain in $(snow list domains| egrep -v "Domain|\-\-" | gawk '{print $1}'); do
+  #The following line only needed if the domains are not shut down before the migration
+  #lvcreate -s -L 1G -n ${domain}-disk-snap snow_vg/${domain}-disk
+  mkdir -p /sNow/domains/$domain
+  dd if=/dev/snow_vg/${domain}-disk-snap of=/sNow/domains/${domain}/${domain}-disk
+  dd if=/dev/snow_vg/${domain}-swap of=/sNow/domains/${domain}/${domain}-swap
+  sed -i "s|phy:/dev/snow_vg/|tap:aio:/sNow/domains/$domain/|g" /sNow/snow-tools/etc/domains/$domain.cfg
 done
+
 ```
 3. Run the script:
 ```
