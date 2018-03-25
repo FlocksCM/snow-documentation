@@ -37,17 +37,29 @@ ip addr show
        valid_lft forever preferred_lft forever
     inet6 ::1/128 scope host
        valid_lft forever preferred_lft forever
-2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master xpub0 state UP group default qlen 1000
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master xsnow0 state UP group default qlen 1000
     link/ether 08:00:27:3c:04:cb brd ff:ff:ff:ff:ff:ff
-3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master xsnow0 state UP group default qlen 1000
+3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master xpub0 state UP group default qlen 1000
     link/ether 08:00:27:30:38:ac brd ff:ff:ff:ff:ff:ff
-4: xpub0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default
+4: eth2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master xmgmt0 state UP group default qlen 1000
+    link/ether 08:00:27:30:38:ad brd ff:ff:ff:ff:ff:ff
+5: eth3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master xdmz0 state UP group default qlen 1000
+        link/ether 08:00:27:30:38:af brd ff:ff:ff:ff:ff:ff
+6: xsnow0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default
     link/ether 08:00:27:3c:04:cb brd ff:ff:ff:ff:ff:ff
-    inet 10.0.2.15/24 brd 10.0.2.255 scope global xpub0
+    inet 10.1.0.1/16 brd 10.1.1.255 scope global xsnow0
+        valid_lft forever preferred_lft forever
+7: xmgmt0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default
+    link/ether 08:00:27:30:38:ad brd ff:ff:ff:ff:ff:ff
+    inet 10.0.0.1/16 brd 10.0.1.255 scope global xmgmt0
        valid_lft forever preferred_lft forever
-5: xsnow0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default
+8: xdmz0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default
     link/ether 08:00:27:30:38:ac brd ff:ff:ff:ff:ff:ff
-    inet 192.168.7.1/24 brd 192.168.7.255 scope global xsnow0
+    inet 172.16.0.1/24 brd 172.16.0.255 scope global xdmz0
+       valid_lft forever preferred_lft forever
+9: xpub0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default
+    link/ether 08:00:27:30:38:ac brd ff:ff:ff:ff:ff:ff
+    inet YOUR_LAN_IP_ADDRESS/24 brd YOUR_LAN_BROADCAST scope global xpub0
        valid_lft forever preferred_lft forever
 ```
 5. After that, you need to setup the firewall. sNow! allows you to setup the firewall automatically by taking into account all the services available in domains.conf and dmz_portmap.conf, which contains all the NAT rules associated with each role. sNow! uses the Uncomplicated Firewall (ufw) to manage IPTABLES. The following command lines will setup advanced and complex rules for you.

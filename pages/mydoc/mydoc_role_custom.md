@@ -7,8 +7,8 @@ permalink: mydoc_role_custom.html
 folder: mydoc
 ---
 
-## Create a new role
-sNow! roles are shell scripts which make them easy to develop and to understand. Keep in mind the following tips and tricks which will help you  develop new roles:
+## Create a New Custom Role
+sNow! domain roles are shell scripts which make them easy to develop and to understand. Keep in mind the following tips and tricks which will help you  develop new roles:
 
 * Use environment variables defined in snow.conf, and extend them if you need new variables to work with
 * When you generate a new configuration file, remember to copy the file in the deployed system and also ```/sNow/snow-confispace/system_files```. If there is a file in this path, avoid overwriting it and use it to setup your new system. This will help you to setup continuous integration into your system.
@@ -19,7 +19,7 @@ sNow! roles are shell scripts which make them easy to develop and to understand.
 * Use sed with pipe symbols rather than slash symbols. This will help you to replace UNIX paths.
 * In this directory (```/sNow/snow-configspace/system_files```) you will find the configuration files used in the different roles. Some of them are common for many roles. Some of them are common to all of them. This is a list of files used for the preinstalled roles.
 
-The template snow_reference_template will help you to develop new roles (available in /sNow/snow-tools/etc/role.d/snow_reference_template).
+The role template ```snow_reference_template``` will help you to develop new roles (available in /sNow/snow-tools/etc/role.d/snow_reference_template).
 Consider to share the new role upstream following the instructions detailed [here](mydoc_contribute_back.html)
 ``` bash
 #!/bin/bash

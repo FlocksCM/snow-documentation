@@ -23,59 +23,30 @@ An IP on the ib0 Infiniband interface or in the high speed network interface of 
 In order to enable the required network bridges, follow the next four simple steps:
 
 1. Edit /etc/network/interfaces by following this [example file](examples/network_interfaces_scenario_a.txt) (please carefully review the file and adapt it to your real network environment)
-2. After the network configuration file is edited, reboot the system and check your configuration has been applied with the following commands:
+2. After the network configuration file is edited, reboot the system and check your configuration has been applied with the following command:
 ```
-ifconfig
 ip addr show
 ```
-3. The expected output should be similar to the following, if you used ifconfig on the previous step:
+3. The expected output should be similar to the following text:
 ```
-eth0  	Link encap:Ethernet  HWaddr 00:1e:67:d6:0e:4e  
-      	UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-      	RX packets:521186 errors:0 dropped:0 overruns:0 frame:0
-      	TX packets:1575110 errors:0 dropped:0 overruns:0 carrier:0
-      	collisions:0 txqueuelen:1000
-      	RX bytes:429970630 (410.0 MiB)  TX bytes:836884100 (798.1 MiB)
-      	Memory:91920000-9193ffff
-
-eth1  	Link encap:Ethernet  HWaddr 00:1e:67:d6:0e:4f  
-      	UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-      	RX packets:7600132 errors:0 dropped:0 overruns:0 frame:0
-      	TX packets:2371910 errors:0 dropped:0 overruns:0 carrier:0
-      	collisions:0 txqueuelen:1000
-      	RX bytes:3662822294 (3.4 GiB)  TX bytes:341538824 (325.7 MiB)
-      	Memory:91900000-9191ffff
-
-lo    	Link encap:Local Loopback  
-      	inet addr:127.0.0.1  Mask:255.0.0.0
-      	inet6 addr: ::1/128 Scope:Host
-      	UP LOOPBACK RUNNING  MTU:65536  Metric:1
-      	RX packets:324 errors:0 dropped:0 overruns:0 frame:0
-      	TX packets:324 errors:0 dropped:0 overruns:0 carrier:0
-      	collisions:0 txqueuelen:0
-      	RX bytes:38958 (38.0 KiB)  TX bytes:38958 (38.0 KiB)
-
-xpub0 	Link encap:Ethernet  HWaddr 00:1e:67:d6:0e:4f  
-      	inet addr:YOUR_LAN_IP_ADDRESS  Bcast:YOUR_LAN_BROADCAST  Mask:YOUR_LAN_NETMASK
-      	inet6 addr: fe80::21e:67ff:fed6:e4f/64 Scope:Link
-      	UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-      	RX packets:7208440 errors:0 dropped:0 overruns:0 frame:0
-      	TX packets:2319933 errors:0 dropped:0 overruns:0 carrier:0
-      	collisions:0 txqueuelen:0
-      	RX bytes:3536513820 (3.2 GiB)  TX bytes:338107598 (322.4 MiB)
-
-xsnow0	Link encap:Ethernet  HWaddr 00:1e:67:d6:0e:4e  
-      	inet addr:192.168.7.1  Bcast:192.168.8.255  Mask:255.255.255.0
-      	inet6 addr: fe80::21e:67ff:fed6:e4e/64 Scope:Link
-      	UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-      	RX packets:1270216 errors:0 dropped:0 overruns:0 frame:0
-      	TX packets:521744 errors:0 dropped:0 overruns:0 carrier:0
-      	collisions:0 txqueuelen:0
-      	RX bytes:483568143 (461.1 MiB)  TX bytes:666980607 (636.0 MiB)
-
-xsnow0:mgmt Link encap:Ethernet  HWaddr 00:1e:67:d6:0e:4e  
-      	inet addr:192.168.100.1  Bcast:192.168.100.255  Mask:255.255.255.0
-      	UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master xpub0 state UP group default qlen 1000
+    link/ether 08:00:27:3c:04:cb brd ff:ff:ff:ff:ff:ff
+3: eth1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast master xsnow0 state UP group default qlen 1000
+    link/ether 08:00:27:30:38:ac brd ff:ff:ff:ff:ff:ff
+4: xpub0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default
+    link/ether 08:00:27:3c:04:cb brd ff:ff:ff:ff:ff:ff
+    inet YOUR_LAN_IP_ADDRESS/24 brd YOUR_LAN_BROADCAST scope global xpub0
+       valid_lft forever preferred_lft forever
+5: xsnow0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default
+    link/ether 08:00:27:30:38:ac brd ff:ff:ff:ff:ff:ff
+    inet 10.1.0.1/16 brd 10.1.1.255 scope global xsnow0
+       valid_lft forever preferred_lft forever
 ```
 4. You can check the bridges and their associated network interfaces with the following command:
 ```
