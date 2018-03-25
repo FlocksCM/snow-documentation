@@ -130,6 +130,10 @@ entries:
     output: web, pdf
     folderitems:
 
+    - title: Overview
+      url: /mydoc_role_overview.html
+      output: web, pdf
+
     - title: List Roles
       url: /mydoc_role_list.html
       output: web, pdf
@@ -150,9 +154,9 @@ entries:
       url: /mydoc_template_overview.html
       output: web, pdf
 
-    - title: Available Templates
-      url: /mydoc_template_available.html
-      output: web, pdf
+#    - title: Available Templates
+#      url: /mydoc_template_available.html
+#      output: web, pdf
 
     - title: List Templates
       url: /mydoc_template_list.html

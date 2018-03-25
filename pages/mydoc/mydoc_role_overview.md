@@ -1,10 +1,10 @@
 ---
-title: List Roles
+title: Roles Overview
 tags: [domains]
 keywords: domains, roles, vms, containers
 last_updated: July 3, 2016
 sidebar: mydoc_sidebar
-permalink: mydoc_role_list.html
+permalink: mydoc_role_overview.html
 folder: mydoc
 ---
 {% include note.html content="In this documentation we are referring to the independent systems running different sNow services as 'domains' or 'virtual machines' or 'containers'." %}
