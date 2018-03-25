@@ -13,7 +13,7 @@ In order to remove an existing template, use the following command:
 ```
 snow remove template <template_name>
 ```
-{% include alert.html content="Be careful with this action. The template is not going to be recovered once is removed unless you recover it from a backup." %}
+{% include warning.html content="Be careful with this action. The template is not going to be recovered once is removed unless you recover it from a backup." %}
 
 Example:
 ```
