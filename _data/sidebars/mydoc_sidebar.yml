@@ -214,6 +214,10 @@ entries:
     output: web, pdf
     folderitems:
 
+    - title: Overview
+      url: /mydoc_domain_overview.html
+      output: web, pdf
+
     - title: Download the domain template
       url: /mydoc_domain_download_template.html
       output: web, pdf
@@ -222,28 +226,28 @@ entries:
       url: /mydoc_domain_deploy.html
       output: web, pdf
 
-    - title: List & Show
-      url: /mydoc_domain_list_and_show.html
+    - title: List Domains
+      url: /mydoc_domain_list.html
       output: web, pdf
 
-    - title: Cloning
-      url: /mydoc_domain_clone.html
-      output: web, pdf
+#    - title: List & Show
+#      url: /mydoc_domain_show.html
+#      output: web, pdf
 
-    - title: Add
-      url: /mydoc_domain_add.html
-      output: web, pdf
+#    - title: Cloning
+#      url: /mydoc_domain_clone.html
+#      output: web, pdf
 
-    - title: Remove
+#    - title: Add
+#      url: /mydoc_domain_add.html
+#      output: web, pdf
+
+    - title: Remove Domains
       url: /mydoc_domain_remove.html
       output: web, pdf
 
-    - title: Boot
-      url: /mydoc_domain_boot.html
-      output: web, pdf
-
-    - title: Shutdown
-      url: /mydoc_domain_shutdown.html
+    - title: Power Control
+      url: /mydoc_domain_power_control.html
       output: web, pdf
 
     - title: Console
