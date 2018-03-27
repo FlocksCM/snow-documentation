@@ -18,7 +18,7 @@ The following sections will explain in detail how to interact with the snow comm
 snow [function] <domain|node> <option>
 ```
 ## Man pages
-There is a manpage covering the usage of the snow command. We encourage you to read it as it might have information not available in this guide or, at least, organized in a different way. The available man pages are :
+There is a manpage covering the usage of the snow command. We encourage you to read it as it might have information not available in this guide or, at least, organised in a different way. The available man pages are :
 * snow
 * snow.conf
 * active-domains.conf
@@ -53,7 +53,7 @@ There is a manpage covering the usage of the snow command. We encourage you to r
 
 * ```poweroff <domain|node>``` initiate a soft-shutdown of the OS via ACPI for domain(s) or node(s)
 
-{% include callout.html content="Differences between shutdown, destroy and poweroff: <br>**shutdown** requires access to the OS in order to be able to trigger 'systemctl poweroff' command. <br>**destroy** forces to stop specific domain or node simulating a power button press. This is performed at the IPMI or API level in those situations where the system is up but is not responsive (i.e. a boot failure in PXE).<br>**poweroff** initiates a soft-shutdown of the OS via ACPI. This is usefull when for some reason you don't have access through SSH but you have access from console (i.e. the system booted without network configuration).</li></ul> " type="success" %}
+{% include callout.html content="Differences between shutdown, destroy and poweroff: <br>**shutdown** requires access to the OS in order to be able to trigger 'systemctl poweroff' command. <br>**destroy** forces to stop specific domain or node simulating a power button press. This is performed at the IPMI or API level in those situations where the system is up but is not responsive (i.e. a boot failure in PXE).<br>**poweroff** initiates a soft-shutdown of the OS via ACPI. This is useful when for some reason you don't have access through SSH but you have access from console (i.e. the system booted without network configuration)." type="success" %}
 
 ## Provisioning
 * ```deploy <domain|node> <template> <force>``` deploy a specific domain/node (optional: with specific template or force deploying existing domain/server)
