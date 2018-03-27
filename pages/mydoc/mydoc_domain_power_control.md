@@ -4,7 +4,7 @@ keywords: deployment, domains
 last_updated: March 20, 2016
 summary: "This section explains how to deploy and boot sNow! domains"
 sidebar: mydoc_sidebar
-permalink: mydoc_domain_deploy.html
+permalink: mydoc_domain_power_control.html
 folder: mydoc
 ---
 
