@@ -1,5 +1,5 @@
 ---
-title: Image Management
+title: Image Remove
 tags: [image, diskless]
 keywords: image management, cloning, clone, image, diskless, stateless, nfsroot
 last_updated: July 3, 2016
