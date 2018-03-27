@@ -4,7 +4,7 @@ keywords: deployment, domains
 last_updated: March 20, 2016
 summary: "This section provides an overview of sNow! domains"
 sidebar: mydoc_sidebar
-permalink: mydoc_domain_deploy.html
+permalink: mydoc_domain_overview.html
 folder: mydoc
 ---
 
