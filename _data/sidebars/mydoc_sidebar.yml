@@ -178,13 +178,17 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Image types
-      url: /mydoc_image_types.html
+    - title: Overview
+      url: /mydoc_image_overview.html
       output: web, pdf
 
 #    - title: Available Images
 #      url: /mydoc_image_available.html
 #      output: web, pdf
+
+    - title: Gather Images
+      url: /mydoc_image_gather.html
+      output: web, pdf
 
     - title: List Images
       url: /mydoc_image_list.html
@@ -192,6 +196,10 @@ entries:
 
     - title: Clone Images
       url: /mydoc_image_clone.html
+      output: web, pdf
+
+    - title: Modify Images
+      url: /mydoc_image_modify.html
       output: web, pdf
 
 #    - title: Import & Export Images
