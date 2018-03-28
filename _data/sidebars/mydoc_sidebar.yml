@@ -258,6 +258,10 @@ entries:
     output: web, pdf
     folderitems:
 
+#    - title: Overview
+#      url: /mydoc_node_overview.html
+#      output: web, pdf
+
     - title: OS deployment repository
       url: /mydoc_node_os_deployment_repository.html
       output: web, pdf
@@ -266,31 +270,31 @@ entries:
       url: /mydoc_node_how_to_collect_the_mac_addresses.html
       output: web, pdf
 
-    - title: Deploy
+    - title: Deploy Compute Node
       url: /mydoc_node_deploy.html
       output: web, pdf
 
-    - title: List & Show
+    - title: List & Show Compute Node
       url: /mydoc_node_list_and_show.html
       output: web, pdf
 
-    - title: Cloning
+    - title: Clone Compute Node
       url: /mydoc_node_clone.html
       output: web, pdf
 
-    - title: Add
+    - title: Add Compute Node
       url: /mydoc_node_add.html
       output: web, pdf
 
-    - title: Remove
+    - title: Set Compute Node
+      url: /mydoc_node_set.html
+      output: web, pdf
+
+    - title: Remove Compute Node
       url: /mydoc_node_remove.html
       output: web, pdf
 
-    - title: Boot
-      url: /mydoc_node_boot.html
-      output: web, pdf
-
-    - title: Shutdown
+    - title: Power Control
       url: /mydoc_node_shutdown.html
       output: web, pdf
 
@@ -347,17 +351,17 @@ entries:
           url: /mydoc_ha_loopback_files.html
           output: web, pdf
 
-        - title: Shared Storage (SAN+LVM)
-          url: /mydoc_ha_san_lvm.html
-          output: web, pdf
+#        - title: Shared Storage (SAN+LVM)
+#          url: /mydoc_ha_san_lvm.html
+#          output: web, pdf
 
-        - title: Shared Storage (DRDB+LVM)
-          url: /mydoc_ha_drdb_lvm.html
-          output: web, pdf
+#        - title: Shared Storage (DRDB+LVM)
+#          url: /mydoc_ha_drdb_lvm.html
+#          output: web, pdf
 
-        - title: Shared File System (NFSROOT)
-          url: /mydoc_ha_nfsroot.html
-          output: web, pdf
+#        - title: Shared File System (NFSROOT)
+#          url: /mydoc_ha_nfsroot.html
+#          output: web, pdf
 
         - title: Migrate from single sNow! server to sNow! HA cluster
           url: /mydoc_ha_migration.html
@@ -370,3 +374,11 @@ entries:
     - title: Contribute Back
       url: /mydoc_contribute_back.html
       output: web, pdf
+
+#  - title: FAQ
+#    output: web, pdf
+#    folderitems:
+
+#    - title: FAQ
+#      url: /mydoc_faq.html
+#      output: web, pdf
