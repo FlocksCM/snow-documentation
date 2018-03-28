@@ -56,9 +56,9 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Quick Installation
-      url: /mydoc_install_quick_installation.html
-      output: web, pdf
+#    - title: Quick Installation
+#      url: /mydoc_install_quick_installation.html
+#      output: web, pdf
 
       subfolders:
       - title: OS Installation
