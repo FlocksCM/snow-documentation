@@ -279,7 +279,7 @@ entries:
       output: web, pdf
 
     - title: Clone Compute Node
-      url: /mydoc_node_clone.html
+      url: /mydoc_image_gather.html
       output: web, pdf
 
     - title: Add Compute Node
