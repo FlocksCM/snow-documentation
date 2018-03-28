@@ -11,7 +11,7 @@ folder: mydoc
 ## Get Console Access
 In order to get access to any of the compute nodes' console, execute the following command:
 ```
-console <domain_name>
+snow console <domain_name>
 ```
 ## Exit from Console
 In order exit from a console session, use ```<CTRL> ]```.
