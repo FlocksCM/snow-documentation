@@ -295,7 +295,7 @@ entries:
       output: web, pdf
 
     - title: Power Control
-      url: /mydoc_node_shutdown.html
+      url: /mydoc_node_power_control.html
       output: web, pdf
 
     - title: Console

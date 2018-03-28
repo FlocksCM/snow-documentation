@@ -2,19 +2,17 @@
 title: Node Console
 keywords: console, compute node
 last_updated: March 20, 2016
-summary: "This section explains how to access to a node console."
+summary: "This section explains how to access to a compute node console."
 sidebar: mydoc_sidebar
-permalink: mydoc_node_deploy.html
+permalink: mydoc_node_console.html
 folder: mydoc
 ---
 
 ## Get Console Access
-In order to get access to any of the nodes' console, execute the following command:
-
+In order to get access to any of the compute nodes' console, execute the following command:
 ```
 console <domain_name>
 ```
-
 ## Exit from Console
 In order exit from a console session, use ```<CTRL> ]```.
 

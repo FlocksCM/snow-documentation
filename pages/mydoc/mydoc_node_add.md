@@ -3,7 +3,7 @@ title: Add Compute Nodes
 keywords: deploy, compute node
 last_updated: July 3, 2016
 tags: [deploy]
-summary: ""
+summary: "This section explains how to add a new node definition in the sNow! database"
 sidebar: mydoc_sidebar
 permalink: mydoc_node_add.html
 folder: mydoc
