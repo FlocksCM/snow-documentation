@@ -14,7 +14,7 @@ sNow! provides all the critical services segmented in a virtualization layer, gi
 
 {% include note.html content="sNow! currently supports Xen Source and Linux Containers (experimental) virtualization technologies. In sNow! argot, those virtual environments are known as *domains*." %}
 
-## Why
+## Key Features
 
 ### Painless Services Deployment
 sNow! domains are unattended deployed by pre-defined roles. Those roles, are shell scripts which make them easy to develop and to understand. More information about roles available in the [Role Overview](mydoc_role_overview) section.
