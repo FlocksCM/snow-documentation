@@ -8,18 +8,13 @@ sidebar: mydoc_sidebar
 permalink: mydoc_node_add.html
 folder: mydoc
 ---
-
-1. Start the deployment of the first compute node (golden node).
+The compute nodes are initially defined in snow.conf by the ```CLUSTERS``` variable. Updating this value in snow.conf will not modify, add or remove nodes in the sNow! database. The following command allows you to add and define new compute nodes.
 ```
-snow deploy first_compute_node
+snow add node <compute_node> [--option value]
 ```
-2. Monitor the deployment progression from the compute node console
-```
-snow console first_compute_node
-```
-3. Review the deployment logs
-Once the deployment is done, you will be able to review the deployment logs. Usually those files are located in the local file system inside the root user home directory:
-```
-/root/post-install.log
-/root/first-boot.log
-```
+The available options are:
+* ```--cluster```: defines the cluster associated to that particular node(s)
+* ```--image```: defines the image to boot the system from
+* ```--template```: defines the template used for provisioning the compute node
+* ```--install_repo```: defines the installation proxy. Used to load-balance the HTTP/FTP access to the RPMs/DEB packages.
+* ```--console_options```: defines the console options
