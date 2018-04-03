@@ -372,7 +372,7 @@ entries:
     folderitems:
 
     - title: Contribute Back
-      url: /mydoc_contribute_back.html
+      url: /mydoc_devel_contribute_back.html
       output: web, pdf
 
 #  - title: FAQ
