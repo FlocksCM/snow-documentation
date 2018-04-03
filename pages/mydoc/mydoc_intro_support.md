@@ -9,7 +9,7 @@ permalink: mydoc_intro_support.html
 folder: mydoc
 ---
 
-sNow! is available under the [GNU General Public License](https://www.gnu.org/copyleft/gpl.html). As open-source project, sNow! is free of charge and you can get support from the community of users via email list and bug reporting through Bitbucket. In addition to that, hardware vendors and consulting companies can provide 1st and 2nd level support. [HPCNow!](http://www.hpcnow.com) as creator and main developer of this project, feels the responsibility to provide 3rd level support.
+sNow! is available under the [GNU General Public License](https://www.gnu.org/copyleft/gpl.html). As open-source project, sNow! is free of charge and you can get support from the community of users via [email list](https://groups.google.com/forum/#!forum/snow-users) and bug reporting through Bitbucket. In addition to that, hardware vendors and consulting companies can provide 1st and 2nd level support. [HPCNow!](http://www.hpcnow.com) as creator and main developer of this project, provides 3rd level support.
 
 HPCNow! also offers a full line of services for sNow!, including:
 * Support agreements for sNow! clusters

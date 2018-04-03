@@ -4,7 +4,7 @@ topnav:
 - title: Topnav
   items:
     - title: Website
-      external_url: https://hpcnow.github.io/snow-web/
+      external_url: http://hpcnow.com/index.php/snow
 
 #Topnav dropdowns
 topnav_dropdowns:
@@ -25,4 +25,4 @@ topnav_dropdowns:
         - title: Issue Tracking
           external_url: https://bitbucket.org/hpcnow/snow-tools/issues?status=new&status=open
         - title: Contributing Back
-          url: /mydoc_contribute_back.html
+          url: /mydoc_devel_contribute_back.html
