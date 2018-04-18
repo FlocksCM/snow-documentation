@@ -6,9 +6,9 @@ permalink: mydoc_ha_migration.html
 folder: mydoc
 ---
 
-The following notes descrive how to migrate from a single sNow! server to multiple sNow! servers working in High Availability (HA) cluster and a shared file system provided by external servers.
+The following notes describe how to migrate from a single sNow! server to multiple sNow! servers working in High Availability (HA) cluster and a shared file system provided by external servers.
 
-This guide asumes that:
+This guide assumes that:
 
 * You have at least two nodes to install sNow!
 * The NFS client has been installed in sNow! nodes
@@ -74,9 +74,9 @@ root@snow02:~# snow init
 [W] Do you want to proceed? (y/N)
 ```
 
-At this point, it's safe to proceed because you are iniciating new nodes. Please, don't consider to run this command in a production environment.
+At this point, it's safe to proceed because you are initiating new nodes. Please, don't consider to run this command in a production environment.
 
-## Install the required software packages in all the sNow! servers
+## Install the required software packages on all the sNow! servers
 
 ```
 apt update
@@ -166,7 +166,7 @@ nodelist {
 }
 ```
 
-You can download the following example file and adapt it to accomodate your needs.
+You can download the following example file and adapt it to accommodate your needs.
 
 Edit ```/etc/corosync/corosync.conf``` in snow01 and transfer this file to the other nodes:
 
@@ -194,7 +194,7 @@ snow boot deploy01
 xl migrate deploy01 snow02
 ```
 
-If it works as expected, you should see a output message similar to the following example:
+If it works as expected, you should see an output message similar to the following example:
 
 ```
 [4287] snow01:~ $ xl migrate deploy01 snow02
@@ -293,8 +293,8 @@ primitive deploy01 ocf:heartbeat:Xen \
  meta target-role="started" allow-migrate="true"
 ```
 
-Some operations like the live migration requires some extra time. Specially when the VM uses a reasonable amount of memory.
-It's highly recommended to increase the default timeout to avoid cancelling the live migration due a short time limit.
+Some operations like the live migration require some extra time. Especially when the VM uses a reasonable amount of memory.
+It's highly recommended to increase the default timeout to avoid canceling the live migration due to a short time limit.
 The following example, setup 120s as default timeout. You can tune this value attending at your VM needs.
 
 ```
@@ -378,7 +378,7 @@ Notice that this IP ```10.1.0.254``` must match with the IP defined in ```NET_SN
 ## Service placement
 
 In order to balance services across the two nodes and also to distribute additional services with native HA (i.e slurm-master slurm-slave) you can use the following instructions to define the preferred hosts.
-Failback is useful to define well balanced services, but if you have an ongoing issue, you could trigger a failback in a “semi-faulty” node.
+Failback is useful to define well-balanced services, but if you have an ongoing issue, you could trigger a failback in a “semi-faulty” node.
 
 ```
 crm(live)# configure

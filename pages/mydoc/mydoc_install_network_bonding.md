@@ -87,3 +87,17 @@ iface xpub0 inet static
         network 150.241.212.0
         dns-nameservers 150.241.212.11 150.241.212.26
 ```
+
+<!--
+## Define VLANs Over a Bonding Interface
+You can create a VLAN over a bonding interface an then create a bridge. 
+
+If you create VLAN interfaces only to put them into a bridge, there is no need to define the VLAN interfaces manually. Just config the bridge, and the VLAN interface will be created automatically when creating the bridge, e.g:
+
+
+```
+auto vlan10
+iface vlan10 inet static
+        vlan-raw-device bond0
+```
+-->
