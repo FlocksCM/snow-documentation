@@ -39,7 +39,7 @@ MOUNT_NFS[2]="/beegfs/home                     /home          none   noauto,x-sy
 ```
 
 ## Install sNow! software
-Install the first node (snow01) following the instructions defined [here](mydoc_os_installation.html).
+Install the first node (snow01) following the instructions defined [here](mydoc_install_os_debian.html).
 
 Once the sNow! installation is completed in the first node, you can proceed with the other sNow! nodes installation.
 
