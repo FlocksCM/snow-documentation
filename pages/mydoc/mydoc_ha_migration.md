@@ -37,10 +37,8 @@ snow shutdown domains
 ```bash
 #!/bin/bash
 for domain in $(snow list domains| egrep -v "Domain|\-\-" | gawk '{print $1}'); do
-  #The following line only needed if the domains are not shut down before the migration
-  #lvcreate -s -L 1G -n ${domain}-disk-snap snow_vg/${domain}-disk
   mkdir -p /sNow/domains/$domain
-  dd if=/dev/snow_vg/${domain}-disk-snap of=/sNow/domains/${domain}/${domain}-disk
+  dd if=/dev/snow_vg/${domain}-disk of=/sNow/domains/${domain}/${domain}-disk
   dd if=/dev/snow_vg/${domain}-swap of=/sNow/domains/${domain}/${domain}-swap
   sed -i "s|phy:/dev/snow_vg/|tap:aio:/sNow/domains/$domain/|g" /sNow/snow-tools/etc/domains/$domain.cfg
 done
