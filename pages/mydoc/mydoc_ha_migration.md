@@ -42,7 +42,6 @@ for domain in $(snow list domains| egrep -v "Domain|\-\-" | gawk '{print $1}'); 
   dd if=/dev/snow_vg/${domain}-swap of=/sNow/domains/${domain}/${domain}-swap
   sed -i "s|phy:/dev/snow_vg/|tap:aio:/sNow/domains/$domain/|g" /sNow/snow-tools/etc/domains/$domain.cfg
 done
-
 ```
 3. Run the script:
 ```
