@@ -14,7 +14,7 @@ This guide asumes that:
 * The BeeGFS (or NFS) client has been installed in sNow! nodes
 * The /sNow path is mounted directly from BeeGFS/NFS or it's a mount bind to that path
 * The /home path is mounted directly from BeeGFS/NFS or it's a mount bind to that path
-* You have followed the instructions defined [here](mydoc_os_installation.html)
+* You have followed the instructions defined [here](mydoc_install_os_debian.html)
 
 {% include image.html file="ha_loopback_images_over_cfs.png" max-width="600" %}
 
@@ -45,7 +45,9 @@ Once the sNow! installation is completed in the first node, you can proceed with
 
 Note that after installing sNow!, a reboot is required in order to boot with the new kernel and configuration.
 
-Configure sNow! by setting snow.conf and active_domains.conf as described [here](mydoc_customize_your_cluster.html)
+Configure sNow! by setting snow.conf as described [here](mydoc_install_snow_conf.html)
+
+Configure sNow! by setting active_domains.conf as described [here](mydoc_install_select_roles.html)
 
 {% include note.html content="The SNOW_NODES defined in snow.conf must contain all the nodes of the HA cluster." %}
 
