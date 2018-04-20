@@ -16,7 +16,7 @@ This guide asumes that:
 * The /sNow path is mounted directly from BeeGFS/NFS or it's a mount bind to that path
 * The /home path is mounted directly from BeeGFS/NFS or it's a mount bind to that path
 
-{% include warning.html content="The /sNow and /home must be a mount point. A symbolic link will not work." %}
+{% include warning.html content="The /sNow and /home must be mount points. A symbolic link will not work." %}
 
 {% include image.html file="ha_loopback_images_over_cfs.png" max-width="600" %}
 
