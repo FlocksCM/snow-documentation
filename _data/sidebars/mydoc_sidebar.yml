@@ -61,7 +61,7 @@ entries:
       output: web, pdf
 
       subfolders:
-      - title: OS Installation
+      - title: 0. OS Installation
         output: web, pdf
         subfolderitems:
 
@@ -69,20 +69,20 @@ entries:
           url: /mydoc_install_os_debian.html
           output: web
 
-    - title: sNow! Installation
+    - title: 1. sNow! Installation
       url: /mydoc_install_snow.html
       output: web, pdf
 
-    - title: SSH Access
+    - title: 2. SSH Access
       url: /mydoc_install_ssh_access.html
       output: web, pdf
 
-    - title: Escalate to Root User
+    - title: 3. Escalate to Root User
       url: /mydoc_install_escalate_to_root.html
       output: web, pdf
 
       subfolders:
-      - title: Network Configuration
+      - title: 4. Network Configuration
         output: web, pdf
         subfolderitems:
 
@@ -110,19 +110,23 @@ entries:
           url: /mydoc_install_infiniband_support.html
           output: web, pdf
 
-    - title: Hostname Setting
+    - title: 5. Hostname Setting
       url: /mydoc_install_hostname_setting.html
       output: web, pdf
 
-    - title: sNow! Configuration
+    - title: 6. sNow! Configuration
       url: /mydoc_install_snow_conf.html
       output: web, pdf
 
-    - title: Initialize Cluster
+    - title: 7. Select Domain Roles
+      url: /mydoc_install_select_roles.html
+      output: web, pdf
+      
+    - title: 8. Initialize Cluster
       url: /mydoc_install_initial_configuration.html
       output: web, pdf
 
-    - title: Next Steps
+    - title: 9. Next Steps
       url: /mydoc_install_next_steps.html
       output: web, pdf
 

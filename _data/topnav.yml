@@ -15,7 +15,7 @@ topnav_dropdowns:
         - title: sNow! Documentation
           url: /index.html
         - title: Quick Reference Guide
-          url: ./pdf/snow-quick-reference.pdf
+          url: /mydoc_admin_quick_reference_sheet.html
     - title: Development
       folderitems:
         - title: Source Code
