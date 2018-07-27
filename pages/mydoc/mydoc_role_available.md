@@ -171,6 +171,21 @@ Default ports
 |TCP/80|HTTP|Ganglia Web Frontend|
 |TCP/8650-86XX|GMOND|Gmond (each cluster has a dedicated port)|
 
+## opennebula-frontend
+sNow! can deploy OpenNebula Frontend servers and re-architect compute nodes to OpenNebula hypervisor nodes.
+
+{% include alert.html content="In order to enable OpenNebula, you must define the version to be used" %}
+{% include alert.html content="OpenNebula integration is not available for SuSE and OpenSuSE" %}
+
+Key parameters in snow.conf
+
+|Parameter|Function|
+|---------|--------|
+|OPENNEBULA_VERSION| define the version to be used|
+|OPENNEBULA_DB_NAME|Used to define the default database of OpenNebula|
+|OPENNEBULA_USER| Used to define the admin user of OpenNebula|
+|OPENNEBULA_PASSWORD| Defines the password of the OpenNebula user|
+
 ## openvpn_as                    
 This role deploys OpenVPN Access Server (two free client connections for testing purposes). OpenVPN Access Server is a full featured secure network tunneling VPN software solution that integrates OpenVPN server capabilities, enterprise management capabilities, simplified OpenVPN Connect UI, and OpenVPN Client software packages that accommodate Windows, MAC, Linux, Android, and iOS environments.
 OpenVPN Access Server supports a wide range of configurations, including secure and granular remote access to internal and/ or private cloud network resources and applications with fine-grained access control.
