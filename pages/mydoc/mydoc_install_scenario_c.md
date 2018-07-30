@@ -23,9 +23,10 @@ In order to enable the required network bridges, follow the next five simple ste
   * Debian:
     1. Edit /etc/network/interfaces by following this [example file](examples/network_interfaces_scenario_b.txt)
     2. Add the following line in /etc/modules
-  ```
+    ```
     dummy numdummies=1
     ```
+    
   * Ubuntu:
     1. Edit /etc/netplan/01-netcfg.yaml by following this [example file](examples/netplan_scenario_b.txt)
 

@@ -243,7 +243,7 @@ crm cluster health | more
 ```
 ### Setup Pacemaker
 
-The following steps can be automated taking advantage of the following script: [setup_domains_ha.sh](https://github.com/HPCNow/snow-ci/blob/master/debian/setup_domains_ha.sh)
+The following steps can be automated taking advantage of the following script: [setup_domains_ha.sh](examples/setup_domains_ha.sh)
 
 ```bash
 #!/bin/bash

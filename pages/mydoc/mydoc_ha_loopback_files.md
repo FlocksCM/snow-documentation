@@ -22,7 +22,7 @@ This guide asumes that:
 
 ## Enabling cluster file system re-export
 
-In the following file you can define which file systems are going to be re-exported from an external server. sNow! relies NFS for deploying the compute nodes, so /sNow and /home are expected to be shared through NFSv4. 
+In the following file you can define which file systems are going to be re-exported from an external server. sNow! relies NFS for deploying the compute nodes, so /sNow and /home are expected to be shared through NFSv4.
 
 Assuming that the content of /sNow and /home are located in /beegfs the file /etc/exports.d/snow.exports should be similar to:
 ```
@@ -57,7 +57,7 @@ root@snow02:~# snow init
 [W] Please, do not run this command in a production environment
 [W] Do you want to proceed? (y/N)
 ```
-Once all the nodes 
+Once all the nodes
 ## Install the required software packages
 ```
 apt update
@@ -88,8 +88,8 @@ chmod 400 /etc/corosync/authkey
 ```
 scp -p /etc/corosync/authkey snow02:/etc/corosync/authkey
 ```
-### Configuring corosync 
-The content of /etc/corosync/corosync.conf should be something similar to the following example. Note that this cluster only has two nodes (snow01 and snow02). 
+### Configuring corosync
+The content of /etc/corosync/corosync.conf should be something similar to the following example. Note that this cluster only has two nodes (snow01 and snow02).
 ```
 # egrep -v "^$|#" /etc/corosync/corosync.conf
 totem {
@@ -198,11 +198,11 @@ chown -R hacluster:haclient /var/lib/pacemaker
 chmod 750 /var/lib/pacemaker
 ssh snow02 chown -R hacluster:haclient /var/lib/pacemaker
 ssh snow02 chmod 750 /var/lib/pacemaker
-crm cluster health | more 
+crm cluster health | more
 ```
 ### Setup Pacemaker
 
-The following steps can be automated taking advantage of the following script: [setup_domains_ha.sh](https://github.com/HPCNow/snow-ci/blob/master/debian/setup_domains_ha.sh)
+The following steps can be automated taking advantage of the following script: [setup_domains_ha.sh](examples/setup_domains_ha.sh)
 ```bash
 #!/bin/bash
 domain_list=$(snow list domains | egrep -v "Domain|------" | gawk '{print $1}')
@@ -242,8 +242,8 @@ primitive deploy01 ocf:heartbeat:Xen \
  op monitor interval="40s" \
  meta target-role="started" allow-migrate="true"
 ```
-Some operations like the live migration requires some extra time. Specially when the VM uses a reasonable amount of memory. 
-It's highly recommended to increase the default timeout to avoid cancelling the live migration due a short time limit. 
+Some operations like the live migration requires some extra time. Specially when the VM uses a reasonable amount of memory.
+It's highly recommended to increase the default timeout to avoid cancelling the live migration due a short time limit.
 The following example, setup 120s as default timeout. You can tune this value attending at your VM needs.
 ```
 crm_attribute --type op_defaults --attr-name timeout --attr-value 120s
@@ -307,7 +307,7 @@ bye
 ```
 Notice that this IP ```10.1.0.254``` must match with the IP defined in ```NET_SNOW``` and ```NET_COMP``` in the snow.conf
 ## Service placement
-In order to balance services across the two nodes and also to distribute additional services with native HA (i.e slurm-master slurm-slave) you can use the following instructions to define the preferred hosts. 
+In order to balance services across the two nodes and also to distribute additional services with native HA (i.e slurm-master slurm-slave) you can use the following instructions to define the preferred hosts.
 Failback is useful to define well balanced services, but if you have an ongoing issue, you could trigger a failback in a “semi-faulty” node.
 ```
 crm(live)# configure
