@@ -69,6 +69,10 @@ entries:
           url: /mydoc_install_os_debian.html
           output: web
 
+        - title: Ubuntu
+          url: /mydoc_install_os_ubuntu.html
+          output: web
+
     - title: 1. sNow! Installation
       url: /mydoc_install_snow.html
       output: web, pdf
