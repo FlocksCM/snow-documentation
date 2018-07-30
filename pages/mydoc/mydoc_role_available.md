@@ -174,8 +174,8 @@ Default ports
 ## opennebula-frontend
 sNow! can deploy OpenNebula Frontend servers and re-architect compute nodes to OpenNebula hypervisor nodes.
 
-{% include alert.html content="In order to enable OpenNebula, you must define the version to be used" %}
-{% include alert.html content="OpenNebula integration is not available for SuSE and OpenSuSE" %}
+{% include note.html content="In order to enable OpenNebula, you must define the version to be used" %}
+{% include note.html content="OpenNebula integration is not available for SuSE and OpenSuSE" %}
 
 Key parameters in snow.conf
 
