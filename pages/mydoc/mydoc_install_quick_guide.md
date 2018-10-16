@@ -15,7 +15,7 @@ folder: mydoc
 
 1. Boot the sNow! master node with a Debian 9.
 2. Press Escape key.
-3. Write in the prompt: ```auto url=http://goo.gl/HqKLty```
+3. Write in the prompt: ```auto url=http://goo.gl/yBiv8V```
 4. Wait until the system boots the system installed in the local disk.
 5. Login as root in order to proceed the installation (Default password is ```HPCN0w!!```).
 6. Update the master password (```MASTER_PASSWORD```) and the cluster definition in /sNow/snow-tools/etc/snow.conf
