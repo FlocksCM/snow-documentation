@@ -22,7 +22,7 @@ Boot from the Debian DVD or USB and choose Install.
 4. Choose your domain name and a root password
 5. Create a user when prompted (snow user is reserved, so do not use snow as a username)
 6. Choose your timezone
-7. Choose manual partition, and create a small partition for ```/boot```
+7. Choose manual partition, and create a small partition for ```/boot```, marking bootable flag as on
 ```
 /boot	ext4	1GB
 ```

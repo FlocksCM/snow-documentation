@@ -75,7 +75,7 @@ export HPCNow_GID=2000
 ```
 Please note that to allow the local snow and hpcnow users to log into the system you will to need either:
 
-a. Set a password for the users with passwd
+a. Set a password for the users with passwd <br />
 b. Use the created SSH key under ```/home/$USER/.ssh```
 ### Install sNow!
 Finally, run the following command in order to perform the installation.

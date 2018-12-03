@@ -23,7 +23,6 @@ Boot from the Ubuntu DVD or USB and choose Install.
 1. Select your language, location and keyboard map.
 2. Configure your primary network interface to have internet access as you will need it for installing sNow!
 3. Choose your hostname (snow01)
-4. Choose your domain name and a root password
 5. Create a user when prompted (snow user is reserved, so do not use snow as a username)
 6. Choose your timezone
 7. Choose manual partition, and create a small partition for ```/boot```
@@ -42,8 +41,8 @@ sNow	ext4	150GB		/sNow
 swap	swap	8GB
 ```
 This is just an example. You can choose other partition layouts that fit your needs but it is mandatory to have the snow_vg volume group and the /sNow filesystem.
-12. Configure a network mirror to install new software and updates when needed.
-13. Choose the default packages to install. You don't need a GUI for sNow!.
+12. Choose system update policy.
+13. Choose the default packages to install.
 14. Reboot the system when the installation is finished.
 
 ## Install pre-required software
